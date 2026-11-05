@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>密码管理 · 酒店影院</title>
+  <link rel="stylesheet" href="passwords.css">
+  <script src="../base1/cockpit.js"></script><script defer src="passwords.js"></script>
+</head>
+<body>
+  <main class="password-page">
+    <header class="page-head"><div><p class="eyebrow">酒店影院 · 系统管理</p><h1>密码管理</h1><p>分别设置，一次保存。忘记原密码也可在这里重置。</p></div><span class="identity" id="identity">Ubuntu 身份验证</span></header>
+    <section class="authority" id="authority" aria-labelledby="authority-title"><div class="authority-mark" aria-hidden="true">✓</div><div><h2 id="authority-title">由 Ubuntu 账号授权</h2><p>先在页面顶部开启管理权限，再验证并加载。Ubuntu 密码只用于身份验证。</p></div><button type="button" id="refresh" class="button secondary">验证并加载</button></section>
+    <p class="notice" id="notice" role="status" aria-live="polite">正在连接 Ubuntu 密码管理…</p>
+    <form id="password-form" autocomplete="off">
+      <div class="form-heading"><h2>应用与维护密码</h2><span id="count">加载后可填写</span></div>
+      <p class="form-rule">应用密码为 12–128 个字符，首尾不含空格。留空的项目保持原密码。</p>
+      <div class="service-list" id="services"></div>
+      <section class="result-panel" id="results" hidden aria-live="polite" aria-labelledby="results-title"><h2 id="results-title">本次保存结果</h2><ul id="result-list"></ul></section>
+      <footer class="save-bar"><strong>仅修改已填写的项目</strong><button class="button primary" id="save" type="submit" disabled>统一保存</button></footer>
+    </form>
+    <p class="footnote">Prowlarr、Jackett 和下载工具入口沿用后台账号验证。</p>
+  </main>
+</body>
+</html>

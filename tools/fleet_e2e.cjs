@@ -1,0 +1,71 @@
+// Real local HTTP/SQLite and production admin UI; devices and worker outcomes are synthetic.
+const {chromium}=require('playwright-core'),fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.join(__dirname,'..'),out=path.join(root,'local/evidence/IN15');fs.mkdirSync(out,{recursive:true});
+const info=JSON.parse(fs.readFileSync(path.join(root,'artifacts/management/AD08/dev.json')));
+assert(info.url.startsWith('http://127.0.0.1:'));
+(async()=>{const browser=await chromium.launch(require('./browser_options.cjs'));const result={errors:[],widths:{}};
+try{for(const [width,height] of [[390,844],[1280,720],[1440,900]]){
+ const page=await browser.newPage({viewport:{width,height}});
+ page.on('pageerror',e=>result.errors.push(String(e)));page.on('console',m=>{if(m.type()==='error'&&!m.location().url.endsWith('/favicon.ico'))result.errors.push(m.text())});
+ await page.goto(info.url+'/?view=fleet');await page.fill('input[type=password]','ad08-local-test');await page.click('button[type=submit]');
+ await page.getByRole('heading',{name:'批量运维与公共通知',exact:true}).waitFor();
+ await page.waitForFunction(()=>document.querySelectorAll('.fleet-room-table tbody tr').length===150);
+ await page.getByRole('button',{name:'选择 / 取消当前筛选结果',exact:true}).click();
+ await page.getByLabel('批量应用版本',{exact:true}).selectOption('pkg-'+'b'.repeat(32));
+ const previewResponse=page.waitForResponse(r=>r.url().endsWith('/api/admin/fleet/preflight')&&r.request().method()==='POST');
+ await page.getByRole('button',{name:'预检所选房间',exact:true}).click();
+ const previewData=await(await previewResponse).json();console.log('preview',width,previewData.rows?.length,previewData.rows?.filter(r=>!r.ready).map(r=>({room:r.room,reasons:r.reasons})));
+ const plan=page.getByRole('region',{name:'批量执行预检',exact:true});await plan.waitFor();
+ assert.equal(await plan.locator('tbody tr').count(),150);
+ assert.equal(await plan.getByText('发布后等待空闲',{exact:true}).count(),148);
+ await plan.getByRole('checkbox').check();const queued=page.waitForResponse(r=>r.url().endsWith('/api/admin/fleet/execute')&&r.request().method()==='POST');await plan.getByRole('button',{name:'发布并等待空闲',exact:true}).click();
+ const queuedData=await(await queued).json();const batch=page.locator('[data-batch-id="'+queuedData.batch.id+'"]');
+ let independent=false;
+ for(let n=0;n<30;n++){await page.getByRole('button',{name:'刷新状态',exact:true}).click();independent=await page.evaluate(id=>{const app=Alpine.$data(document.querySelector('[x-data]'));const b=app.fleetData.batches.find(b=>b.id===id);return b&&!b.jobs.some(j=>['queued','running'].includes(j.status))&&b.jobs.filter(j=>j.status==='completed').length>1&&b.jobs.some(j=>j.status==='failed')&&b.jobs.some(j=>j.status==='waiting_online')&&b.jobs.some(j=>j.status==='waiting_idle')},queuedData.batch.id);if(independent)break;await page.waitForTimeout(200)}
+ assert(independent,'offline/busy rooms wait and one failure must not block other rooms');
+ await batch.locator('summary').click();
+ assert(await batch.getByText('等待上线',{exact:true}).count()>0);
+ assert(await batch.getByText('等待空闲',{exact:true}).count()>0);
+ await batch.screenshot({path:path.join(out,`fleet-pending-${width}.png`)});
+ const cancelling=page.waitForResponse(r=>r.url().endsWith('/api/admin/fleet/cancel')&&r.request().method()==='POST');
+ await batch.getByRole('button',{name:'撤回 / 停止后续目标',exact:true}).click();const cancelled=await cancelling;assert.equal(cancelled.status(),200,await cancelled.text());
+ await page.waitForFunction(id=>{const b=Alpine.$data(document.querySelector('[x-data]')).fleetData.batches.find(b=>b.id===id);return b?.status==='cancelled'},queuedData.batch.id);
+ await page.getByLabel('批量应用操作',{exact:true}).selectOption('uninstall');
+ const manualPreview=page.waitForResponse(r=>r.url().endsWith('/api/admin/fleet/preflight')&&r.request().method()==='POST');
+ await page.getByRole('button',{name:'预检所选房间',exact:true}).click();const manualResponse=await manualPreview;assert.equal(manualResponse.status(),200,await manualResponse.text());await plan.waitFor();
+ assert.equal(await plan.getByText('可执行',{exact:true}).count(),148);
+ await plan.getByRole('checkbox').check();const manualQueued=page.waitForResponse(r=>r.url().endsWith('/api/admin/fleet/execute')&&r.request().method()==='POST');
+ await plan.getByRole('button',{name:'开始逐台执行',exact:true}).click();
+ const manualData=await(await manualQueued).json();const legacy=page.locator('[data-batch-id="'+manualData.batch.id+'"]');
+ let paused=false;
+ for(let n=0;n<30;n++){await page.getByRole('button',{name:'刷新状态',exact:true}).click();paused=await legacy.locator('summary').filter({hasText:/已停止，待处理.*成功 1\//}).count()>0;if(paused)break;await page.waitForTimeout(200)}
+ assert(paused,'manual uninstall keeps original stop-on-failure behavior');
+ await legacy.locator('summary').click();await legacy.getByRole('button',{name:'重新预检未完成目标',exact:true}).click();
+ await page.getByRole('button',{name:'预检所选房间',exact:true}).click();await plan.waitFor();
+ assert.equal(await plan.locator('tbody tr').count(),149,'successful target excluded from retry');
+ await plan.getByRole('button',{name:'取消预检',exact:true}).click();
+ await page.getByLabel('批量应用操作',{exact:true}).selectOption('install');
+ await page.getByLabel('批量运维设备组',{exact:true}).selectOption('1楼');
+ await page.getByRole('button',{name:'选择 / 取消当前筛选结果',exact:true}).click();
+ const title='IN15 本地通知 '+width;
+ await page.getByLabel('公共通知标题',{exact:true}).fill(title);await page.getByLabel('公共通知正文',{exact:true}).fill('仅用于本地模拟测试，不发送到真实电视。');
+ await page.locator('.fleet-columns').screenshot({path:path.join(out,`fleet-forms-${width}.png`)});
+ await page.getByRole('button',{name:'预览通知与房间',exact:true}).click();
+ const preview=page.getByRole('region',{name:'公共通知发送预览',exact:true});await preview.waitFor();
+ await preview.getByRole('checkbox').check();const publishing=page.waitForResponse(r=>r.url().endsWith('/api/admin/fleet/messages/publish')&&r.request().method()==='POST');await preview.getByRole('button',{name:'向 50 台电视发送',exact:true}).click();const published=await publishing;assert.equal(published.status(),200,await published.text());
+ const headers={'X-TV-Token':'fleet-fixture-token-0','Content-Type':'application/json'};
+ const list=await (await fetch(info.tv_url+'/api/v1/messages',{headers})).json();const notice=list.messages.find(m=>m.title===title);assert(notice);
+ const other=await(await fetch(info.tv_url+'/api/v1/messages',{headers:{'X-TV-Token':'fleet-fixture-token-100'}})).json();assert(!other.messages.some(m=>m.id===notice.id),'message must stay in selected floor');
+ for(const status of ['displayed','dismissed']){const r=await fetch(info.tv_url+'/api/v1/messages/receipt',{method:'POST',headers,body:JSON.stringify({id:notice.id,status})});assert.equal(r.status,200)}
+ await page.getByRole('button',{name:'刷新状态',exact:true}).click();
+ const message=page.locator('.fleet-history').filter({has:page.locator('summary').filter({hasText:title})});
+ await message.locator('summary').click();await message.getByText('客人已关闭',{exact:true}).waitFor();assert(await message.getByText('客人已关闭',{exact:true}).count()===1);
+ await message.getByRole('button',{name:'撤回通知',exact:true}).click();
+ await page.getByRole('heading',{name:'批量运维与公共通知',exact:true}).scrollIntoViewIfNeeded();
+ const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);assert(!overflow,'horizontal overflow at '+width);
+ await page.screenshot({path:path.join(out,`fleet-${width}.png`),fullPage:false});
+ result.widths[width]={rooms:150,publishable:149,offline_and_busy_retained:true,failed_room_does_not_block_others:true,manual_uninstall_stopped_after_first_failure:true,retry_targets:149,notification_targets:50,other_floor_excluded:true,receipt_displayed_and_closed:true,withdrawn:true,overflow};
+ await page.close();
+}
+assert.deepEqual(result.errors,[]);fs.writeFileSync(path.join(out,'fleet-e2e.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});

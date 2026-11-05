@@ -1,0 +1,5028 @@
+{
+  "schema": 1,
+  "version": "2026-11-03.2.0",
+  "profiles": [
+    {
+      "id": "hotel-xiaomi-mitv-astp0",
+      "name": "本店小米 MiTV-ASTP0 / mulan",
+      "match": {
+        "models": [
+          "MiTV-ASTP0"
+        ],
+        "devices": [
+          "mulan"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint": "Xiaomi/mulan/mulan:9/PPR1.180610.011/OS3.0.104.0.PSTAATV:user/release-keys"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/pengchujin/aerial-tv",
+      "tested": "本项目PD05–PD07及AD10已验单台播放/维护/实体待机；便携工具整套新装仍待现场验收。",
+      "notes": "客户端整合AD10广告及迟到唤醒修复；2026-10-29 用1.2.0在同固件新电视一次装成；1.3.0新流程（重启验证/卸载式还原）待现场复验。",
+      "level": "本项目实测（一键安装级）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aipro2k",
+      "name": "aipro2k",
+      "match": {
+        "models": [],
+        "devices": [
+          "dongnae"
+        ],
+        "brand": "Expressluck",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/aipro2k",
+      "tested": "{\"by\": \"Alefrankie (PR #233)\", \"firmware\": \"UKN6.260116.085\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aiwa-ai-pont-sa",
+      "name": "aiwa-ai-pont-sa",
+      "match": {
+        "models": [],
+        "devices": [
+          "osaka"
+        ],
+        "brand": "AIWA",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/aiwa-ai-pont-sa",
+      "tested": "{\"by\": \"Thiago Damas (PR #226)\", \"firmware\": \"UKNV.260603.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "amazon-fire-tv-aftdec012e",
+      "name": "amazon-fire-tv-aftdec012e",
+      "match": {
+        "models": [
+          "AFTDEC012E"
+        ],
+        "devices": [
+          "ginza"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/amazon-fire-tv-aftdec012e",
+      "tested": "{\"by\": \"GaneshVarma1\", \"firmware\": \"RS8185.3885N\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "amazon-fire-tv-afttiff43",
+      "name": "amazon-fire-tv-afttiff43",
+      "match": {
+        "models": [
+          "AFTTIFF43"
+        ],
+        "devices": [
+          "brandenburg"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/amazon-fire-tv-afttiff43",
+      "tested": "{\"by\": \"maxhayim (PR #394)\", \"firmware\": \"Fire OS 7.7.1.7 (PS7717.5741N)\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-2018",
+      "name": "amazon-fire-tv-stick-4k-2018",
+      "match": {
+        "models": [
+          "AFTMM"
+        ],
+        "devices": [
+          "mantis"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 25,
+        "sdk_max": 25,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/amazon-fire-tv-stick-4k-2018",
+      "tested": "{\"by\": \"IdentityDC (PR #195)\", \"firmware\": \"Fire OS 6.7.1.1 (NS6711/5908)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-2023",
+      "name": "amazon-fire-tv-stick-4k-2023",
+      "match": {
+        "models": [
+          "AFTKM"
+        ],
+        "devices": [
+          "karat"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/amazon-fire-tv-stick-4k-2023",
+      "tested": "{\"by\": \"Mateus Lecchi (PR #466)\", \"firmware\": \"Fire OS 8.1.8.5 (RS8185.3891N)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-max-2021",
+      "name": "amazon-fire-tv-stick-4k-max-2021",
+      "match": {
+        "models": [
+          "AFTKA"
+        ],
+        "devices": [
+          "kara"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/amazon-fire-tv-stick-4k-max-2021",
+      "tested": "{\"by\": \"samoralespu (PR #493)\", \"firmware\": \"Fire OS 7.7.1.3 (PS7713.5443N)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "amazon-fire-tv-stick-lite-2020",
+      "name": "amazon-fire-tv-stick-lite-2020",
+      "match": {
+        "models": [
+          "AFTSS"
+        ],
+        "devices": [
+          "sheldon"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/amazon-fire-tv-stick-lite-2020",
+      "tested": "{\"by\": \"kushc451 (PR #351)\", \"firmware\": \"Fire OS 7.7.1.7 (PS7717.5741N)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "aqua-matrixtv-ee-50",
+      "name": "aqua-matrixtv-ee-50",
+      "match": {
+        "models": [],
+        "devices": [
+          "omonia"
+        ],
+        "brand": "Haier",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/aqua-matrixtv-ee-50",
+      "tested": "{\"by\": \"Randhi Pratama Putra (PR #1444)\", \"firmware\": \"UKN7.260716.049\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "benq-e55-735",
+      "name": "benq-e55-735",
+      "match": {
+        "models": [
+          "AI PONT"
+        ],
+        "devices": [],
+        "brand": "BenQ",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/benq-e55-735",
+      "tested": "{\"by\": null, \"firmware\": \"UKNV.260506.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "benq-e55-750",
+      "name": "benq-e55-750",
+      "match": {
+        "models": [
+          "AI PONT"
+        ],
+        "devices": [],
+        "brand": "BenQ",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/benq-e55-750",
+      "tested": "{\"by\": \"sorosora (PR #252)\", \"firmware\": \"RTM8.240401.136\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "byintek-t5-max",
+      "name": "byintek-t5-max",
+      "match": {
+        "models": [
+          "4K Google TV Stick"
+        ],
+        "devices": [
+          "YYT"
+        ],
+        "brand": "BYINTEK",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/byintek-t5-max",
+      "tested": "{\"by\": \"mzet97 (PR #355)\", \"firmware\": \"UKG3.260128.001.C3.3.5_20260723\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "cecotec-shandao",
+      "name": "cecotec-shandao",
+      "match": {
+        "models": [],
+        "devices": [
+          "shandao"
+        ],
+        "brand": "vestel",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/cecotec-shandao",
+      "tested": "{\"by\": \"Gonzalo Alonso Kitayama Pastor (PR #418)\", \"firmware\": \"UKNV.260304.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "challenger-32t22bt",
+      "name": "challenger-32t22bt",
+      "match": {
+        "models": [],
+        "devices": [
+          "cvt_mt5863_col"
+        ],
+        "brand": "Challenger",
+        "sdk_min": 24,
+        "sdk_max": 24,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/challenger-32t22bt",
+      "tested": "{\"by\": \"xngxllw (PR #507)\", \"firmware\": \"NRD90M 1464 (V8-MT659CO-A18V015)\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "chiq-ai-pont",
+      "name": "chiq-ai-pont",
+      "match": {
+        "models": [
+          "AI PONT"
+        ],
+        "devices": [
+          "samseong"
+        ],
+        "brand": "CHiQ",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/chiq-ai-pont",
+      "tested": "{\"by\": null, \"firmware\": \"RTO2.250508.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "chiq-gtvu65",
+      "name": "chiq-gtvu65",
+      "match": {
+        "models": [
+          "AI PONT"
+        ],
+        "devices": [
+          "dangni"
+        ],
+        "brand": "CHiQ",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/chiq-gtvu65",
+      "tested": "{\"by\": \"Mfolio (PR #133)\", \"firmware\": \"UKN2.241219.138.A1\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "compac-atv-r2",
+      "name": "compac-atv-r2",
+      "match": {
+        "models": [],
+        "devices": [
+          "R2"
+        ],
+        "brand": "Compac",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/compac-atv-r2",
+      "tested": "{\"by\": \"Ritik Sahni (PR #384)\", \"firmware\": \"PTT1.201001.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "eko-2k-google-tv-tennoji",
+      "name": "eko-2k-google-tv-tennoji",
+      "match": {
+        "models": [],
+        "devices": [
+          "tennoji"
+        ],
+        "brand": "EKO",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/eko-2k-google-tv-tennoji",
+      "tested": "{\"by\": \"Francisco Rodrigues (PR #440)\", \"firmware\": \"UKNV.260415.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "epson-ls800",
+      "name": "epson-ls800",
+      "match": {
+        "models": [
+          "HA90"
+        ],
+        "devices": [
+          "sti6202d101"
+        ],
+        "brand": "Epson",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/epson-ls800",
+      "tested": "{\"by\": \"Adam Hansen (PR #784)\", \"firmware\": \"UKG3.250826.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "ffalcon-65s585c-pro",
+      "name": "ffalcon-65s585c-pro",
+      "match": {
+        "models": [],
+        "devices": [
+          "tcl_mt5879_cn"
+        ],
+        "brand": "FFalcon",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/ffalcon-65s585c-pro",
+      "tested": "{\"by\": \"codertesla (PR #335)\", \"firmware\": \"RQ3A.210705.001/2026012200\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。 此类国行固件使用无 HOME 声明的 guard 安装包，必须取得真实 ADB 授权与无障碍权限。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "freebox-player-pop",
+      "name": "freebox-player-pop",
+      "match": {
+        "models": [],
+        "devices": [
+          "fbx8am"
+        ],
+        "brand": "Freebox",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/freebox-player-pop",
+      "tested": "{\"by\": \"malo-gx (PR #366)\", \"firmware\": \"QTT8.201201.002.v10.5.66\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "google-chromecast-gtv-4k",
+      "name": "google-chromecast-gtv-4k",
+      "match": {
+        "models": [],
+        "devices": [
+          "sabrina"
+        ],
+        "brand": "google",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/google-chromecast-gtv-4k",
+      "tested": "{\"by\": null, \"firmware\": \"UTTC.250917.004\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "Google盒子：上游指出替换桌面可能影响投屏，本影院尚无保持投屏与完整接管的验证，本版完整接管暂不支持；可查连接方法。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "google-chromecast-gtv-hd",
+      "name": "google-chromecast-gtv-hd",
+      "match": {
+        "models": [],
+        "devices": [
+          "boreal"
+        ],
+        "brand": "google",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/google-chromecast-gtv-hd",
+      "tested": "{\"by\": \"timhayford\", \"firmware\": \"UTTC.250917.004\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "Google盒子：上游指出替换桌面可能影响投屏，本影院尚无保持投屏与完整接管的验证，本版完整接管暂不支持；可查连接方法。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "google-tv-streamer-4k-kirkwood",
+      "name": "google-tv-streamer-4k-kirkwood",
+      "match": {
+        "models": [],
+        "devices": [
+          "kirkwood"
+        ],
+        "brand": "google",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/google-tv-streamer-4k-kirkwood",
+      "tested": "{\"by\": \"Pablo (PR #501)\", \"firmware\": \"UTTK.260317.003\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "Google盒子：上游指出替换桌面可能影响投屏，本影院尚无保持投屏与完整接管的验证，本版完整接管暂不支持；可查连接方法。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "box"
+    },
+    {
+      "id": "haier-android-tv-dvb2k",
+      "name": "haier-android-tv-dvb2k",
+      "match": {
+        "models": [
+          "Haier Android TV DVB2K"
+        ],
+        "devices": [
+          "broadway"
+        ],
+        "brand": "Haier",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/haier-android-tv-dvb2k",
+      "tested": "{\"by\": \"Manjunathan (PR #296)\", \"firmware\": \"RTMA.250416.179\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "haier-h32s80efx",
+      "name": "haier-h32s80efx",
+      "match": {
+        "models": [
+          "Haier MatrixTV CE"
+        ],
+        "devices": [
+          "deto"
+        ],
+        "brand": "Haier",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/haier-h32s80efx",
+      "tested": "{\"by\": \"devilnaked (PR #267)\", \"firmware\": \"UKNV.260302.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-e5q-pro",
+      "name": "hisense-e5q-pro",
+      "match": {
+        "models": [],
+        "devices": [
+          "MT9653"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-e5q-pro",
+      "tested": "{\"by\": \"nzjiance2 (PR #358)\", \"firmware\": \"02.02.70.01\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-fire-tv-aftcibfbd1",
+      "name": "hisense-fire-tv-aftcibfbd1",
+      "match": {
+        "models": [
+          "AFTCIBFBD1"
+        ],
+        "devices": [
+          "coyote"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-fire-tv-aftcibfbd1",
+      "tested": "{\"by\": \"Amey Arya (PR #545), Mimoh Solanki (PR #572)\", \"firmware\": \"Fire OS 8.0 (RS8180.3734N)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-hg9",
+      "name": "hisense-hg9",
+      "match": {
+        "models": [],
+        "devices": [
+          "laohushan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-hg9",
+      "tested": "{\"by\": \"Tanner Powell (PR #100)\", \"firmware\": \"PTMR.190127.037\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-hismarttv-a4",
+      "name": "hisense-hismarttv-a4",
+      "match": {
+        "models": [],
+        "devices": [
+          "xiaoyushan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-hismarttv-a4",
+      "tested": "{\"by\": \"Prateek Jain (PR #184)\", \"firmware\": \"PTMR.190127.037 (01.00.00.04)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-hismarttv-a4-android11",
+      "name": "hisense-hismarttv-a4-android11",
+      "match": {
+        "models": [],
+        "devices": [
+          "xiaoyushan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-hismarttv-a4-android11",
+      "tested": "{\"by\": \"vcheckk (PR #262)\", \"firmware\": \"RTT2.221108.001 (00.00.00.18)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-smarttv-4k-ffm",
+      "name": "hisense-smarttv-4k-ffm",
+      "match": {
+        "models": [
+          "SmartTV 4K FFM"
+        ],
+        "devices": [
+          "huangshan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-smarttv-4k-ffm",
+      "tested": "{\"by\": null, \"firmware\": \"QTG3.200902.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-smarttv-4k-ffm-android11",
+      "name": "hisense-smarttv-4k-ffm-android11",
+      "match": {
+        "models": [],
+        "devices": [
+          "songshan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-smarttv-4k-ffm-android11",
+      "tested": "{\"by\": \"Ansh Walia\", \"firmware\": \"RTT2.220118.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-smarttv-4k-ffm-lushan",
+      "name": "hisense-smarttv-4k-ffm-lushan",
+      "match": {
+        "models": [],
+        "devices": [
+          "lushan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-smarttv-4k-ffm-lushan",
+      "tested": "{\"by\": \"Suuuiii\", \"firmware\": \"STT2.230929.001.092\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hisense-u75-hengshan",
+      "name": "hisense-u75-hengshan",
+      "match": {
+        "models": [
+          "SmartTV 4K FFM"
+        ],
+        "devices": [
+          "hengshan"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hisense-u75-hengshan",
+      "tested": "{\"by\": \"Charles Zwicker (PR #235)\", \"firmware\": \"STT2.230310.002\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hitachi-65qledsm20",
+      "name": "hitachi-65qledsm20",
+      "match": {
+        "models": [],
+        "devices": [
+          "bangbae"
+        ],
+        "brand": "Hitachi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hitachi-65qledsm20",
+      "tested": "{\"by\": \"adrian jurcevic (PR #144)\", \"firmware\": \"RTO8.250915.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "hitachi-cdh-le32smart21",
+      "name": "hitachi-cdh-le32smart21",
+      "match": {
+        "models": [
+          "Smart TV"
+        ],
+        "devices": [
+          "C06"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "TCL/C06_2K_GB/C06:11/AR2101/AR14"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/hitachi-cdh-le32smart21",
+      "tested": "{\"by\": \"Dinamarcus (PR #242)\", \"firmware\": \"AR2101 AR14 (V8-T221T01-LF1V030)\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "insignia-ns55f301na25",
+      "name": "insignia-ns55f301na25",
+      "match": {
+        "models": [
+          "AFTDCT31"
+        ],
+        "devices": [
+          "duckie"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/insignia-ns55f301na25",
+      "tested": "{\"by\": null, \"firmware\": \"PS7715.5585N\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "jmgo-n1s-holan",
+      "name": "jmgo-n1s-holan",
+      "match": {
+        "models": [
+          "K80A"
+        ],
+        "devices": [
+          "holan"
+        ],
+        "brand": "JMGO",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/jmgo-n1s-holan",
+      "tested": "{\"by\": \"spikeganush (PR #284)\", \"firmware\": \"UKNV.260401.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "jvc-android-tv-menlo",
+      "name": "jvc-android-tv-menlo",
+      "match": {
+        "models": [],
+        "devices": [
+          "menlo"
+        ],
+        "brand": "Jvc",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/jvc-android-tv-menlo",
+      "tested": "{\"by\": \"Mariano Baldovino (PR #492)\", \"firmware\": \"RTM7.230903.063\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "jvc-lt55mb508",
+      "name": "jvc-lt55mb508",
+      "match": {
+        "models": [],
+        "devices": [
+          "seocho"
+        ],
+        "brand": "JVC",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/jvc-lt55mb508",
+      "tested": "{\"by\": \"loopbackbr (PR #1469)\", \"firmware\": \"RTO8.250904.001\", \"daysLivedWith\": 4, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "kalley-43g200",
+      "name": "kalley-43g200",
+      "match": {
+        "models": [],
+        "devices": [
+          "R3_GTV"
+        ],
+        "brand": "MOKA",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/kalley-43g200",
+      "tested": "{\"by\": \"samoralespu (PR #478)\", \"firmware\": \"UKR1.250803 (2501)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "kalley-r10g",
+      "name": "kalley-r10g",
+      "match": {
+        "models": [],
+        "devices": [
+          "R10G"
+        ],
+        "brand": "Kalley",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/kalley-r10g",
+      "tested": "{\"by\": \"Keneth Lallemand (PR #266)\", \"firmware\": \"UKR1.260612.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "karbonn-swtv-20ae",
+      "name": "karbonn-swtv-20ae",
+      "match": {
+        "models": [
+          "SWTV-20AE"
+        ],
+        "devices": [
+          "SW4H"
+        ],
+        "brand": "Skyworth",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/karbonn-swtv-20ae",
+      "tested": "{\"by\": \"7H-ANKUR\", \"firmware\": \"QTG3.200617.002\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "kogan-gtvu65kg",
+      "name": "kogan-gtvu65kg",
+      "match": {
+        "models": [],
+        "devices": [
+          "dangni"
+        ],
+        "brand": "Kogan",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/kogan-gtvu65kg",
+      "tested": "{\"by\": \"Hans Jakob Emmel (PR #541)\", \"firmware\": \"UKN3.250415.047.A1\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "lumio-vision-7",
+      "name": "lumio-vision-7",
+      "match": {
+        "models": [],
+        "devices": [
+          "khardi"
+        ],
+        "brand": "LUMIO",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "LUMIO/KTC_LUMIO_4K_EU_23GV1/khardi:14/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/lumio-vision-7",
+      "tested": "{\"by\": \"Subramanya GB (PR #988)\", \"firmware\": \"UKRA.251202.032\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "motorola-mt4310",
+      "name": "motorola-mt4310",
+      "match": {
+        "models": [],
+        "devices": [
+          "hayward"
+        ],
+        "brand": "Motorola",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/motorola-mt4310",
+      "tested": "{\"by\": \"Guillermo Asernitzky (PR #806)\", \"firmware\": \"RTM7.230903.035\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "motorola-swtv-24ae-fhd",
+      "name": "motorola-swtv-24ae-fhd",
+      "match": {
+        "models": [],
+        "devices": [
+          "beomil"
+        ],
+        "brand": "Motorola",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/motorola-swtv-24ae-fhd",
+      "tested": "{\"by\": \"mandipkumarkanu (PR #445)\", \"firmware\": \"UKN4.250714.138\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "mtc-uk-2k-android-tv",
+      "name": "mtc-uk-2k-android-tv",
+      "match": {
+        "models": [],
+        "devices": [
+          "tabata"
+        ],
+        "brand": "MTC",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/mtc-uk-2k-android-tv",
+      "tested": "{\"by\": \"pkia (PR #341)\", \"firmware\": \"RTO8.250807.002\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "nvidia-shield-tv-2017",
+      "name": "nvidia-shield-tv-2017",
+      "match": {
+        "models": [],
+        "devices": [
+          "darcy"
+        ],
+        "brand": "NVIDIA",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/nvidia-shield-tv-2017",
+      "tested": "{\"by\": \"Vito Sansevero (PR #1705)\", \"firmware\": \"RQ1A.210105.003 (SHIELD Experience 9.2.x)\", \"daysLivedWith\": 4, \"rebootTested\": true}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "nvidia-shield-tv-2019",
+      "name": "nvidia-shield-tv-2019",
+      "match": {
+        "models": [
+          "P3430"
+        ],
+        "devices": [
+          "sif"
+        ],
+        "brand": "NVIDIA",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/nvidia-shield-tv-2019",
+      "tested": "{\"by\": \"xbsheng (PR #314), reported by geekitup (issue #312)\", \"firmware\": \"RQ1A.210105.003 (SHIELD Experience 9.2.4)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "nvidia-shield-tv-pro-2019",
+      "name": "nvidia-shield-tv-pro-2019",
+      "match": {
+        "models": [
+          "P2897"
+        ],
+        "devices": [
+          "mdarcy"
+        ],
+        "brand": "NVIDIA",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/nvidia-shield-tv-pro-2019",
+      "tested": "{\"by\": null, \"firmware\": \"9.2.4 (33.2.0.400)\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "ok-ai-pont-ikebukuro",
+      "name": "ok-ai-pont-ikebukuro",
+      "match": {
+        "models": [],
+        "devices": [
+          "ikebukuro"
+        ],
+        "brand": "Changhong",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/ok-ai-pont-ikebukuro",
+      "tested": "{\"by\": \"Stefano Bichicchi\", \"firmware\": \"RTO2.250804.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "oneplus-tv-cebu",
+      "name": "oneplus-tv-cebu",
+      "match": {
+        "models": [
+          "C00"
+        ],
+        "devices": [
+          "Cebu"
+        ],
+        "brand": "OnePlus",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/oneplus-tv-cebu",
+      "tested": "{\"by\": \"Shubham Jain (PR #1043)\", \"firmware\": \"QTG3.201207.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "oneplus-tv-dosa",
+      "name": "oneplus-tv-dosa",
+      "match": {
+        "models": [],
+        "devices": [
+          "Oneplus_Dosa_IN"
+        ],
+        "brand": "OnePlus",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/oneplus-tv-dosa",
+      "tested": "{\"by\": \"Quickfever (PR #1404)\", \"firmware\": \"RTM5.220609.299\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "oneplus-tv-dubai",
+      "name": "oneplus-tv-dubai",
+      "match": {
+        "models": [
+          "D00"
+        ],
+        "devices": [
+          "Dubai"
+        ],
+        "brand": "OnePlus",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/oneplus-tv-dubai",
+      "tested": "{\"by\": null, \"firmware\": \"UTT1.240928.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "oneplus-tv-y1",
+      "name": "oneplus-tv-y1",
+      "match": {
+        "models": [],
+        "devices": [
+          "shibuya"
+        ],
+        "brand": "OnePlus",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/oneplus-tv-y1",
+      "tested": "{\"by\": \"Anmol Behl (PR #455)\", \"firmware\": \"RTO9.231122.002\", \"daysLivedWith\": 2, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "onn-4k-plus-2025",
+      "name": "onn-4k-plus-2025",
+      "match": {
+        "models": [
+          "onn. 4K Plus Streaming"
+        ],
+        "devices": [
+          "coffey"
+        ],
+        "brand": "onn",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/onn-4k-plus-2025",
+      "tested": "{\"by\": \"Alightsole (PR #443)\", \"firmware\": \"URO4.260304.011.B1.15051976\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "onn-4k-streaming-box-2023",
+      "name": "onn-4k-streaming-box-2023",
+      "match": {
+        "models": [],
+        "devices": [
+          "YOC"
+        ],
+        "brand": "onn",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/onn-4k-streaming-box-2023",
+      "tested": "{\"by\": \"shuklamrajat (PR #270, PR #393)\", \"firmware\": \"URO4.260304.011.B1.15051976\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "panasonic-4ktv-0su",
+      "name": "panasonic-4ktv-0su",
+      "match": {
+        "models": [
+          "4KTV-0SU"
+        ],
+        "devices": [
+          "SW4H"
+        ],
+        "brand": "Panasonic",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/panasonic-4ktv-0su",
+      "tested": "{\"by\": \"Caesar (PR #346)\", \"firmware\": \"QTG3.200617.002\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "panasonic-4ktv-jup",
+      "name": "panasonic-4ktv-jup",
+      "match": {
+        "models": [
+          "4KTV-JUP"
+        ],
+        "devices": [
+          "Jupiter_PA"
+        ],
+        "brand": "Panasonic",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/panasonic-4ktv-jup",
+      "tested": "{\"by\": \"KimiWang2046 (PR #142)\", \"firmware\": \"4.501 / RTM2.210929.137\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "panasonic-th-40hs550k",
+      "name": "panasonic-th-40hs550k",
+      "match": {
+        "models": [],
+        "devices": [
+          "shibuya"
+        ],
+        "brand": "Panasonic",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/panasonic-th-40hs550k",
+      "tested": "{\"by\": \"Afif Zafri (PR #250)\", \"firmware\": \"RTO9.240708.002\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-50pud7406",
+      "name": "philips-50pud7406",
+      "match": {
+        "models": [
+          "2020/2021 UHD Android TV"
+        ],
+        "devices": [
+          "PH0M_EA_T32"
+        ],
+        "brand": "Philips",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-50pud7406",
+      "tested": "{\"by\": \"Juan Caceres\", \"firmware\": \"RTM2.210929.098\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-50pus8517",
+      "name": "philips-50pus8517",
+      "match": {
+        "models": [
+          "2021_22_Philips_UHD_Android_TV"
+        ],
+        "devices": [
+          "PH1M_EA_9970A"
+        ],
+        "brand": "Philips",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-50pus8517",
+      "tested": "{\"by\": \"Artem Veikus (PR #178)\", \"firmware\": \"RTT2.211108.001 (21029)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-55oled707",
+      "name": "philips-55oled707",
+      "match": {
+        "models": [
+          "2021/22 Philips UHD Android TV"
+        ],
+        "devices": [
+          "PH1M_EA_9970A"
+        ],
+        "brand": "Philips",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-55oled707",
+      "tested": "{\"by\": \"Oliver Roberts (PR #285)\", \"firmware\": \"RTT2.211108.001 (21029)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-65pus8102",
+      "name": "philips-65pus8102",
+      "match": {
+        "models": [],
+        "devices": [
+          "PH7M_EU_5596"
+        ],
+        "brand": "Philips",
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-65pus8102",
+      "tested": "{\"by\": \"Riku Pirttinokka (PR #295, PR #483)\", \"firmware\": \"TPM171E_R.107.001.143.000\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-75pus8505",
+      "name": "philips-75pus8505",
+      "match": {
+        "models": [
+          "TPM191E"
+        ],
+        "devices": [
+          "PH9M_EA_5599"
+        ],
+        "brand": "Philips",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-75pus8505",
+      "tested": "{\"by\": \"Martin Horský (PR #439)\", \"firmware\": \"STT2.230526.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-google-tv-ta1",
+      "name": "philips-google-tv-ta1",
+      "match": {
+        "models": [],
+        "devices": [
+          "PH1M_WW_9972"
+        ],
+        "brand": "Philips",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-google-tv-ta1",
+      "tested": "{\"by\": \"Nefritor (PR #1631)\", \"firmware\": \"UKN2.241117.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-google-tv-ta7",
+      "name": "philips-google-tv-ta7",
+      "match": {
+        "models": [],
+        "devices": [
+          "PH3M_AL_T32"
+        ],
+        "brand": "Philips",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-google-tv-ta7",
+      "tested": "{\"by\": \"Wesley Prado (PR #518), second set amachador (PR #1778)\", \"firmware\": \"UTT1.250308.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-r8g-google-tv",
+      "name": "philips-r8g-google-tv",
+      "match": {
+        "models": [
+          "R8G"
+        ],
+        "devices": [
+          "whitefield"
+        ],
+        "brand": "Philips",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-r8g-google-tv",
+      "tested": "{\"by\": \"maxhayim (PR #212)\", \"firmware\": \"UKRE.260524.058\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "philips-smart-4k-google-tv",
+      "name": "philips-smart-4k-google-tv",
+      "match": {
+        "models": [
+          "Philips Smart 4K TV"
+        ],
+        "devices": [
+          "eleonas"
+        ],
+        "brand": "Philips",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/philips-smart-4k-google-tv",
+      "tested": "{\"by\": null, \"firmware\": \"UKN5.251016.083\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "polytron-2k-hayward",
+      "name": "polytron-2k-hayward",
+      "match": {
+        "models": [],
+        "devices": [
+          "hayward"
+        ],
+        "brand": "Polytron",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/polytron-2k-hayward",
+      "tested": "{\"by\": \"andikatuluspangestu (PR #388)\", \"firmware\": \"RTMA.250416.094\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "prismplus-q65-ultra-r10g",
+      "name": "prismplus-q65-ultra-r10g",
+      "match": {
+        "models": [],
+        "devices": [
+          "R10G"
+        ],
+        "brand": "MOKA",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/prismplus-q65-ultra-r10g",
+      "tested": "{\"by\": \"dineshalphaque (PR #238)\", \"firmware\": \"UKR1.251010.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "rca-ai-pont",
+      "name": "rca-ai-pont",
+      "match": {
+        "models": [
+          "AI PONT SA"
+        ],
+        "devices": [
+          "redwood"
+        ],
+        "brand": "RCA",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/rca-ai-pont",
+      "tested": "{\"by\": \"pranabsarma18 (PR #38)\", \"firmware\": \"UKNV.260504.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "redmi-mitv-mftp0",
+      "name": "redmi-mitv-mftp0",
+      "match": {
+        "models": [
+          "MiTV-MFTP0"
+        ],
+        "devices": [
+          "alita"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/redmi-mitv-mftp0",
+      "tested": "{\"by\": \"shaoxyz (PR #631)\", \"firmware\": \"23.2.10.6129\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sanyo-atv-r2",
+      "name": "sanyo-atv-r2",
+      "match": {
+        "models": [],
+        "devices": [
+          "R2"
+        ],
+        "brand": "SANYO",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "SANYO/SANYO/R2:9/PTT1.201001.001/200"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sanyo-atv-r2",
+      "tested": "{\"by\": null, \"firmware\": \"PTT1.201001.001 build 200\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sber-salute-tv-at30a6",
+      "name": "sber-salute-tv-at30a6",
+      "match": {
+        "models": [],
+        "devices": [
+          "at30a6"
+        ],
+        "brand": "SaluteTV",
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": "SaluteTV/SaluteTV/at30a6:13/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sber-salute-tv-at30a6",
+      "tested": "{\"by\": \"tryconn (PR #1197)\", \"firmware\": \"TP1A.220905.004.A2 (StarOS 1.101.84-B28350)\", \"daysLivedWith\": 2, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sharp-2t-c32gh3000i",
+      "name": "sharp-2t-c32gh3000i",
+      "match": {
+        "models": [],
+        "devices": [
+          "beomil"
+        ],
+        "brand": "SHARP",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "Sharp/SW11_SHARP_APEU/beomil:14/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sharp-2t-c32gh3000i",
+      "tested": "{\"by\": \"ariwisnu (PR #1160)\", \"firmware\": \"UKN6.260116.061\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sharp-aquos-tve21f",
+      "name": "sharp-aquos-tve21f",
+      "match": {
+        "models": [
+          "AQUOS-TVE21F"
+        ],
+        "devices": [
+          "banqiao"
+        ],
+        "brand": "SHARP",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sharp-aquos-tve21f",
+      "tested": "{\"by\": \"AessemOps (PR #465)\", \"firmware\": \"UKNV.260623.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "skyworth-sw-22sa",
+      "name": "skyworth-sw-22sa",
+      "match": {
+        "models": [
+          "SW-22SA"
+        ],
+        "devices": [
+          "SW6H"
+        ],
+        "brand": "Skyworth",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/skyworth-sw-22sa",
+      "tested": "{\"by\": \"FORD79-main\", \"firmware\": \"UTT1.250517.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "skyworth-swtv-21ae",
+      "name": "skyworth-swtv-21ae",
+      "match": {
+        "models": [],
+        "devices": [
+          "sunnyvale"
+        ],
+        "brand": "Skyworth",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/skyworth-swtv-21ae",
+      "tested": "{\"by\": \"fakhri626 (PR #161)\", \"firmware\": \"UKNV.260824.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "skyworth-swtv-22ae-fhd",
+      "name": "skyworth-swtv-22ae-fhd",
+      "match": {
+        "models": [],
+        "devices": [
+          "umeda"
+        ],
+        "brand": "Skyworth",
+        "sdk_min": 30,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/skyworth-swtv-22ae-fhd",
+      "tested": "{\"by\": \"hathechi\", \"firmware\": \"UKNV.260211.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "skyworth-swtv-24na-4k-nf",
+      "name": "skyworth-swtv-24na-4k-nf",
+      "match": {
+        "models": [
+          "SWTV-24NA-4K NF"
+        ],
+        "devices": [
+          "eleonas"
+        ],
+        "brand": "Skyworth",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/skyworth-swtv-24na-4k-nf",
+      "tested": "{\"by\": \"maxhayim (PR #213)\", \"firmware\": \"UKN6.260116.056\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-gb",
+      "name": "sony-bravia-4k-gb",
+      "match": {
+        "models": [
+          "BRAVIA 4K GB"
+        ],
+        "devices": [
+          "BRAVIA_ATV2",
+          "BRAVIA_ATV2_EU"
+        ],
+        "brand": "Sony",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Sony/BRAVIA_ATV2_EU/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-gb",
+      "tested": "{\"by\": \"jcardonne (PR #154)\", \"firmware\": \"PTT1.190515.001.S54\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-gb-us",
+      "name": "sony-bravia-4k-gb-us",
+      "match": {
+        "models": [
+          "BRAVIA 4K GB"
+        ],
+        "devices": [
+          "BRAVIA_ATV2",
+          "BRAVIA_ATV2_UC"
+        ],
+        "brand": "Sony",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-gb-us",
+      "tested": "{\"by\": \"akirschke15-cmd (PR #256)\", \"firmware\": \"PTT1.190515.001.S54\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-ur2",
+      "name": "sony-bravia-4k-ur2",
+      "match": {
+        "models": [
+          "BRAVIA_UR2_4K"
+        ],
+        "devices": [
+          "BRAVIA_UR2_4K"
+        ],
+        "brand": "Sony",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-ur2",
+      "tested": "{\"by\": null, \"firmware\": \"QTG3.200305.006.S97\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-ur3",
+      "name": "sony-bravia-4k-ur3",
+      "match": {
+        "models": [
+          "BRAVIA 4K UR3"
+        ],
+        "devices": [
+          "BRAVIA_UR3"
+        ],
+        "brand": "Sony",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-ur3",
+      "tested": "{\"by\": \"chilli\", \"firmware\": \"QTG3.200305.006.S97\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-vh1",
+      "name": "sony-bravia-4k-vh1",
+      "match": {
+        "models": [
+          "BRAVIA VH1",
+          "BRAVIA 4K VH1"
+        ],
+        "devices": [
+          "BRAVIA_VH1"
+        ],
+        "brand": "Sony",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-vh1",
+      "tested": "{\"by\": \"Erresedos\", \"firmware\": \"STT2.230505.001.S137\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-vh2",
+      "name": "sony-bravia-4k-vh2",
+      "match": {
+        "models": [
+          "BRAVIA 4K VH2"
+        ],
+        "devices": [
+          "BRAVIA_VH2"
+        ],
+        "brand": "Sony",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": "Sony/BRAVIA_VH2_EU/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-vh2",
+      "tested": "{\"by\": \"Miroslav Maksimovic (PR #145)\", \"firmware\": \"STT2.230505.001.S136\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-4k-vh21",
+      "name": "sony-bravia-4k-vh21",
+      "match": {
+        "models": [
+          "BRAVIA 4K VH21"
+        ],
+        "devices": [
+          "BRAVIA_VH21"
+        ],
+        "brand": "Sony",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-4k-vh21",
+      "tested": "{\"by\": \"swordfish6975 (PR #302)\", \"firmware\": \"STT2.230505.001.S136\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-9-ii",
+      "name": "sony-bravia-9-ii",
+      "match": {
+        "models": [
+          "BRAVIA 9 II"
+        ],
+        "devices": [
+          "BRAVIA_AE3"
+        ],
+        "brand": "Sony",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-9-ii",
+      "tested": "{\"by\": \"JegoVPN (PR #127)\", \"firmware\": \"UKN4.250422.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-ae2",
+      "name": "sony-bravia-ae2",
+      "match": {
+        "models": [
+          "BRAVIA 4K AE2"
+        ],
+        "devices": [
+          "BRAVIA_AE2"
+        ],
+        "brand": "Sony",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-ae2",
+      "tested": "{\"by\": \"Phil Trinh (PR #171)\", \"firmware\": \"UKN4.250422.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-bf1",
+      "name": "sony-bravia-bf1",
+      "match": {
+        "models": [],
+        "devices": [
+          "BRAVIA_BF1"
+        ],
+        "brand": "Sony",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": "Sony/BRAVIA_BF1_4K"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-bf1",
+      "tested": "{\"by\": \"Eswaramoorthy Karthikeyan (PR #183)\", \"firmware\": \"STT2.230811.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-tl2",
+      "name": "sony-bravia-tl2",
+      "match": {
+        "models": [],
+        "devices": [
+          "OD0M_EA_T32"
+        ],
+        "brand": "Sony",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "Sony/BRAVIA_TL2/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-tl2",
+      "tested": "{\"by\": \"aidplmraul69 (PR #281)\", \"firmware\": \"RTM2.210929.098\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-vu1",
+      "name": "sony-bravia-vu1",
+      "match": {
+        "models": [],
+        "devices": [
+          "BRAVIA_VU1"
+        ],
+        "brand": "Sony",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "Sony/BRAVIA_VU1_UC/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-vu1",
+      "tested": "{\"by\": \"karangupta8 (PR #1532)\", \"firmware\": \"RTT7.210105.001 (366.60436)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-vu3",
+      "name": "sony-bravia-vu3",
+      "match": {
+        "models": [],
+        "devices": [
+          "BRAVIA_VU3_4K"
+        ],
+        "brand": "Sony",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "Sony/BRAVIA_VU3/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-vu3",
+      "tested": "{\"by\": \"CMehta-sudo (PR #1433), second unit dhruvkumar1805 (PR #1634)\", \"firmware\": \"UKR1.240726.001 (386-60842)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-bravia-vu31",
+      "name": "sony-bravia-vu31",
+      "match": {
+        "models": [],
+        "devices": [
+          "BRAVIA_VU31_4K"
+        ],
+        "brand": "Sony",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-bravia-vu31",
+      "tested": "{\"by\": \"ipythonist and Anandha Krishnan (PR #258)\", \"firmware\": \"UKR1.240726.001\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-kd-43x80l",
+      "name": "sony-kd-43x80l",
+      "match": {
+        "models": [
+          "BRAVIA 4K VH22"
+        ],
+        "devices": [
+          "BRAVIA_VH22"
+        ],
+        "brand": "Sony",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-kd-43x80l",
+      "tested": "{\"by\": \"Alberto Catania\", \"firmware\": \"STT2.230505.001.S136\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-kd-55x8509c",
+      "name": "sony-kd-55x8509c",
+      "match": {
+        "models": [
+          "BRAVIA 4K 2015"
+        ],
+        "devices": [
+          "SVP-DTV15"
+        ],
+        "brand": "Sony",
+        "sdk_min": 24,
+        "sdk_max": 24,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-kd-55x8509c",
+      "tested": "{\"by\": \"MarcusElmett (issue #104), xbsheng (PR #282)\", \"firmware\": \"NRD91N.S34\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-kd-55x85j",
+      "name": "sony-kd-55x85j",
+      "match": {
+        "models": [
+          "BRAVIA 4K VH2"
+        ],
+        "devices": [
+          "BRAVIA_VH2"
+        ],
+        "brand": "Sony",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-kd-55x85j",
+      "tested": "{\"by\": \"Patricio Manquepillan (PR #198)\", \"firmware\": \"STT2.230505.001.S136\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-kd-55xe8596",
+      "name": "sony-kd-55xe8596",
+      "match": {
+        "models": [
+          "BRAVIA 4K GB"
+        ],
+        "devices": [
+          "BRAVIA_ATV2_EU",
+          "BRAVIA_ATV2"
+        ],
+        "brand": "Sony",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Sony/BRAVIA_ATV2_EU/BRAVIA_ATV2:9/PTT1.190515.001.S52/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-kd-55xe8596",
+      "tested": "{\"by\": \"Ben Redmond-Benham (PR #331)\", \"firmware\": \"PTT1.190515.001.S52\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-kd-65x80j",
+      "name": "sony-kd-65x80j",
+      "match": {
+        "models": [
+          "BRAVIA 4K VH2"
+        ],
+        "devices": [
+          "BRAVIA_VH2"
+        ],
+        "brand": "Sony",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-kd-65x80j",
+      "tested": "{\"by\": \"Rachit Jain (PR #191)\", \"firmware\": \"QTG3.200305.006.S118\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-kd-65x9300d",
+      "name": "sony-kd-65x9300d",
+      "match": {
+        "models": [
+          "BRAVIA 4K 2015"
+        ],
+        "devices": [
+          "SVP-DTV15"
+        ],
+        "brand": "Sony",
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-kd-65x9300d",
+      "tested": "{\"by\": \"waranon (PR #259)\", \"firmware\": \"OPR2.170623.027.S16\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-xbr-65x900f",
+      "name": "sony-xbr-65x900f",
+      "match": {
+        "models": [
+          "BRAVIA 4K GB ATV3"
+        ],
+        "devices": [
+          "BRAVIA_ATV3_4K"
+        ],
+        "brand": "Sony",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-xbr-65x900f",
+      "tested": "{\"by\": \"whiskeykilo (PR #255)\", \"firmware\": \"PTT1.190515.001.S54\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "sony-xbr-x900e",
+      "name": "sony-xbr-x900e",
+      "match": {
+        "models": [
+          "BRAVIA_ATV2"
+        ],
+        "devices": [],
+        "brand": "Sony",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/sony-xbr-x900e",
+      "tested": "{\"by\": null, \"firmware\": \"PTT1.190515.001.S54\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "stellamore-t950s",
+      "name": "stellamore-t950s",
+      "match": {
+        "models": [],
+        "devices": [
+          "r34a1"
+        ],
+        "brand": "Stellamore",
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": "Android/r34a1/r34a1:"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/stellamore-t950s",
+      "tested": "{\"by\": null, \"firmware\": \"LMY47V/20220912\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-40s5400a",
+      "name": "tcl-40s5400a",
+      "match": {
+        "models": [],
+        "devices": [
+          "C06"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-40s5400a",
+      "tested": "{\"by\": \"adrbsk91 (PR #159)\", \"firmware\": \"AR2101 (V8-T221T05-LF1V325)\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-43ep660",
+      "name": "tcl-43ep660",
+      "match": {
+        "models": [
+          "BeyondTV"
+        ],
+        "devices": [
+          "BeyondTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "TCL/BeyondTV/BeyondTV:9/PPR1.180610.011/AP04"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-43ep660",
+      "tested": "{\"by\": \"Frane Zunic (PR #279)\", \"firmware\": \"PPR1.180610.011 AP04 (V8-R851T02-LF1V378)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-43s5k",
+      "name": "tcl-43s5k",
+      "match": {
+        "models": [],
+        "devices": [
+          "G13"
+        ],
+        "brand": "TCL",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-43s5k",
+      "tested": "{\"by\": \"Manas Arora (PR #391)\", \"firmware\": \"UKN2.241110.001 AU10\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-50dp660",
+      "name": "tcl-50dp660",
+      "match": {
+        "models": [
+          "Percee TV"
+        ],
+        "devices": [
+          "tcl_eu"
+        ],
+        "brand": "TCL",
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": "TCL/tcl_eu/tcl_eu:8.0.0/OTT1.180130.001"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-50dp660",
+      "tested": "{\"by\": \"intrak (PR #642), second unit Muhammad Ali Bukhari (PR #1454)\", \"firmware\": \"OTT1.180130.001 (V8-T658T01-LF1V602)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-50ep680",
+      "name": "tcl-50ep680",
+      "match": {
+        "models": [
+          "BeyondTV"
+        ],
+        "devices": [
+          "BeyondTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-50ep680",
+      "tested": "{\"by\": \"Jiri Cermak (PR #181)\", \"firmware\": \"PPR1.180610.011 AR05\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-55c715",
+      "name": "tcl-55c715",
+      "match": {
+        "models": [
+          "BeyondTV2"
+        ],
+        "devices": [
+          "BeyondTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "TCL/BeyondTV2/BeyondTV:9/PPR1.180610.011/AP06"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-55c715",
+      "tested": "{\"by\": \"bendorneanu (PR #502)\", \"firmware\": \"PPR1.180610.011 AP06 (V8-R851T02-LF1V606)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-55c815",
+      "name": "tcl-55c815",
+      "match": {
+        "models": [
+          "BeyondTV2"
+        ],
+        "devices": [
+          "BeyondTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "TCL/BeyondTV2/BeyondTV:11/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-55c815",
+      "tested": "{\"by\": \"Johannesnc (PR #336)\", \"firmware\": \"PPR1.180610.011 AR05\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-55p7k",
+      "name": "tcl-55p7k",
+      "match": {
+        "models": [],
+        "devices": [
+          "G10"
+        ],
+        "brand": "TCL",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": "TCL/G10_4K_GB/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-55p7k",
+      "tested": "{\"by\": \"egyjs (PR #529)\", \"firmware\": \"STT2.230203.001 AS16\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-55s470g",
+      "name": "tcl-55s470g",
+      "match": {
+        "models": [],
+        "devices": [
+          "G10"
+        ],
+        "brand": "TCL",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-55s470g",
+      "tested": "{\"by\": \"hayitsjose (PR #265)\", \"firmware\": \"STT2.230203.001 AS50\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-65c725",
+      "name": "tcl-65c725",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "BeyondTV4"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-65c725",
+      "tested": "{\"by\": null, \"firmware\": \"RP1A.200622.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-65c735",
+      "name": "tcl-65c735",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "G05"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "TCL/G05_4K_GB/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-65c735",
+      "tested": "{\"by\": \"WhidanB (PR #205)\", \"firmware\": \"AR2101\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-ak30a5",
+      "name": "tcl-ak30a5",
+      "match": {
+        "models": [],
+        "devices": [
+          "ak30a5"
+        ],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-ak30a5",
+      "tested": "{\"by\": null, \"firmware\": \"PPR1.180610.011\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。 此类国行固件使用无 HOME 声明的 guard 安装包，必须取得真实 ADB 授权与无障碍权限。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-beyondtv",
+      "name": "tcl-beyondtv",
+      "match": {
+        "models": [
+          "BeyondTV"
+        ],
+        "devices": [],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-beyondtv",
+      "tested": "{\"by\": null, \"firmware\": \"PPR1.180610.011\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-beyondtv-rt2851",
+      "name": "tcl-beyondtv-rt2851",
+      "match": {
+        "models": [
+          "BeyondTV"
+        ],
+        "devices": [
+          "BeyondTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "TCL/BeyondTV/BeyondTV:9/PPR1.180610.011/AP06"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-beyondtv-rt2851",
+      "tested": "{\"by\": \"Aleksander Sandnes (PR #137)\", \"firmware\": \"PPR1.180610.011 AP06 (V8-R851T02-LF1V606)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-beyondtv2-latin-america",
+      "name": "tcl-beyondtv2-latin-america",
+      "match": {
+        "models": [
+          "BeyondTV2"
+        ],
+        "devices": [
+          "BeyondTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "TCL/BeyondTV2/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-beyondtv2-latin-america",
+      "tested": "{\"by\": \"Eddy Sangalli (PR #179)\", \"firmware\": \"PPR1.180610.011 AP08 (V8-R851T02-LF1V660)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-c755-google-tv",
+      "name": "tcl-c755-google-tv",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "G08"
+        ],
+        "brand": "TCL",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "TCL/G08_4K_GB/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-c755-google-tv",
+      "tested": "{\"by\": \"Samuel Hinton (PR #241)\", \"firmware\": \"UTT2.250416.001 AU02\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-g03-google-tv",
+      "name": "tcl-g03-google-tv",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "BeyondTV4"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "TCL/G03_4K_GB/BeyondTV4:11/RP1A.200622.001/AR09"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-g03-google-tv",
+      "tested": "{\"by\": \"www-r3m1x (PR #423)\", \"firmware\": \"RP1A.200622.001 AR09 (V8-R51MT05-LF1V620)\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-g05-google-tv",
+      "name": "tcl-g05-google-tv",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "G05"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-g05-google-tv",
+      "tested": "{\"by\": \"damonearl (PR #73)\", \"firmware\": \"AR2101\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-g07-google-tv",
+      "name": "tcl-g07-google-tv",
+      "match": {
+        "models": [],
+        "devices": [
+          "G07"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-g07-google-tv",
+      "tested": "{\"by\": \"Erick Mwamodo (PR #290), Mateus Zanes (PR #415), Jean-Baptiste (PR #420)\", \"firmware\": \"RP1A.200622.001 AR20, AR17\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-g08-eu-android12",
+      "name": "tcl-g08-eu-android12",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "G08"
+        ],
+        "brand": "TCL",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": "TCL/G08_4K_GB/G08:12/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-g08-eu-android12",
+      "tested": "{\"by\": \"contributor of PR #657, second unit kermes (PR #1610)\", \"firmware\": \"STT2.221228.001 AS34\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-g09-google-tv",
+      "name": "tcl-g09-google-tv",
+      "match": {
+        "models": [],
+        "devices": [
+          "G09"
+        ],
+        "brand": "TCL",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-g09-google-tv",
+      "tested": "{\"by\": \"Mateus Zanes (PR #413)\", \"firmware\": \"STT2.230203.001 AS24\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-g10-google-tv",
+      "name": "tcl-g10-google-tv",
+      "match": {
+        "models": [],
+        "devices": [
+          "G10"
+        ],
+        "brand": "TCL",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-g10-google-tv",
+      "tested": "{\"by\": null, \"firmware\": \"STT2.230203.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-q10g-pro",
+      "name": "tcl-q10g-pro",
+      "match": {
+        "models": [],
+        "devices": [
+          "tcl_mt5879_cn"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-q10g-pro",
+      "tested": "{\"by\": null, \"firmware\": \"RQ3A.210705.001/2026012200\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。 此类国行固件使用无 HOME 声明的 guard 安装包，必须取得真实 ADB 授权与无障碍权限。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-qm6k-google-tv",
+      "name": "tcl-qm6k-google-tv",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "G08"
+        ],
+        "brand": "TCL",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-qm6k-google-tv",
+      "tested": "{\"by\": null, \"firmware\": \"UTT2.250416.001 AU16\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-uniontv-latin-america",
+      "name": "tcl-uniontv-latin-america",
+      "match": {
+        "models": [
+          "UnionTV"
+        ],
+        "devices": [
+          "UnionTV"
+        ],
+        "brand": "TCL",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/tcl-uniontv-latin-america",
+      "tested": "{\"by\": \"Pedro Seixas (PR #200)\", \"firmware\": \"PPR2.180905.006.A1\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "telesystem-ont2hd",
+      "name": "telesystem-ont2hd",
+      "match": {
+        "models": [
+          "ONT2HD"
+        ],
+        "devices": [],
+        "brand": "Telesystem",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/telesystem-ont2hd",
+      "tested": "{\"by\": \"Andrea Manzini (PR #430)\", \"firmware\": \"20231013 (user/release-keys)\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "thomson-32he5800",
+      "name": "thomson-32he5800",
+      "match": {
+        "models": [
+          "UnionTV"
+        ],
+        "devices": [
+          "UnionTV"
+        ],
+        "brand": "Thomson",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/thomson-32he5800",
+      "tested": "{\"by\": \"MarioParraL (PR #130)\", \"firmware\": \"PPR2.180905.006.A1\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "thomson-43rt1055",
+      "name": "thomson-43rt1055",
+      "match": {
+        "models": [],
+        "devices": [
+          "sauve"
+        ],
+        "brand": "Thomson",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "THOMSON/SPPL_2K_RT41/sauve:14/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/thomson-43rt1055",
+      "tested": "{\"by\": \"Manu Sharma (PR #634)\", \"firmware\": \"UKRE.260524.055\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "thomson-t32rtl6000",
+      "name": "thomson-t32rtl6000",
+      "match": {
+        "models": [
+          "ATV R1"
+        ],
+        "devices": [
+          "R1"
+        ],
+        "brand": "Thomson",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "THOMSON/THOMSON/R1:9/PTT1.210114.001/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/thomson-t32rtl6000",
+      "tested": "{\"by\": \"hikiasi (PR #509)\", \"firmware\": \"PTT1.210114.001 build 337\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "toshiba-cosmos-android-tv",
+      "name": "toshiba-cosmos-android-tv",
+      "match": {
+        "models": [],
+        "devices": [
+          "yeoksam"
+        ],
+        "brand": "Vestel",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "Vestel/Cosmos170/yeoksam:11/"
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/toshiba-cosmos-android-tv",
+      "tested": "{\"by\": \"carlosmolados-droid (PR #460)\", \"firmware\": \"RTOC.251019.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "toshiba-fire-tv-aftha004",
+      "name": "toshiba-fire-tv-aftha004",
+      "match": {
+        "models": [
+          "AFTHA004"
+        ],
+        "devices": [
+          "hazel"
+        ],
+        "brand": "Amazon",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "blocked",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/toshiba-fire-tv-aftha004",
+      "tested": "{\"by\": \"umang350 (PR #4)\", \"firmware\": \"PS7717.5741N.0036408028416\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "Fire OS 机型清理记录不证明本影院 HOME/开机/待机可用，本版暂不支持接管；Vega OS 不能运行 Android APK。",
+      "level": "上游记录（本工具阻止）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "verizon-stream-tv",
+      "name": "verizon-stream-tv",
+      "match": {
+        "models": [
+          "Stream TV"
+        ],
+        "devices": [],
+        "brand": "wnc",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/verizon-stream-tv",
+      "tested": "{\"by\": \"Jonathan Julian (PR #517)\", \"firmware\": \"SC.v6.6.3-20250328\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "vidda-mt9653",
+      "name": "vidda-mt9653",
+      "match": {
+        "models": [],
+        "devices": [
+          "MT9653"
+        ],
+        "brand": "Vidda",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/vidda-mt9653",
+      "tested": "{\"by\": \"HeimaoLST (PR #354)\", \"firmware\": \"RP1A.200720.011 (02.02.70.01)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "vu-4k-lushan",
+      "name": "vu-4k-lushan",
+      "match": {
+        "models": [
+          "VU 4K"
+        ],
+        "devices": [
+          "lushan"
+        ],
+        "brand": "HVCL",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/vu-4k-lushan",
+      "tested": "{\"by\": \"harshmandalgi (PR #182)\", \"firmware\": \"STT2.230929.001.080\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "vu-premium-fhd-43-hamamatsucho",
+      "name": "vu-premium-fhd-43-hamamatsucho",
+      "match": {
+        "models": [],
+        "devices": [
+          "hamamatsucho"
+        ],
+        "brand": "Hisense",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/vu-premium-fhd-43-hamamatsucho",
+      "tested": "{\"by\": \"mano18 (PR #367)\", \"firmware\": \"PTO4.200424.001\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "wanbo-x5-pro",
+      "name": "wanbo-x5-pro",
+      "match": {
+        "models": [
+          "4K Google TV Stick"
+        ],
+        "devices": [
+          "YYT"
+        ],
+        "brand": "SkyworthDigital",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/wanbo-x5-pro",
+      "tested": "{\"by\": \"swordfish6975 (PR #303)\", \"firmware\": \"UKG3.260128.001.C3.3.5_20260723\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xgimi-horizon-s-pro",
+      "name": "xgimi-horizon-s-pro",
+      "match": {
+        "models": [
+          "XK03H"
+        ],
+        "devices": [
+          "xgimigalileo"
+        ],
+        "brand": "XGIMI",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xgimi-horizon-s-pro",
+      "tested": "{\"by\": null, \"firmware\": \"RT.3.24.329\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "xgimi-mogo-2",
+      "name": "xgimi-mogo-2",
+      "match": {
+        "models": [],
+        "devices": [
+          "xgimiapollo"
+        ],
+        "brand": "XGIMI",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xgimi-mogo-2",
+      "tested": "{\"by\": \"ankit9971 (PR #516)\", \"firmware\": \"RTT0.211222.001 / 2.13.192\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "xgimi-mogo-3-pro",
+      "name": "xgimi-mogo-3-pro",
+      "match": {
+        "models": [
+          "G0035"
+        ],
+        "devices": [
+          "altai"
+        ],
+        "brand": "XGIMI",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xgimi-mogo-3-pro",
+      "tested": "{\"by\": \"Takrim (PR #480)\", \"firmware\": \"UKNV.260707.001.15802496\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "xiaomi-mi-box-3",
+      "name": "xiaomi-mi-box-3",
+      "match": {
+        "models": [
+          "MIBOX3"
+        ],
+        "devices": [
+          "once"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mi-box-3",
+      "tested": "{\"by\": \"Ferko\", \"firmware\": \"PI.3934\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "xiaomi-mi-box-s",
+      "name": "xiaomi-mi-box-s",
+      "match": {
+        "models": [
+          "MIBOX4"
+        ],
+        "devices": [
+          "oneday"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Xiaomi/oneday/oneday:9/PI/"
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mi-box-s",
+      "tested": "{\"by\": null, \"firmware\": \"PI.3933\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "xiaomi-mi-box-s-2nd-gen",
+      "name": "xiaomi-mi-box-s-2nd-gen",
+      "match": {
+        "models": [
+          "MiTV-AFKR0"
+        ],
+        "devices": [
+          "jaws"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mi-box-s-2nd-gen",
+      "tested": "{\"by\": \"Bahriish (PR #169), Lorenzo Ganzella (PR #253)\", \"firmware\": \"RTT0.211222.001 (772, 737)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "xiaomi-mi-box-s-android12",
+      "name": "xiaomi-mi-box-s-android12",
+      "match": {
+        "models": [
+          "MIBOX4"
+        ],
+        "devices": [
+          "oneday"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mi-box-s-android12",
+      "tested": "{\"by\": \"Alimango Studio (PR #1523)\", \"firmware\": \"STTC.230106.001.4560\", \"daysLivedWith\": 2, \"rebootTested\": false}",
+      "notes": "2.0新增盒子受控试装：上游有精确机型记录，本影院尚未在此盒子实测。保留原厂桌面和系统应用，强制重启/HOME/稳定观察；失败自动恢复，实体待机/HDMI-CEC另验。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "box"
+    },
+    {
+      "id": "xiaomi-mi-tv-4a",
+      "name": "xiaomi-mi-tv-4a",
+      "match": {
+        "models": [
+          "MiTV-MOOQ1"
+        ],
+        "devices": [
+          "tarzan"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mi-tv-4a",
+      "tested": "{\"by\": null, \"firmware\": \"QTG3.200305.006.2591\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-aesp0",
+      "name": "xiaomi-mitv-aesp0",
+      "match": {
+        "models": [
+          "MiTV-AESP0"
+        ],
+        "devices": [
+          "aquaman"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-aesp0",
+      "tested": "{\"by\": null, \"firmware\": \"PI.2055\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-afmu0",
+      "name": "xiaomi-mitv-afmu0",
+      "match": {
+        "models": [
+          "MiTV-AFMU0"
+        ],
+        "devices": [
+          "twilight"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-afmu0",
+      "tested": "{\"by\": \"dennisblokland (PR #185), hovsep-dc\", \"firmware\": \"UKG3.250826.001 / V816.0.11.0.UZFAABX\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-ansp0",
+      "name": "xiaomi-mitv-ansp0",
+      "match": {
+        "models": [
+          "MiTV-ANSP0"
+        ],
+        "devices": [
+          "jobs"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-ansp0",
+      "tested": "{\"by\": \"ForeverSkys (PR #399)\", \"firmware\": \"23.6.5.3226 (PPR1.180610.011)\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-astp0",
+      "name": "xiaomi-mitv-astp0",
+      "match": {
+        "models": [
+          "MiTV-ASTP0"
+        ],
+        "devices": [
+          "mulan"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-astp0",
+      "tested": "{\"by\": \"Kien (PR #628)\", \"firmware\": \"22.12.2.1630\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-astp1",
+      "name": "xiaomi-mitv-astp1",
+      "match": {
+        "models": [
+          "MiTV-ASTP1"
+        ],
+        "devices": [
+          "maverick"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-astp1",
+      "tested": "{\"by\": \"Zebro (PR #128)\", \"firmware\": \"2.40.641.0514.cn\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-axfr1",
+      "name": "xiaomi-mitv-axfr1",
+      "match": {
+        "models": [
+          "MiTV-AXFR1"
+        ],
+        "devices": [
+          "rango"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-axfr1",
+      "tested": "{\"by\": \"tanaypatwa (PR #229)\", \"firmware\": \"RTT0.210630.002.485\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-axso0",
+      "name": "xiaomi-mitv-axso0",
+      "match": {
+        "models": [
+          "MiTV-AXSO0"
+        ],
+        "devices": [
+          "dangal"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-axso0",
+      "tested": "{\"by\": null, \"firmware\": \"PI.6036\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-axso2",
+      "name": "xiaomi-mitv-axso2",
+      "match": {
+        "models": [
+          "MiTV-AXSO2"
+        ],
+        "devices": [
+          "dangalUHD"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-axso2",
+      "tested": "{\"by\": \"Alafazam (PR #260)\", \"firmware\": \"PI.6432\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-ayfr0",
+      "name": "xiaomi-mitv-ayfr0",
+      "match": {
+        "models": [
+          "MiTV-AYFR0"
+        ],
+        "devices": [
+          "soul"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-ayfr0",
+      "tested": "{\"by\": \"steepenergy (PR #740)\", \"firmware\": \"UKG3.250107.001 (V816.0.26.6.10)\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mffu0",
+      "name": "xiaomi-mitv-mffu0",
+      "match": {
+        "models": [
+          "MiTV-MFFU0"
+        ],
+        "devices": [
+          "finch"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mffu0",
+      "tested": "{\"by\": \"fants (PR #463)\", \"firmware\": \"OS3.0.115.0.UFFMATV (HyperOS 3)\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mftr0",
+      "name": "xiaomi-mitv-mftr0",
+      "match": {
+        "models": [
+          "MiTV-MFTR0"
+        ],
+        "devices": [
+          "freeguy"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mftr0",
+      "tested": "{\"by\": \"HG0539xDC860539\", \"firmware\": \"OS2.0.23.0.RFTMATV\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-moeu0",
+      "name": "xiaomi-mitv-moeu0",
+      "match": {
+        "models": [
+          "MiTV-MOEU0"
+        ],
+        "devices": [
+          "ladybird"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-moeu0",
+      "tested": "{\"by\": \"Alexis Rico\", \"firmware\": \"UKN1.240806.017.V816.0.25.12.1.ULBMIXM\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mooq0",
+      "name": "xiaomi-mitv-mooq0",
+      "match": {
+        "models": [
+          "MiTV-MOOQ0"
+        ],
+        "devices": [
+          "croods"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mooq0",
+      "tested": "{\"by\": \"mirhnaz (PR #81)\", \"firmware\": \"QTG3.200305.006.3270\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mooq2",
+      "name": "xiaomi-mitv-mooq2",
+      "match": {
+        "models": [
+          "MiTV-MOOQ2"
+        ],
+        "devices": [
+          "croods"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mooq2",
+      "tested": "{\"by\": \"AlfaRojo\", \"firmware\": \"RTM4.220307.164.8238\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-moor2",
+      "name": "xiaomi-mitv-moor2",
+      "match": {
+        "models": [
+          "MiTV-MOOR2"
+        ],
+        "devices": [
+          "venom"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-moor2",
+      "tested": "{\"by\": null, \"firmware\": \"RTM5.220609.003.2674\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mosr4",
+      "name": "xiaomi-mitv-mosr4",
+      "match": {
+        "models": [
+          "MiTV-MOSR4"
+        ],
+        "devices": [
+          "irobot"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mosr4",
+      "tested": "{\"by\": \"heybyben (PR #177)\", \"firmware\": \"RTM5.220609.003.1585\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mssp0",
+      "name": "xiaomi-mitv-mssp0",
+      "match": {
+        "models": [
+          "MiTV-MSSP0"
+        ],
+        "devices": [
+          "amelie"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mssp0",
+      "tested": "{\"by\": \"Roman Linev (PR #661)\", \"firmware\": \"PI.5926\", \"daysLivedWith\": 2, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mssp1",
+      "name": "xiaomi-mitv-mssp1",
+      "match": {
+        "models": [
+          "MiTV-MSSP1"
+        ],
+        "devices": [
+          "nino"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mssp1",
+      "tested": "{\"by\": \"Andrey Kozodoy\", \"firmware\": \"PI.5925\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mssp2",
+      "name": "xiaomi-mitv-mssp2",
+      "match": {
+        "models": [
+          "MiTV-MSSP2"
+        ],
+        "devices": [
+          "volver"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mssp2",
+      "tested": "{\"by\": \"bart-b-pl (PR #643)\", \"firmware\": \"PI.4621\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mssp3",
+      "name": "xiaomi-mitv-mssp3",
+      "match": {
+        "models": [
+          "MiTV-MSSP3"
+        ],
+        "devices": [
+          "machuca"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mssp3",
+      "tested": "{\"by\": null, \"firmware\": \"RTT2.211214.001.1065\", \"daysLivedWith\": null, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mssp3-android9",
+      "name": "xiaomi-mitv-mssp3-android9",
+      "match": {
+        "models": [
+          "MiTV-MSSP3"
+        ],
+        "devices": [
+          "machuca"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mssp3-android9",
+      "tested": "{\"by\": \"Martin Trajkovski (PR #223), alessandrodauria (PR #494)\", \"firmware\": \"PI.7524\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-mitv-mteq0",
+      "name": "xiaomi-mitv-mteq0",
+      "match": {
+        "models": [
+          "MiTV-MTEQ0"
+        ],
+        "devices": [
+          "baymax"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-mitv-mteq0",
+      "tested": "{\"by\": \"Gấu Coder (PR #612)\", \"firmware\": \"23.6.26.4028 (QQ2A.200305.004.A1)\", \"daysLivedWith\": 1, \"rebootTested\": true}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "xiaomi-tv-a-pro-2026",
+      "name": "xiaomi-tv-a-pro-2026",
+      "match": {
+        "models": [
+          "MiTV-MZTU0"
+        ],
+        "devices": [
+          "river"
+        ],
+        "brand": "Xiaomi",
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "evidence": "https://github.com/Gathin23/cleanyourtv/tree/b06ab21/examples/xiaomi-tv-a-pro-2026",
+      "tested": "{\"by\": null, \"firmware\": \"UKN1.240806.017.V816.0.25.3.10.URTMIXM\", \"daysLivedWith\": null, \"rebootTested\": false}",
+      "notes": "参考项目有该机型记录；本工具保留原厂应用，以本客户端守护和实际 HOME 检查验收，不执行上游清理列表。",
+      "level": "上游机型方法记录（试装级，影院未实测）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "tcl-mt9655-no-adb-auth",
+      "name": "雷鸟 55S595C Ultra / MT9655 授权受限固件",
+      "match": {
+        "models": [
+          "FF-CN-0015-S595CPRO-TX"
+        ],
+        "devices": [
+          "tcl_mt9655_cn"
+        ],
+        "brand": "TCL",
+        "sdk_min": 30,
+        "sdk_max": 0
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/tcl-mt9655-cn.md",
+      "tested": "上游记录：无线ADB强制TLS且无配对入口；用USB A对A线先走有线adb可取得授权（Aerial 后续补充）",
+      "notes": "无线调试拿不到授权时用USB A对A线；设置里没有无障碍入口，Aerial 记为主页键接管不了。",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xiaomi-mitv-mftr0",
+      "name": "Aerial 记录 · Redmi X65 2026 (and maintainer's MFTR0)",
+      "match": {
+        "models": [
+          "MiTV-MFTR0"
+        ],
+        "devices": [],
+        "brand": "",
+        "brands": [
+          "Xiaomi",
+          "Redmi"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/3",
+      "tested": "Aerial README ✅；置信度 medium；属性来源 issue #3 text (model, manufacturer); doc gives codename only",
+      "notes": "Redmi X65 2026 (and maintainer's MFTR0) · 可用：One-line install.sh (standard); boots straight into Aerial (#3, adb reboot); HOME returns via guard (~0.5 s, no PatchWall flash since onPause pull-back for Android 12+); standby: firmware killAllThirdApp force-stops Aerial, notification listener RevivalListener rebinds in ~0.5 s and the guard returns to Aerial after wake (PatchWall visible briefly). / 限制/失败：HOME role / …",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xiaomi-mitv-mffu0",
+      "name": "Aerial 记录 · MiTV-MFFU0 (finch)",
+      "match": {
+        "models": [
+          "MiTV-MFFU0"
+        ],
+        "devices": [
+          "finch"
+        ],
+        "brand": "",
+        "brands": [
+          "Xiaomi",
+          "Redmi"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/xiaomi-mitv-mffu0.md",
+      "tested": "Aerial README ✅；置信度 high；属性来源 doc states ro.product.model / ro.product.device",
+      "notes": "MiTV-MFFU0 (finch) · 可用：install.sh standard: 'turning on Aerial Home Guard'; HOME -> Aerial; adb reboot boots straight into Aerial on both firmwares (1.9, 1.31). / 限制/失败：HOME role ignored like MFTR0; standby not separately verified; setting screensaver_components to AerialDream black-screens and sleeps the TV. / 需要：KEEP_ADB=1；optional (owner's choice, #534): settings put system str_killbackgroud_pkg_white_list <pk…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xiaomi-mitv-astp0",
+      "name": "Aerial 记录 · Redmi A65 2025 (per HANDOFF)",
+      "match": {
+        "models": [
+          "MiTV-ASTP0"
+        ],
+        "devices": [
+          "mulan"
+        ],
+        "brand": "",
+        "brands": [
+          "Xiaomi",
+          "Redmi"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Xiaomi/mulan/mulan:9/PPR1.180610.011"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/470",
+      "tested": "Aerial README ✅；置信度 high；属性来源 getprop (report in #470) + Build diag line",
+      "notes": "Redmi A65 2025 (per HANDOFF) · 可用：install.sh standard KEEP_ADB=1: boots into Aerial, HOME returns to Aerial; standby wake fixed in 1.47 (stock launcher flashes, Aerial in 1-2 s). / 限制/失败：1.46: wake after >1 min standby stayed on PatchWall (revival counted 3x -> 'revivedOften'); old GPU (Mali-G31) drew glass panels as solid blocks in 1.27-1.30; key filter + volume crashed system_server (MitvFreezer NPE, #249) befor…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xiaomi-mitv-nsop0",
+      "name": "Aerial 记录 · MiTV-NSOP0 (Novatek)",
+      "match": {
+        "models": [
+          "MiTV-NSOP0"
+        ],
+        "devices": [
+          "furyroad"
+        ],
+        "brand": "",
+        "brands": [
+          "Xiaomi",
+          "Redmi"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/563",
+      "tested": "Aerial README ✅；置信度 high；属性来源 issue #563 text gives ro.product.model / ro.product.device",
+      "notes": "MiTV-NSOP0 (Novatek) · 可用：Official 1.47 standard set as default HOME with stock launcher kept; full restart and two standby-wake cycles OK; volume hold OK; HDMI mapping fixed in 1.49 (PR #568). / 限制/失败：HDMI labels/targets wrong before 1.49 (framework HW ids != physical ports).",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xiaomi-mitv4-ansm0",
+      "name": "Aerial 记录 · 小米电视 4 / 4A (MiTV4-ANSM0)",
+      "match": {
+        "models": [
+          "MiTV4-ANSM0"
+        ],
+        "devices": [
+          "xmen"
+        ],
+        "brand": "",
+        "brands": [
+          "Xiaomi",
+          "Redmi"
+        ],
+        "sdk_min": 23,
+        "sdk_max": 23,
+        "fingerprint_prefix": "Xiaomi/xmen/xmen:6.0.1/MHC19J"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/81",
+      "tested": "Aerial README ✅；置信度 high；属性来源 issue #81 / #318 comment tables (ro.product.model / ro.product.device / name)",
+      "notes": "小米电视 4 / 4A (MiTV4-ANSM0) · 可用：From 1.43: guard polls UsageStats each second (PatchWall sends no accessibility window events), so HOME returns to Aerial after a few seconds (5-8 s on ANSM0); BootActivity covered in 0.6-1.0 s; rival key filter (karaoke PuremicKeyService) handled by dropping flagDefault. / 限制/失败：Before 1.43: guard 'deaf' to PatchWall, HOME and boot stayed on PatchWall; no `cmd` binary (no set-home-a…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xiaomi-fengmi-ultraman",
+      "name": "Aerial 记录 · Xiaomi Ultraman series projector (retail model unconfirmed)",
+      "match": {
+        "models": [
+          "Xiaomi_Ultraman_Series_Projector"
+        ],
+        "devices": [],
+        "brand": "",
+        "brands": [
+          "Xiaomi",
+          "Redmi",
+          "Formovie",
+          "Fengmi"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/xiaomi-ultraman-projector.md",
+      "tested": "Aerial README ✅；置信度 medium；属性来源 doc states ro.product.model / ro.product.board",
+      "notes": "Xiaomi Ultraman series projector (retail model unconfirmed) · 可用：Standard 1.31 via adb install -r; set-home-activity refused ('cannot be home'), guard via settings put secure enabled_accessibility_services works; adb reboot -> Aerial in front at boot_completed (~47 s); HOME back in ~4 s. / 限制/失败：Notification listener never binds (sync-adapter revival 30-60 s, unverified); standby untested; no adbd port until ADB d…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "aerial-tcl-98t8h",
+      "name": "Aerial 记录 · TCL 98T8H",
+      "match": {
+        "models": [
+          "tcl_mt5879_cn"
+        ],
+        "devices": [
+          "tcl_mt5879_cn"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "TCL/tcl_mt5879_cn_db/tcl_mt5879_cn:11/RQ3A.210705.001"
+      },
+      "route": "guard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/803",
+      "tested": "Aerial README ✅；置信度 high；属性来源 Build diag line (#803): 'unknown / TCL / tcl_mt5879_cn'",
+      "notes": "TCL 98T8H · 可用：1.65-guard (installer com.android.packageinstaller, done by an AI agent): HOME, power-cycle boot, standby wake, inputs, volume, screensaver all OK. / 限制/失败：Brightness not settable by Aerial. / 需要：APP_AUTO_START / APP_ASSOC_START appops as MT5879",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-ffalcon-t966d5-75s78a-plus",
+      "name": "Aerial 记录 · 雷鸟 75S78A Plus",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "T966D5"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "TCL/T966D5_4K_CN/T966D5:14/UTT2.250416.001"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/817",
+      "tested": "Aerial README ❌；置信度 high；属性来源 getprop (#817); Build diag shows 'FFALCON / IFFALCON / Smart TV Pro' (Build.BRAND=IFFALCON)",
+      "notes": "雷鸟 75S78A Plus · 可用：Guard 1.65 installs via 多屏互动 push; ADB 5555 survives reboots; boot into Aerial via boot_app_componentname (3 reboots, Aerial within 26 s). / 限制/失败：Firmware clears enabled_accessibility_services (accessibility_enabled=0) about every 52 s -> HOME returns to TCL launcher; AUTO_START/ASSOC_START reset to ignore every boot; role/set-home fail; adb install -> INSTALL_FAILED_VERIFICATION_FAILURE; no a…",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-ffalcon-t966d5-85-he6-ultra-2027",
+      "name": "Aerial 记录 · 雷鸟鹤 6 Ultra 2027 款 85 英寸",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "T966D5"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "TCL/T966D5_4K_CN/T966D5:14/UTT2.250416.001"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/885",
+      "tested": "Aerial README ；置信度 high；属性来源 getprop (#885); Build diag 'IFFALCON / IFFALCON / Smart TV Pro'",
+      "notes": "雷鸟鹤 6 Ultra 2027 款 85 英寸 · 可用：selftest 1.69 standard all PASS: Aerial default HOME (role holder), HOME from app 0.9 s, standby 0.7 s, reboot 2 s, 7 inputs via com.tcl.tv/.TVActivity. / 限制/失败：Plain adb install rejected (VERIFICATION_FAILURE); standard was installed through 多屏互动 after temporarily editing TCL InstallConfig launcherStrategy (restored afterwards). / 需要：temporary content provider edit of TCL InstallConf…",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-tcl-75v2-m7221",
+      "name": "Aerial 记录 · TCL 75V2",
+      "match": {
+        "models": [
+          "sugarcane"
+        ],
+        "devices": [
+          "sugarcane"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/363",
+      "tested": "Aerial README ✅；置信度 high；属性来源 doc: ro.product.device / ro.product.model = sugarcane",
+      "notes": "TCL 75V2 · 可用：No root: standard installs after the signature switch; set-home-activity gives isDefault=true; persist.sys.launcher.component boots straight into Aerial (27 s, no cyberui); guard returns HOME; graphic backlight readable/writable (1.41). / 限制/失败：adb install of a HOME app -> INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES 'disable install launcher app not signature by tcl'; with persist.sys.launcher.com…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-tcl-65c6-m7221",
+      "name": "Aerial 记录 · TCL 65C6",
+      "match": {
+        "models": [
+          "X5"
+        ],
+        "devices": [
+          "X5"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": "Mstar/X5/X5:8.0.0/OPR5.170623.014"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/590",
+      "tested": "Aerial README ；置信度 high；属性来源 #590: 'ADB 的 model/device 为 X5'",
+      "notes": "TCL 65C6 · 可用：1.51 standard: after clearing persist.sys.launcher.component and using TCL's boot-app properties, full reboot boots into Aerial, HOME returns to Aerial, other apps open normally. / 限制/失败：1.49/1.51-guard: HOME still went to TCL desktop; with persist.sys.launcher.component set, apps opened from Aerial crashed. / 需要：setprop persist.tcl.bootappmode 1；setprop persist.SDK.boot.userapp <pkg>；setprop persist…",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-tcl-55v2-pro-x32a0",
+      "name": "Aerial 记录 · TCL 55V2 Pro (DE1E 机芯)",
+      "match": {
+        "models": [
+          "x32a0"
+        ],
+        "devices": [
+          "x32a0"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/620",
+      "tested": "Aerial README ✅；置信度 medium；属性来源 #620 text: 'x32a0（device/model）' (no raw getprop)",
+      "notes": "TCL 55V2 Pro (DE1E 机芯) · 可用：1.49 standard via adb install after the debug switch; default HOME isDefault=true; guard runs; boots straight into Aerial; standby/HOME takeover OK. / 限制/失败：adb/pm install blocked by default ('install apk has be disabled from pm by system default!'); control-center Settings 'not supported' (needs com.tcl.settings/.MainActivity); clock ~4 min slow; MediaMetadataRetriever fails on Apple h…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-ffalcon-he6-2025-ultra-mt9655",
+      "name": "Aerial 记录 · 雷鸟鹤6 Ultra (98S595C Ultra-A; README '鹤 6 2025 Ultra')",
+      "match": {
+        "models": [
+          "Smart TV Pro"
+        ],
+        "devices": [
+          "MT9655"
+        ],
+        "brand": "",
+        "brands": [
+          "TCL",
+          "FFALCON",
+          "IFFALCON"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "TCL/MT9655_4K_CN/MT9655:14/UTT2.250416.001"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/588",
+      "tested": "Aerial README ❌；置信度 high；属性来源 Build diag line (#588): 'TCL / IFFALCON / Smart TV Pro' (Build.BRAND; getprop brand may be TCL)",
+      "notes": "雷鸟鹤6 Ultra (98S595C Ultra-A; README '鹤 6 2025 Ultra') · 可用：#588: after disabling the package installer (甲壳虫 ADB) the 1.47 standard build installed, resolved as default HOME, HOME returned to Aerial. / 限制/失败：Wireless ADB only after first wired USB connection; accessibility cannot be enabled (guard enabled=false); after power cycle the stock desktop shows and Aerial only via HOME/manual (#588, #52 ZXT251). / 需要：USB …",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-sony-bravia-vh1",
+      "name": "Aerial 记录 · Sony BRAVIA VH1",
+      "match": {
+        "models": [],
+        "devices": [
+          "BRAVIA_VH1"
+        ],
+        "brand": "",
+        "brands": [
+          "Sony"
+        ],
+        "sdk_min": 31,
+        "sdk_max": 31,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/2",
+      "tested": "Aerial README ✅；置信度 medium；属性来源 #2 text: ro.product.device=BRAVIA_VH1",
+      "notes": "Sony BRAVIA VH1 · 可用：1.8 standard; brightness via Sony picture settings after WRITE_SETTINGS appop handling (fixed 1.10). / 限制/失败：Brightness slider had no effect before 1.10.",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-skyworth-75a7d-8r134-a7d",
+      "name": "Aerial 记录 · 创维 75A7D (CCOS 9.0)",
+      "match": {
+        "models": [
+          "8R134_A7D"
+        ],
+        "devices": [
+          "rtk2885n"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "Skyworth/Sky_rtk2885n_8R145_A5D/rtk2885n:11/RP1A.200720.011"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/894",
+      "tested": "Aerial README ✅；置信度 high；属性来源 Build diag line (#894)",
+      "notes": "创维 75A7D (CCOS 9.0) · 可用：1.69 standard via install.sh: HOME, boot, standby, inputs (since 1.45 via com.skyworth.tv.sdk.provider + SkyTVMainActivity), volume/brightness panel, screensaver. / 限制/失败：At boot the Coocaa desktop shows 3-6 s before the guard switches (bootintent.xml 'modelhome' launches persist.service.model.pkg/.cls; com.tianci.system clears them ~24 s into each boot). / 需要：optional (reporter, not merge…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-coocaa-c10-3h352",
+      "name": "Aerial 记录 · 酷开 C10 投影仪",
+      "match": {
+        "models": [
+          "3H352_C10"
+        ],
+        "devices": [
+          "Hi3751V350"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "HiDPT/Hi3751V553_32_DMO_2layer_1024M/Hi3751V553:9/PPR1.180610.011"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/487",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 getprop (brand/model) + Build diag line (#487)",
+      "notes": "酷开 C10 投影仪 · 可用：Since 1.48/1.50 the guard treats com.coocaa.aigc.home as stock: HOME back in ~1-2 s; boot pull-back ~3 s; HDMI via com.hisilicon.tvui not pulled back (1.68 fix #779). / 限制/失败：'Path A': open the stock-launcher tile from Aerial, then HOME -> stays on Coocaa (open); ADB 5555 has no auth prompt; ro.config.low_ram=true.",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-coocaa-7t863-n6e",
+      "name": "Aerial 记录 · 酷开 7T863_N6E",
+      "match": {
+        "models": [
+          "7T863_N6E"
+        ],
+        "devices": [],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/106",
+      "tested": "Aerial README ⚠️；置信度 medium；属性来源 #106: ro.product.model = 7T863_N6E",
+      "notes": "酷开 7T863_N6E · 可用：1.42 standard; with persist.service.model.* and persist.service.homepage.* set to Aerial, physical HOME/BACK went to Aerial (6/6 acceptance checks). / 限制/失败：Firmware clears model.* and rewrites homepage.* at every boot -> keys back to stock desktop until reset. / 需要：setprop persist.service.model.pkg/.cls and persist.service.homepage.pkg/.cls (reset each boot)",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-skyworth-1aa46-d4-t963",
+      "name": "Aerial 记录 · 创维 1AA46_D4 (T963)",
+      "match": {
+        "models": [
+          "1AA46_D4"
+        ],
+        "devices": [
+          "T963"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Skyworth/skyT963_1AA46/T963:9/PPR1.180610.011"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/796",
+      "tested": "Aerial README ✅；置信度 high；属性来源 Build diag line (#796)",
+      "notes": "创维 1AA46_D4 (T963) · 可用：1.65 standard: HOME resolves to Aerial (Default), guard running, notification listener allowed, Aerial screensaver. / 限制/失败：Slow (p99 615 ms frames, home load 5.1 s); brightness not settable. / 需要：set default HOME (set-home-activity) – then guard does not filter keys (avoids T963 volume bug #448/#451)",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-skyworth-7t634-p3h",
+      "name": "Aerial 记录 · 创维 7T634_P3H (K3)",
+      "match": {
+        "models": [
+          "7T634_P3H"
+        ],
+        "devices": [
+          "mt9633"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/864",
+      "tested": "Aerial README ❌；置信度 medium；属性来源 #864 text ('System model', 'Product', 'Device'; not raw getprop)",
+      "notes": "创维 7T634_P3H (K3) · 可用：Installs, launches, loads content; FreeTV (another launcher) displays on the same TV. / 限制/失败：1.57 standard and guard: screen/screenshots black, focus false, two no-focused-window ANRs; package renamed to com.coocaa.air still black. / 需要：(per-app autostart, this firmware only) service call skyresource 5 s16 <pkg> i32 0 i32 1; background keep: i32 1 i32 2 / 后续：state:still_failing；detail:#864 …",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-skyworth-75a6e-8r710",
+      "name": "Aerial 记录 · 创维 75A6E",
+      "match": {
+        "models": [
+          "8R710_A6E"
+        ],
+        "devices": [
+          "titanite"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": "Skyworth/titanite/titanite:13/TQ1A.230205.002"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/365",
+      "tested": "Aerial README ❌；置信度 high；属性来源 getprop (#365)",
+      "notes": "创维 75A6E · 可用：adb install Success; uninstall restores HOME. / 限制/失败：Standard as sole HOME candidate: pressing HOME freezes the whole TV until power-cycle; com.skyworth.tv keeps input focus, Aerial NOT_VISIBLE / focus false; guard 1.38 same. / 后续：state:still_failing；detail:#365 closed 'not planned' 2026-10-29; only workaround is uninstall.",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-skyworth-55a5f-pro-8r702",
+      "name": "Aerial 记录 · 创维 55A5F Pro",
+      "match": {
+        "models": [
+          "8R702_A5FP"
+        ],
+        "devices": [
+          "titanite"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": ""
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/676",
+      "tested": "Aerial README ❌；置信度 high；属性来源 getprop (#676)",
+      "notes": "创维 55A5F Pro · 可用：Guard 1.53 installs, guard + RevivalListener bind. / 限制/失败：Black screen, focus false, ANR after ~30 s; simulated HOME opens Skyworth 机顶盒 input page; mode_switch/soft_layer/uhd_canvas switches no help. / 后续：state:still_failing；detail:#676 closed 2026-10-27, no workaround.",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-skyworth-8r721-a6fp",
+      "name": "Aerial 记录 · 创维 8R721_A6FP",
+      "match": {
+        "models": [
+          "8R721_A6FP"
+        ],
+        "devices": [
+          "titanite"
+        ],
+        "brand": "",
+        "brands": [
+          "Skyworth",
+          "Coocaa"
+        ],
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": "Skyworth/titanite/titanite:13/TQ1A.230205.002"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/839",
+      "tested": "Aerial README ❌；置信度 high；属性来源 getprop (#839)",
+      "notes": "创维 8R721_A6FP · 可用：1.67-guard installs (adb install -r), guard binds, home UI shows ~30 s. / 限制/失败：Focus lost, two no-focused-window ANRs, process gone, back to stock launcher. / 后续：state:still_failing；detail:#839 closed 'not planned' 2026-10-29; tracked in #321.",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-letv-x4-55-f608",
+      "name": "Aerial 记录 · 乐视超4 X55 (label X55-f608)",
+      "match": {
+        "models": [
+          "Letv X4-55"
+        ],
+        "devices": [],
+        "brand": "",
+        "brands": [
+          "Letv",
+          "LeEco"
+        ],
+        "sdk_min": 23,
+        "sdk_max": 23,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/510",
+      "tested": "Aerial README ✅；置信度 medium；属性来源 #510 text: ro.product.model = Letv X4-55",
+      "notes": "乐视超4 X55 (label X55-f608) · 可用：Official 1.46 standard: HOME takeover and boot override (2 reboots); stock launcher flashes at boot; casting unaffected. / 限制/失败：EUI adb install needs an on-screen confirm (else INSTALL_FAILED_USER_RESTRICTED); no `cmd` on Android 6 (notification listener skipped); EUI memory manager kills non-vendor packages. / 需要：ADB via signal-source menu; accept RSA prompt；accept install confirma…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hisense-vidaa-mt9655-a14",
+      "name": "Aerial 记录 · VIDAA_TV (Android 14, MT9655)",
+      "match": {
+        "models": [
+          "VIDAA_TV"
+        ],
+        "devices": [
+          "MT9655"
+        ],
+        "brand": "",
+        "brands": [
+          "Hisense"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/84",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 #84 property listing",
+      "notes": "VIDAA_TV (Android 14, MT9655) · 可用：1.37: HOME -> Aerial; inputs open the native Hisense panel (since 1.35). / 限制/失败：Boot opens 聚好看 first; guard needs force-stop/restart after each upgrade; individual HDMI cannot be pinned. / 需要：after upgrade: am force-stop <pkg> && am start <pkg>/.MainActivity",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hisense-vidaa-msd6a828-a5",
+      "name": "Aerial 记录 · VIDAA_TV old (Android 5.1.1, MStar MSD6A828)",
+      "match": {
+        "models": [
+          "VIDAA_TV"
+        ],
+        "devices": [
+          "MSD6A828"
+        ],
+        "brand": "",
+        "brands": [
+          "Hisense"
+        ],
+        "sdk_min": 22,
+        "sdk_max": 22,
+        "fingerprint_prefix": "Hisense/VIDAA_TV/MSD6A828:5.1.1/LVY48C"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/285",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 getprop (#285)",
+      "notes": "VIDAA_TV old (Android 5.1.1, MStar MSD6A828) · 可用：Installs; default HOME via chooser; guard keeps HOME once bound. / 限制/失败：Firmware clears accessibility_enabled on every cold boot and silently drops direct writes; GlobalPanel overlay eats HOME; no accessibility settings entry -> needs a computer after every boot. / 需要：each boot: pm unhide com.hisense.vidaaassistant; settings put secure enabled_accessibility_servic…",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hisense-vidaa-c1-mt9669",
+      "name": "Aerial 记录 · VIDAA C1 投影",
+      "match": {
+        "models": [
+          "VIDAA_TV"
+        ],
+        "devices": [
+          "MT9669"
+        ],
+        "brand": "",
+        "brands": [
+          "Hisense"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Hisense/VIDAA_TV/MT9669:9/PPR2.180905.006.A1"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/323",
+      "tested": "Aerial README ⚠️ (C1 itself: 接管不了)；置信度 high；属性来源 getprop + Build diag (#323)",
+      "notes": "VIDAA C1 投影 · 可用：Installs, opens from app list, screensaver plays. / 限制/失败：No role service, no persist.vt.use_home_pkg; set-home-activity ignored; guard brings Aerial up but system switches back to 聚好看 in 2-5 s; SYSTEM_ALERT_WINDOW reverted to ignore; accessibility list rewritten. / 后续：state:partial；detail:1.49 added UsageStats polling for 聚好看 (from PR #545, tested on Vidda C1S, same MT9669 platform: HOME 1-2 s, 2…",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hisense-h55e9a",
+      "name": "Aerial 记录 · 海信 H55E9A",
+      "match": {
+        "models": [
+          "VIDAA_TV"
+        ],
+        "devices": [
+          "Hi3751v811"
+        ],
+        "brand": "",
+        "brands": [
+          "Hisense"
+        ],
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": ""
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/hisense-vidaa.md",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 doc: 系统型号 VIDAA_TV, 设备 Hi3751v811, ro.product.hisense.model=H55E9A",
+      "notes": "海信 H55E9A · 可用：Installed 1.41/1.43 standard; 'Always' default was saved. / 限制/失败：Guard read CE-storage prefs before unlock -> crash -> system cleared Aerial's preferred HOME and showed the chooser at each boot (fix in source, not verified on device); no TvInput HDMI (native Hisense API).",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hisense-65e52d",
+      "name": "Aerial 记录 · 海信 65E52D",
+      "match": {
+        "models": [
+          "VIDAA_TV"
+        ],
+        "devices": [
+          "NOVA72671"
+        ],
+        "brand": "",
+        "brands": [
+          "Hisense"
+        ],
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": "Hisense/VIDAA_TV/NOVA72671:8.0.0/OPR6.170623.013"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/672",
+      "tested": "Aerial README ✅；置信度 high；属性来源 getprop + Build diag (#672)",
+      "notes": "海信 65E52D · 可用：1.53 standard via install.sh KEEP_ADB=1; cmd role add-role-holder -> default HOME; HOME direct; reboot straight into Aerial; guard bound; screensaver. / 限制/失败：No notification listeners (revival via sync ~30-60 s); APP_AUTO_START unknown op; no inputs; slow frames. / 需要：ADB: Settings→Sound→Balance alternate Menu/OK until 'M' → factory menu → To Fac U→M → reboot → About→device info press Menu 4-5x → h…",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hisense-75e3f",
+      "name": "Aerial 记录 · 海信 75E3F",
+      "match": {
+        "models": [
+          "VIDAA_TV"
+        ],
+        "devices": [
+          "NOVA72691"
+        ],
+        "brand": "",
+        "brands": [
+          "Hisense"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "Hisense/VIDAA_TV/NOVA72691:9/PPR2.180905.006.A1"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/847",
+      "tested": "Aerial README ✅；置信度 high；属性来源 Build diag line (#847)",
+      "notes": "海信 75E3F · 可用：1.67 standard (AI agent): physical HOME instant; boot -> Aerial within 4 s; standby wake to Aerial. / 限制/失败：Injected input keyevent HOME takes ~24 s (tool artefact). / 需要：setprop persist.vt.use_home_pkg <pkg> (install.sh does it when the prop exists)",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-xgimi-lamp-l1",
+      "name": "Aerial 记录 · 极米 神灯 L1",
+      "match": {
+        "models": [
+          "XGIMI TV"
+        ],
+        "devices": [
+          "pig_chivalrous"
+        ],
+        "brand": "",
+        "brands": [
+          "XGIMI"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "MediaTek/m7642_db/m7642:9/PPR2.180905.006.A1"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/767",
+      "tested": "Aerial README ✅；置信度 high；属性来源 #767 text: system model XGIMI TV, 设备代号 pig_chivalrous, product Product_cp01",
+      "notes": "极米 神灯 L1 · 可用：1.61 standard (install.sh): after the reporter's two preferred-activity rules, HOME/power-cycle/standby all Aerial; survives real reboot. / 限制/失败：Default HOME lost after boot (FallbackHome query without DEFAULT -> 'Result set changed'). / 需要：ADB via third-party XGIMI ADB opener；write 2 rules via IPackageManager.replacePreferredActivity (service call package 70 – transaction number only valid for this…",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "aerial-xgimi-h3",
+      "name": "Aerial 记录 · 极米 H3 (README 'H3、m7221')",
+      "match": {
+        "models": [
+          "XGIMI TV"
+        ],
+        "devices": [
+          "ironman"
+        ],
+        "brand": "",
+        "brands": [
+          "XGIMI",
+          "Xgimi Technology Co.,Ltd"
+        ],
+        "sdk_min": 26,
+        "sdk_max": 26,
+        "fingerprint_prefix": "Xgimi/ironman/ironman:8.0.0/OPR5.170623.014"
+      },
+      "route": "standard",
+      "grade": "proven",
+      "evidence": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/xgimi-h3.md",
+      "tested": "Aerial README ✅；置信度 high；属性来源 doc lists ro.product.* values",
+      "notes": "极米 H3 (README 'H3、m7221') · 可用：1.57 standard: boot shows XGIMI home then Aerial without key press; screensaver -> AerialDream. / 限制/失败：No developer options; ro.config.low_ram=true. / 需要：ADB via code-ant/z7x-adb uploaded with the XGIMI phone app",
+      "level": "网上已证（Aerial 同源守护实测，可一键）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "aerial-obe-r3ultra",
+      "name": "Aerial 记录 · 大眼橙 OBE_R3Ultra 高亮版",
+      "match": {
+        "models": [],
+        "devices": [
+          "mt5879_cd"
+        ],
+        "brand": "",
+        "brands": [
+          "OBE",
+          "OBE_NEW"
+        ],
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "MediaTek/mt5879_cd/mt5879:11/RP1A.200720.011"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/obe-r3-ultra.md",
+      "tested": "Aerial README ✅；置信度 high；属性来源 doc lists ro.product.brand / manufacturer / device",
+      "notes": "大眼橙 OBE_R3Ultra 高亮版 · 可用：1.65 standard adb install; role add-role-holder -> isDefault=true; boot straight into Aerial; guard returns HOME after ~13 s. / 限制/失败：HOME first lands on Youku/CIBN desktop (~13 s); 32-bit only (armeabi-v7a); standby untested. / 需要：ADB: tap version 7x → 开发者选项 → USB 调试 (adbd listens on 5555 immediately)；alt install without ADB: 沙发管家 web upload on port 8899；KEEP_ADB=1",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-tencent-aurora-6-q5043",
+      "name": "Aerial 记录 · 腾讯极光盒子 6",
+      "match": {
+        "models": [
+          "Q5043"
+        ],
+        "devices": [
+          "cupid-p2"
+        ],
+        "brand": "",
+        "brands": [
+          "skyworthbox",
+          "TencentBox",
+          "Tencent",
+          "SkyworthDigitalRT"
+        ],
+        "sdk_min": 29,
+        "sdk_max": 29,
+        "fingerprint_prefix": "skyworthbox/cupid_p2/cupid-p2:10/QP1A.191105.004"
+      },
+      "route": "blocked",
+      "grade": "",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/367",
+      "tested": "Aerial README ✅；置信度 high；属性来源 getprop (#367)",
+      "notes": "Q5043固件的settings命令会卡adbd约120秒；当前安装器必须读取settings备份，因此暂不支持，不能沿用普通盒子路线。",
+      "level": "上游有HOME方法；本影院盒子路线待实机（受控试装）",
+      "device_kind": "box"
+    },
+    {
+      "id": "aerial-tencent-aurora-7s-ba101",
+      "name": "Aerial 记录 · 腾讯极光盒子 7S",
+      "match": {
+        "models": [
+          "BA101"
+        ],
+        "devices": [
+          "ross"
+        ],
+        "brand": "",
+        "brands": [
+          "skyworthbox",
+          "TencentBox",
+          "Tencent",
+          "XiaoPaiTech"
+        ],
+        "sdk_min": 34,
+        "sdk_max": 34,
+        "fingerprint_prefix": "TencentBox/BA101/ross:14/UD2A.240505.001.W1"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/269",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 Build diag line (#269)",
+      "notes": "腾讯极光盒子 7S · 可用：Guard recognises LauncherHomeSingleTaskActivity (1.35+); HOME eventually reaches Aerial. / 限制/失败：Boot stays on stock launcher: guard not bound at boot ('boot completed with com.android.provision in front').",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "box"
+    },
+    {
+      "id": "aerial-dangbei-h3s-rk3566",
+      "name": "Aerial 记录 · 当贝 H3S 盒子",
+      "match": {
+        "models": [
+          "DBBOXH3S"
+        ],
+        "devices": [
+          "rk356x_box"
+        ],
+        "brand": "",
+        "brands": [
+          "Dangbei"
+        ],
+        "sdk_min": 30,
+        "sdk_max": 30,
+        "fingerprint_prefix": "Dangbei/rk356x_box/rk356x_box:11/RD2A.211001.002"
+      },
+      "route": "guard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/849",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 getprop + Build diag (#849)",
+      "notes": "当贝 H3S 盒子 · 可用：Cold boot straight into Aerial; guard bound. / 限制/失败：Each HOME press: firmware force-stops Aerial (reason=10 USER REQUESTED from pid 434) and Dangbei launcher shows 7-12 s until revival; cannot be default home (role filter lists only Dangbei + FallbackHome); /data/dblist whitelist did not help. 1.41 was reportedly stable. / 后续：state:unknown；detail:Maintainer suspects the guard's CLOSE_SYSTEM_DIALOGS…",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "box"
+    },
+    {
+      "id": "aerial-dangbei-f3-projector",
+      "name": "Aerial 记录 · 当贝 F3 投影仪",
+      "match": {
+        "models": [
+          "F3"
+        ],
+        "devices": [],
+        "brand": "",
+        "brands": [
+          "Dangbei"
+        ],
+        "sdk_min": 23,
+        "sdk_max": 23,
+        "fingerprint_prefix": "Dangbei/aosp_mangosteen/mangosteen:6.0/MRA58K"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/789",
+      "tested": "Aerial README ❌；置信度 high；属性来源 reporter's diagnostics table (#789)",
+      "notes": "当贝 F3 投影仪 · 可用：Aerial 1.63 runs in the foreground when launched. / 限制/失败：HOME always returns to Dangbei launcher; firmware removes Aerial as launcher; no accessibility service exists (guard cannot run); pm disable/hide of launcher -> SecurityException. / 后续：state:still_failing；detail:#789 closed 2026-10-28, no workaround.",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "aerial-jmgo-s621",
+      "name": "Aerial 记录 · 坚果 S621 (product model unconfirmed)",
+      "match": {
+        "models": [
+          "S621"
+        ],
+        "devices": [
+          "S621"
+        ],
+        "brand": "",
+        "brands": [
+          "JMGO"
+        ],
+        "sdk_min": 33,
+        "sdk_max": 33,
+        "fingerprint_prefix": "MediaTek/S621/S621:13/TP1A.220624.021.A1"
+      },
+      "route": "guard",
+      "grade": "avoid",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/793",
+      "tested": "Aerial README ❌；置信度 high；属性来源 Build diag line (#793)",
+      "notes": "坚果 S621 (product model unconfirmed) · 可用：Standard installs and runs. / 限制/失败：SettingsProvider refuses writes to enabled_accessibility_services from anyone but com.jmgo.hippo (even adb shell); set-home-activity reverted by firmware. / 需要：adb shell am broadcast -a action.jmgo.request.accessibility.service -p com.jmgo.hippo --es compontentNameStr '<pkg>/<guard.Service>' --ez enabled true (disable: --ez enabled false)…",
+      "level": "网上已知失败（不建议，可试装）",
+      "device_kind": "projector"
+    },
+    {
+      "id": "aerial-zhiying-rigal-hs350",
+      "name": "Aerial 记录 · HS350 投影仪 (HiSilicon, YunOS)",
+      "match": {
+        "models": [
+          "ZY_HS350_D5E8_RG_853_600P"
+        ],
+        "devices": [
+          "ZY_HS350_D5E8_RG_853_600P"
+        ],
+        "brand": "",
+        "brands": [
+          "RIGAL",
+          "ZHIYING"
+        ],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "RIGAL/ZY_HS350_D5E8_RG_853_600P/ZY_HS350_D5E8_RG_853_600P:9/PPR1.180610.011"
+      },
+      "route": "guard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/853",
+      "tested": "Aerial README ⚠️；置信度 high；属性来源 getprop + Build diag (#853)",
+      "notes": "HS350 投影仪 (HiSilicon, YunOS) · 可用：Guard catches HOME while Aerial is in front; standby wake 0.5 s to Aerial. / 限制/失败：tvmgr AppDaemon force-stops backgrounded 3rd-party apps -> HOME from another app takes 9-48 s; reboot check failed (Aerial only at ~70 s); notification listener unusable; low_ram (476 MB). / 需要：pm grant <pkg> android.permission.WRITE_SECURE_SETTINGS；appops set <pkg> GET_USAGE_STATS allow (both missi…",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-pptv-k55u27",
+      "name": "Aerial 记录 · PPTV K55U27",
+      "match": {
+        "models": [
+          "MStar Android TV"
+        ],
+        "devices": [
+          "almond"
+        ],
+        "brand": "",
+        "brands": [
+          "PPTV"
+        ],
+        "sdk_min": 23,
+        "sdk_max": 23,
+        "fingerprint_prefix": "MStar/aosp_almond_dtmb/almond:6.0/MRA58K"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/264",
+      "tested": "Aerial README ✅；置信度 high；属性来源 getprop (#264); Build diag shows Build.MODEL='PPTV-K55U27'",
+      "notes": "PPTV K55U27 · 可用：1.33 standard (install.sh KEEP_ADB=1): Aerial is default HOME; Wi-Fi/settings/brightness entries fixed in 1.35. / 限制/失败：No standard settings/Wi-Fi intents (PPTV-specific entries needed).",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "tv"
+    },
+    {
+      "id": "aerial-hk1-box-s905x3",
+      "name": "Aerial 记录 · HK1 Box (first gen, S905X3; firmware jikeku_TV)",
+      "match": {
+        "models": [
+          "jikeku_TV"
+        ],
+        "devices": [
+          "franklin"
+        ],
+        "brand": "",
+        "brands": [],
+        "sdk_min": 28,
+        "sdk_max": 28,
+        "fingerprint_prefix": "google/sailfish/sailfish:9/PQ1A.190105.004"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/838",
+      "tested": "Aerial README ✅；置信度 high；属性来源 Build diag line (#838)",
+      "notes": "HK1 Box (first gen, S905X3; firmware jikeku_TV) · 可用：1.67 standard from USB drive: set as default home and it takes over; guard not needed (disabled). / 限制/失败：Low frame rate; screensaver stays on PhotoDream unless set via adb; ~200 ms onPause/onNewIntent loop observed. / 需要：adb shell settings put secure screensaver_components <pkg>/<Dream> (save old com.leslie.tvhome/.PhotoDream)；use Lite/smooth effects",
+      "level": "网上有限制（Aerial 实测部分可用，试装）",
+      "device_kind": "box"
+    },
+    {
+      "id": "aerial-phicomm-t1-q201",
+      "name": "Aerial 记录 · 斐讯 T1 盒子 (S912)",
+      "match": {
+        "models": [
+          "q201"
+        ],
+        "devices": [
+          "q201"
+        ],
+        "brand": "",
+        "brands": [
+          "Phicomm"
+        ],
+        "sdk_min": 25,
+        "sdk_max": 25,
+        "fingerprint_prefix": "Phicomm/q201/q201:7.1.2/NHG47L"
+      },
+      "route": "standard",
+      "grade": "limited",
+      "evidence": "https://github.com/pengchujin/aerial-tv/issues/876",
+      "tested": "Aerial README ✅；置信度 high；属性来源 Build diag line (#876)",
+      "notes": "斐讯 T1 盒子 (S912) · 可用：1.69 standard: HOME, power cycle, standby, inputs, volume, screensaver, phone page. / 限制/失败：Stutter scrolling to all-apps (set Effects → Smooth); TvInputManager refused list; brightness not settable.",
+      "level": "上游有HOME方法；本影院盒子路线待实机（受控试装）",
+      "device_kind": "box"
+    }
+  ],
+  "platforms": [
+    {
+      "name": "Android 4.0 / API14–15",
+      "brands": "按实体型号另验，不按品牌放行",
+      "status": "实验版已随包；正式自动接管暂不支持",
+      "reason": "API14页面及API15播放/广告/HOME等模拟器证据已附；原生字幕样本失败，实体开机待机未验。支持页可离线获取完整实验包。",
+      "sources": [
+        "https://github.com/BeatsAD/quiet-tv/releases/tag/v1.3.0"
+      ]
+    },
+    {
+      "name": "Android 4.4 / API19",
+      "brands": "按实体型号另验，不按品牌放行",
+      "status": "候选版已随包；实体型号待验",
+      "reason": "API19模拟器业务、standard HOME/复位及guard HOME已验；ARM实体电视、待机和最新共同广告版仍待整合验收。",
+      "sources": [
+        "https://github.com/BeatsAD/quiet-tv"
+      ]
+    },
+    {
+      "name": "Android TV / Google TV / AOSP（Android 5+）",
+      "brands": "小米、Redmi、TCL、雷鸟、索尼、海信、创维、康佳、极米、飞利浦、海尔等",
+      "status": "本项目实测与网上已证（Aerial）型号一键安装；其他型号勾选“允许试装”；网上已知失败的型号“不建议”但可试装",
+      "reason": "分级：本项目实测（固件指纹）/网上已证（Aerial 同源守护、精确型号代码）/试装（上游清理记录或无记录）/不建议（Aerial 实测失败）。非本项目实测的一律强制重启验证+2分钟稳定观察，失败自动还原。Android 10+文件级加密的非本项目实测型号只用guard版；Android 5–6只用guard版、不改默认桌面。",
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv",
+        "https://github.com/Gathin23/cleanyourtv",
+        "https://github.com/udhaykumarbala/cleanyourtv-app",
+        "https://github.com/wukongdaily/tvhelper"
+      ]
+    },
+    {
+      "name": "Fire OS",
+      "brands": "Amazon、部分TCL/东芝/海信等Fire TV型号",
+      "status": "本影院接管暂不支持",
+      "reason": "部分版本可安装Android APK，HOME限制随固件变化；清理或侧载记录不能证明影院开机/待机可用。",
+      "sources": [
+        "https://github.com/CVasilakis/luncher",
+        "https://github.com/Gathin23/cleanyourtv"
+      ]
+    },
+    {
+      "name": "Tizen",
+      "brands": "三星（按型号/固件分别核验）",
+      "status": "已有原生工具；本影院客户端暂不支持",
+      "reason": "quiet-tizen仅在U8000F特定固件实测；原生NUI与Android不是同一运行时，需要保持现有界面的独立原生适配。SDB/私有框架不随本版分发。",
+      "sources": [
+        "https://github.com/jss8649/quiet-tizen",
+        "https://github.com/chris-ritsen/samsung-tv-root",
+        "https://github.com/reisxd/TizenBrew",
+        "https://github.com/reisxd/TizenBrewInstaller",
+        "https://github.com/Apps2Samsung/tizen-community-packages"
+      ]
+    },
+    {
+      "name": "webOS",
+      "brands": "LG及搭载webOS的授权品牌",
+      "status": "已有原生侧载/管理工具；本影院暂不支持",
+      "reason": "Dev Manager/ares-cli可安装IPK，Homebrew路径受固件限制；仍需本影院原生客户端、HOME/开机与媒体适配。",
+      "sources": [
+        "https://github.com/webosbrew/dev-manager-desktop",
+        "https://github.com/webosose/ares-cli",
+        "https://github.com/RootMyTV/RootMyTV.github.io",
+        "https://github.com/lasharor/cleanyourtv-WebOS"
+      ]
+    },
+    {
+      "name": "VIDAA OS",
+      "brands": "部分海信、东芝、夏普等；与名字含VIDAA的Android固件区分",
+      "status": "本影院原生安装暂不支持",
+      "reason": "有Web应用侧载路径，但固件存在安装返回成功却无图标的情况，且不是现有Android客户端。需另做本地客户端及完整验收。",
+      "sources": [
+        "https://github.com/Stremio/stremio-hisense-install",
+        "https://github.com/kimkha/stremio"
+      ]
+    },
+    {
+      "name": "Roku OS",
+      "brands": "Roku及采用Roku的TCL/Hisense/Sharp等",
+      "status": "可开发原生频道；本影院暂不支持",
+      "reason": "开发者模式可侧载BrightScript/SceneGraph频道；不是Android运行时，需要另做客户端并验证启动/HOME限制。",
+      "sources": [
+        "https://github.com/rokudev/samples",
+        "https://github.com/paramount-engineering/roku-dev-studio"
+      ]
+    },
+    {
+      "name": "HarmonyOS / Honor封闭系统",
+      "brands": "华为、荣耀（具体系统分别识别）",
+      "status": "暂不支持",
+      "reason": "本轮未建立可重复、保持现有影院功能的完整原生安装与桌面接管路径；不是按品牌一概推断。",
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/main/docs/devices/adb-by-brand.md"
+      ]
+    },
+    {
+      "name": "Vega / Titan / SAPHI / 其他封闭平台",
+      "brands": "部分新Fire TV、Philips及其他OEM型号",
+      "status": "暂不支持，待逐平台研究与实机验证",
+      "reason": "不假定兼容Android APK；本轮没有完成保持现有影院界面/功能的原生客户端和现场验证。",
+      "sources": [
+        "https://github.com/CVasilakis/luncher"
+      ]
+    }
+  ],
+  "advisories": [
+    {
+      "brand": "TCL",
+      "sdk_min": 0,
+      "sdk_max": 0,
+      "devices": [
+        "T966D5"
+      ],
+      "level": "warn",
+      "note": "雷鸟 75S78A Plus（FFALCON T966D5）：固件约每分钟清空无障碍设置，HOME 键接管不了（Aerial 记为接管失败；已降为“不建议”，可试装）",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/ffalcon-t966d5.md"
+    },
+    {
+      "brand": "FFALCON",
+      "sdk_min": 0,
+      "sdk_max": 0,
+      "devices": [
+        "T966D5"
+      ],
+      "level": "warn",
+      "note": "雷鸟 75S78A Plus（FFALCON T966D5）：固件约每分钟清空无障碍设置，HOME 键接管不了（Aerial 记为接管失败；已降为“不建议”，可试装）",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/ffalcon-t966d5.md"
+    },
+    {
+      "brand": "TCL",
+      "sdk_min": 0,
+      "sdk_max": 0,
+      "devices": [
+        "tcl_mt9655_cn"
+      ],
+      "level": "warn",
+      "note": "雷鸟 MT9655 国行（55S595C Ultra、鹤6 Ultra、75T7M Pro）：能装但接管不了 HOME 键，Android 14 上守护开不起来（Aerial 记为接管失败；已降为“不建议”，可试装）",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/tcl-mt9655-cn.md"
+    },
+    {
+      "brand": "Skyworth",
+      "sdk_min": 33,
+      "sdk_max": 33,
+      "models_contains": [
+        "8R710",
+        "75A6E"
+      ],
+      "level": "warn",
+      "note": "创维 75A6E（8R710）：standard 版按主页键整机卡死，影院窗口拿不到焦点（Aerial 记为接管失败；已降为“不建议”，可试装）",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/skyworth-coocaa.md"
+    },
+    {
+      "brand": "Skyworth",
+      "sdk_min": 33,
+      "sdk_max": 33,
+      "models_contains": [
+        "7T641",
+        "7T634",
+        "8R721",
+        "8R734"
+      ],
+      "level": "warn",
+      "note": "创维 Android 13（7T641/7T634_P3H/8R721 等）：Aerial 实测黑屏或约 30 秒后“没有焦点窗口”被系统结束；试装后重点看冷启动和 30 秒后画面",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/skyworth-coocaa.md"
+    },
+    {
+      "brand": "Skyworth",
+      "sdk_min": 26,
+      "sdk_max": 30,
+      "level": "warn",
+      "note": "创维/酷开 Android 8–11：开机先进酷开桌面，或被系统清理后 20–30 秒才回到影院；冷启动验证会等待最长约 2 分钟",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/skyworth-coocaa.md"
+    },
+    {
+      "brand": "Hisense",
+      "sdk_min": 24,
+      "sdk_max": 34,
+      "models_contains": [
+        "VIDAA"
+      ],
+      "level": "warn",
+      "note": "海信 VIDAA_TV：主页键能接管，开机多数先进聚好看；冷启动验证可能不通过并自动还原",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/hisense-vidaa.md"
+    },
+    {
+      "brand": "*",
+      "sdk_min": 33,
+      "sdk_max": 33,
+      "models_contains": [
+        "S621"
+      ],
+      "level": "warn",
+      "note": "坚果 S621：固件不让写无障碍设置，守护读回会失败并自动还原",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/README.md"
+    },
+    {
+      "brand": "*",
+      "sdk_min": 34,
+      "sdk_max": 34,
+      "models_contains": [
+        "BA101"
+      ],
+      "level": "warn",
+      "note": "腾讯极光 7S（BA101）：开机停在原桌面",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/tencent-aurora-box.md"
+    },
+    {
+      "brand": "TCL",
+      "sdk_min": 34,
+      "sdk_max": 34,
+      "models_contains": [
+        "Q9L"
+      ],
+      "level": "warn",
+      "note": "TCL Q9L Pro：只能 USB 线连 adb，要在电视管家允许自启",
+      "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/README.md"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+.nas-workspace .nas-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:7px;margin-bottom:28px}
+.nas-tabs a{display:inline-flex;align-items:center;gap:6px;padding:12px 16px;border-radius:7px;color:#596779;text-decoration:none;font-size:14px;line-height:1.5;transition:background-color .16s,color .16s,box-shadow .16s}
+.nas-tabs a{min-width:0}
+.nas-tabs a:hover{background:#ffffff7a;color:#253548}
+.nas-tabs a.active{background:#fff;color:#253548;box-shadow:0 2px 7px #26384b16}
+.nas-tabs a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.nas-external{font-size:12px;opacity:.6}
+.nas-workspace [data-nas-pane]{min-width:0}
+.nas-workspace [data-nas-pane]>.panel{margin:0}
+.nas-workspace [data-nas-pane] .panel-head h2{font-size:21px}
+.nas-workspace [data-nas-pane] .form-stack>p{margin:0}
+.nas-workspace #nas-share-address{max-width:540px}
+@media(max-width:700px){.nas-workspace .page-head{gap:16px}.nas-workspace .nas-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:6px;margin-bottom:22px}.nas-tabs a{padding:10px 12px;font-size:13px}.nas-workspace [data-nas-pane] .panel-head{flex-wrap:wrap;gap:12px}}
+@media(prefers-reduced-motion:reduce){.nas-tabs a{transition:none}}

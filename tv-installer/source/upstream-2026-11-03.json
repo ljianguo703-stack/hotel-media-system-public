@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-11-03",
+  "sources": [
+    {
+      "repo": "pengchujin/aerial-tv",
+      "branch": "main",
+      "commit": "bf64c3090c0ae71912f0a9753dd1d453d4705f06",
+      "date": "2026-11-02T13:17:10Z",
+      "message": "HANDOFF: 1.80 released; Xiaomi and TCL installed, site deployed",
+      "release": "v1.80",
+      "release_date": "2026-11-02T13:15:21Z"
+    },
+    {
+      "repo": "udhaykumarbala/cleanyourtv-app",
+      "branch": "main",
+      "commit": "8ec0679f0a3b04cbf1a23d7762f68b35679f8b59",
+      "date": "2026-10-31T12:19:02Z",
+      "message": "TV list: the 0.4.8-beta2 test build link and the confirmations of 31 October",
+      "release": "v0.4.8-beta2",
+      "release_date": "2026-10-31T12:12:04Z"
+    },
+    {
+      "repo": "Gathin23/cleanyourtv",
+      "branch": "main",
+      "commit": "572ce2cbe98b53654cea3d262ee8558a5872dfd1",
+      "date": "2026-11-02T15:47:09Z",
+      "message": "Round AQ: fixes folded in on merge, tables and cards regenerated",
+      "release": "v3.3.0",
+      "release_date": "2026-11-01T14:08:21Z"
+    },
+    {
+      "repo": "jss8649/quiet-tizen",
+      "branch": "main",
+      "commit": "cf518d7a9278dca7990e27756218258e44044a29",
+      "date": "2026-10-20T17:23:40Z",
+      "message": "Publish Quiet Tizen launcher, reversible cleanup guide, and findings",
+      "release": "v0.1.0",
+      "release_date": "2026-10-20T17:24:38Z"
+    },
+    {
+      "repo": "wukongdaily/tvhelper",
+      "branch": "master",
+      "commit": "4b83f0becd957b02c4c92bb83f717366dc0b632b",
+      "date": "2024-11-18T01:16:36Z",
+      "message": "Update README.md",
+      "release": "v2.0.5",
+      "release_date": "2024-04-06T03:26:10Z"
+    },
+    {
+      "repo": "wukongdaily/tvhelper-docker",
+      "branch": "master",
+      "commit": "6372b2611be19070eacbfc1444c33c248f8e7a2e",
+      "date": "2026-03-28T03:56:22Z",
+      "message": "Update README with installation package and Docker info",
+      "release": "fpk",
+      "release_date": "2026-03-26T08:31:38Z"
+    },
+    {
+      "repo": "BeatsAD/quiet-tv",
+      "branch": "main",
+      "commit": "c6951f5f5047a4e60b7f3c178f190d855120177a",
+      "date": "2026-11-02T15:38:21Z",
+      "message": "修复升级配置保留并准备1.3.4测试版 (#133)",
+      "release": "v1.3.3",
+      "release_date": "2026-11-01T17:04:50Z"
+    }
+  ]
+}

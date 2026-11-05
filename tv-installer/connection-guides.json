@@ -1,0 +1,613 @@
+{
+  "schema": 1,
+  "checked_at": "2026-11-03",
+  "guides": [
+    {
+      "id": "xiaomi-tv",
+      "name": "小米／Redmi 电视",
+      "kind": "tv",
+      "brands": [
+        "Xiaomi",
+        "Redmi"
+      ],
+      "steps": [
+        "设置 → 关于，连续按产品型号／产品类型进入开发者模式。",
+        "设置 → 账号与安全，开启ADB调试及允许未知来源安装。",
+        "网络设置查看IP，在工具检测；电视出现授权框时选“始终允许”。"
+      ],
+      "notes": [
+        "待机或开机后部分固件会关闭ADB；沿用已验安装器的调试保持和重连流程。",
+        "通电亮屏是独立原厂能力，仅本店MiTV-ASTP0精确固件已有PW01证据。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/adb-by-brand.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "tcl-cn",
+      "name": "TCL／雷鸟 国行电视",
+      "kind": "tv",
+      "brands": [
+        "TCL",
+        "FFALCON",
+        "iFFALCON"
+      ],
+      "steps": [
+        "设置 → 关于 → 本机信息，快速依次按“上、下、左、右”。",
+        "若底部出现“更多”，进入并开启ADB；在网络设置查看IP。",
+        "Android11+只有无线调试时先查看是否存在配对码入口；有入口才用工具无线配对。"
+      ],
+      "notes": [
+        "部分MT9655／Q10M等只有动态端口且无配对入口，需要设备支持的数据线先授权；手机网页不能代替这一步。",
+        "有线方法按具体机型笔记，不能把任意USB A对A线当作通用连接方法。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/tcl-mt9655-cn.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "oppo-tv",
+      "name": "OPPO ColorOS TV",
+      "kind": "tv",
+      "brands": [
+        "OPPO"
+      ],
+      "steps": [
+        "设置 → 系统 → 关于本机 → 设备型号，部分固件依次按“上、上、右、右、确认”。",
+        "根据提示完成后返回系统 → 开发者选项，开启USB／ADB调试。",
+        "网络 → 已连接网络，页面最下面查看IP。"
+      ],
+      "notes": [
+        "部分固件只允许特定包名当HOME；能连上和能安装不代表本影院已可接管。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/oppo-coloros-tv.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "haier-tv",
+      "name": "海尔／模卡 MOOKA",
+      "kind": "tv",
+      "brands": [
+        "Haier",
+        "MOOKA"
+      ],
+      "steps": [
+        "按电视机身信号源键打开菜单，再用遥控器依次按“左、左、上、右”。",
+        "若出现海尔工厂菜单，仅打开ADB调试；部分机型位于第二页Other Option。",
+        "退出菜单，查看网络IP，再用工具检测并在电视授权。"
+      ],
+      "notes": [
+        "这是部分固件的社区记录；不要更改工厂复位、屏参或其他工程选项。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/adb-by-brand.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "sony-tv",
+      "name": "索尼 BRAVIA",
+      "kind": "tv",
+      "brands": [
+        "Sony"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "入口因系统地区和固件不同；只有实际提供的开关才可使用。",
+        "名字含VIDAA的Android固件与真正VIDAA OS不同；先检测SDK和运行时。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "hisense-android",
+      "name": "海信／Vidda Android电视",
+      "kind": "tv",
+      "brands": [
+        "Hisense",
+        "Vidda"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "入口因系统地区和固件不同；只有实际提供的开关才可使用。",
+        "名字含VIDAA的Android固件与真正VIDAA OS不同；先检测SDK和运行时。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "philips-android",
+      "name": "飞利浦 Android TV／Google TV",
+      "kind": "tv",
+      "brands": [
+        "Philips"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "入口因系统地区和固件不同；只有实际提供的开关才可使用。",
+        "名字含VIDAA的Android固件与真正VIDAA OS不同；先检测SDK和运行时。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "generic-atv",
+      "name": "原生Android TV／Google TV",
+      "kind": "tv",
+      "brands": [
+        "Android TV",
+        "Google TV",
+        "Toshiba",
+        "Sharp",
+        "Panasonic",
+        "OnePlus"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "入口因系统地区和固件不同；只有实际提供的开关才可使用。",
+        "名字含VIDAA的Android固件与真正VIDAA OS不同；先检测SDK和运行时。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "skyworth-tv",
+      "name": "创维／酷开 Android电视",
+      "kind": "tv",
+      "brands": [
+        "Skyworth",
+        "Coocaa"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "若没有可用开发者入口，按具体型号资料处理；没有统一工程密码。",
+        "部分Android13固件存在黑屏或焦点限制，先查看机型库，不能只因ADB连接成功就放行。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/skyworth-coocaa.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "letv-konka",
+      "name": "乐视／康佳 Android电视",
+      "kind": "tv",
+      "brands": [
+        "Letv",
+        "LeEco",
+        "Konka",
+        "KKTV"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "部分老型号没有可用ADB入口；无已验证开启方法时列暂不支持，不尝试恢复出厂或刷机。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/adb-by-brand.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "xiaomi-box",
+      "name": "小米盒子／Mi Box S／小米电视棒",
+      "kind": "box",
+      "brands": [
+        "Xiaomi",
+        "Mi Box",
+        "MIBOX3",
+        "MIBOX4",
+        "MiTV-AFKR0"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "仅按机型库的型号、设备代号、SDK和指纹匹配；国内MIUI与国际ATV入口不同。",
+        "盒子供电后启动不等于电视屏幕也会亮；HDMI-CEC和电视原厂来电策略要分别验。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "nvidia-shield",
+      "name": "NVIDIA SHIELD 盒子",
+      "kind": "box",
+      "brands": [
+        "NVIDIA",
+        "SHIELD",
+        "P3430",
+        "P2897"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "选网络调试或设备实际提供的无线配对入口。",
+        "上游某些HOME方案会停用原厂桌面；本工具保留原厂组件，采用受控试装并验证自己的guard路线。"
+      ],
+      "sources": [
+        "https://github.com/Gathin23/cleanyourtv/blob/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nvidia-shield-tv-2019/README.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "google-streamer",
+      "name": "Chromecast／Google TV Streamer",
+      "kind": "box",
+      "brands": [
+        "Google",
+        "Chromecast",
+        "sabrina",
+        "boreal",
+        "kirkwood"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "上游指出部分桌面替换会影响投屏；本工具不以侧载成功认定完整接管。",
+        "本版保留这类设备的完整接管限制，资料可查，实际放行以检测结果为准。"
+      ],
+      "sources": [
+        "https://github.com/udhaykumarbala/cleanyourtv-app/blob/8ec0679f0a3b04cbf1a23d7762f68b35679f8b59/README.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "onn-box",
+      "name": "onn 电视盒子",
+      "kind": "box",
+      "brands": [
+        "onn",
+        "YOC",
+        "coffey"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "接管与自启需对应型号和固件的证据；上游清理记录不等于本影院接管已验。",
+        "无精确记录的型号先体检收集，不能以品牌名直接承诺兼容。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "homatics-mecool",
+      "name": "Homatics／MECOOL／RockTek／Dune／Nokia盒子",
+      "kind": "box",
+      "brands": [
+        "Homatics",
+        "MECOOL",
+        "RockTek",
+        "Dune",
+        "Nokia"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "接管与自启需对应型号和固件的证据；上游清理记录不等于本影院接管已验。",
+        "无精确记录的型号先体检收集，不能以品牌名直接承诺兼容。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "freebox",
+      "name": "Freebox Player Pop",
+      "kind": "box",
+      "brands": [
+        "Freebox",
+        "fbx8am"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "接管与自启需对应型号和固件的证据；上游清理记录不等于本影院接管已验。",
+        "无精确记录的型号先体检收集，不能以品牌名直接承诺兼容。"
+      ],
+      "sources": [
+        "https://developer.android.com/tools/adb"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "skyworth-p3",
+      "name": "创维小湃 P3 Q5001",
+      "kind": "box",
+      "brands": [
+        "Skyworth",
+        "Q5001",
+        "cupid-p2"
+      ],
+      "steps": [
+        "设置 → 关于，连续按版本号开启开发者选项。",
+        "在开发者选项开启网络调试，查看盒子IP并连接5555；按盒子授权框确认。"
+      ],
+      "notes": [
+        "此固件HOME有包名前缀白名单；上游需要改包名构建。本影院未提供该特殊包，当前完整接管暂不支持。",
+        "盒子休眠时ADB会无响应，应由现场遥控唤醒后维护。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/skyworth-p3-box.md"
+      ],
+      "status": "可参考连接；当前影院完整接管暂不支持"
+    },
+    {
+      "id": "tencent-box",
+      "name": "腾讯极光盒子6／6SE／7S／4 Pro",
+      "kind": "box",
+      "brands": [
+        "TencentBox",
+        "Q5043",
+        "Q0102",
+        "BA101",
+        "A4111"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "Q5043／cupid-p2存在settings子命令卡adbd约120秒的问题，现有依赖settings的安装流程不能直接套用。",
+        "7S和4 Pro部分版本开机接管仍有问题；具体型号未验证前不标支持。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/tencent-aurora-box.md"
+      ],
+      "status": "仅连接资料；特殊固件接管需另行适配"
+    },
+    {
+      "id": "cm311",
+      "name": "CM311-1 改版Android9 ATV",
+      "kind": "box",
+      "brands": [
+        "CM311",
+        "S905L3"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "上游记录仅适用改版ATV固件，不能推及运营商原固件。",
+        "型号S905L3是通用芯片标识；缺完整设备身份和固件条件时不能自动放行。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/cm311-1-android9-atv.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "other-box",
+      "name": "当贝／斐讯／HK1及其他Android盒子",
+      "kind": "box",
+      "brands": [
+        "Dangbei",
+        "Phicomm",
+        "HK1",
+        "DBBOXH3S",
+        "q201",
+        "jikeku_TV"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "斐讯T1、HK1等按精确机型记录检测；当贝部分HOME按键会触发系统强停，需查看限制。",
+        "运营商封闭盒子与同外观改版固件不能混为一种支持条件。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/README.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "fire-tv",
+      "name": "Amazon Fire TV／Fire TV Stick（Fire OS）",
+      "kind": "box",
+      "brands": [
+        "Amazon",
+        "Fire TV",
+        "Fire OS"
+      ],
+      "steps": [
+        "设置 → 我的Fire TV → 关于，部分版本对设备名称连续按确认7次显示开发者选项。",
+        "返回开发者选项，打开ADB Debugging；设置 → 关于 → 网络查看IP。",
+        "使用工具检测连接并在Fire TV上确认授权。"
+      ],
+      "notes": [
+        "仅Fire OS连接资料；当前影院HOME接管仍暂不支持。",
+        "新Vega设备不是Android，不能按Fire OS安装APK。"
+      ],
+      "sources": [
+        "https://developer.amazon.com/docs/fire-tv/connecting-adb-to-device.html"
+      ],
+      "status": "ADB连接可参考；本影院完整接管暂不支持"
+    },
+    {
+      "id": "xgimi-projector",
+      "name": "极米 H3／Z7X等投影",
+      "kind": "projector",
+      "brands": [
+        "XGIMI",
+        "H3",
+        "Z7X"
+      ],
+      "steps": [
+        "先查看机型专属说明；H3／Z7X有社区ADB开启器记录。",
+        "仅在型号/固件与记录相符时，经设备原有安装渠道安装并打开该开启器，再连接网络ADB。"
+      ],
+      "notes": [
+        "开启器是第三方工具，本包不自动下载或执行；这条记录不代表所有极米型号。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/adb-by-brand.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "projector-atv",
+      "name": "当贝／坚果／峰米等Android投影",
+      "kind": "projector",
+      "brands": [
+        "Dangbei",
+        "JMGO",
+        "Formovie",
+        "Fengmi",
+        "OBE"
+      ],
+      "steps": [
+        "设置 → 系统／设备偏好设置 → 关于，选“内部版本号／Build”，连续按确认7次。",
+        "返回开发者选项，打开USB调试／网络调试；若只有无线调试，使用“配对码配对设备”。",
+        "在网络设置查看目标设备IP；有网络调试时用设备显示的端口，只有明确旧式网络ADB时才默认5555。",
+        "在目标设备确认信任Ubuntu／电脑，选“始终允许”；只有配对码时，工具里分别填写配对端口、6位码和连接端口。"
+      ],
+      "notes": [
+        "定制固件可能没有开发者入口；按具体机型笔记处理，缺已验方法时明确暂不支持。"
+      ],
+      "sources": [
+        "https://github.com/pengchujin/aerial-tv/blob/bf64c3090c0ae71912f0a9753dd1d453d4705f06/docs/devices/adb-by-brand.md"
+      ],
+      "status": "参考方法；须按型号/固件现场核对"
+    },
+    {
+      "id": "tizen",
+      "name": "三星 Tizen",
+      "kind": "other",
+      "brands": [
+        "Samsung",
+        "Tizen"
+      ],
+      "steps": [
+        "先确认实际系统、型号和固件；这些运行时不能直接运行本影院Android APK。",
+        "保留原厂环境，查看来源中的原生开发／安装资料；不要在此工具中套用ADB命令。"
+      ],
+      "notes": [
+        "资料入口不代表本影院已移植；本版暂不支持安装或接管。"
+      ],
+      "sources": [
+        "https://github.com/jss8649/quiet-tizen"
+      ],
+      "status": "暂不支持本影院安装"
+    },
+    {
+      "id": "webos",
+      "name": "LG webOS",
+      "kind": "other",
+      "brands": [
+        "LG",
+        "webOS"
+      ],
+      "steps": [
+        "先确认实际系统、型号和固件；这些运行时不能直接运行本影院Android APK。",
+        "保留原厂环境，查看来源中的原生开发／安装资料；不要在此工具中套用ADB命令。"
+      ],
+      "notes": [
+        "资料入口不代表本影院已移植；本版暂不支持安装或接管。"
+      ],
+      "sources": [
+        "https://github.com/webosbrew/dev-manager-desktop"
+      ],
+      "status": "暂不支持本影院安装"
+    },
+    {
+      "id": "other-os",
+      "name": "VIDAA／Roku／HarmonyOS／Vega等",
+      "kind": "other",
+      "brands": [
+        "VIDAA OS",
+        "Roku",
+        "Honor",
+        "HarmonyOS",
+        "Vega"
+      ],
+      "steps": [
+        "先确认实际系统、型号和固件；这些运行时不能直接运行本影院Android APK。",
+        "保留原厂环境，查看来源中的原生开发／安装资料；不要在此工具中套用ADB命令。"
+      ],
+      "notes": [
+        "资料入口不代表本影院已移植；本版暂不支持安装或接管。"
+      ],
+      "sources": [
+        "https://github.com/Gathin23/cleanyourtv"
+      ],
+      "status": "暂不支持本影院安装"
+    }
+  ]
+}

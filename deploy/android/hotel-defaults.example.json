@@ -1,0 +1,5 @@
+{
+  "server": "http://127.0.0.1:18790",
+  "device_token": "not-configured",
+  "staff_pin_sha256": "9beec2dec420a0f20378cd4c6089489c769976efa62fee01dac78f13e72c0375"
+}

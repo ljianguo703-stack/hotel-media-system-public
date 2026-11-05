@@ -1,0 +1,16 @@
+<aside class="drawer real-drawer cleanup-drawer" x-show="modal==='media-cleanup'" x-cloak role="dialog" aria-modal="true" aria-label="冷门清理预览">
+<header class="drawer-head"><div><p class="eyebrow">LOCAL STORAGE</p><h2 x-text="cleanupResult?'清理结果':'冷门清理预览'"></h2></div><button class="icon-btn" aria-label="关闭冷门清理" @click="close()" :disabled="busy">×</button></header>
+<div class="drawer-body form-stack">
+<template x-if="cleanupPlan&&!cleanupResult"><div class="form-stack">
+<p>仅删除下面所列原视频，不递归删除目录，海报、字幕和兼容副本保留。普通归档仍保留原文件。</p>
+<div class="cleanup-summary"><div><small>可清理作品</small><strong x-text="cleanupPlan.rows.length+' 部'"></strong></div><div><small>原视频大小</small><strong x-text="bytes(cleanupPlan.size_bytes)"></strong></div><div><small>预计释放空间</small><strong x-text="bytes(cleanupPlan.reclaimable_bytes)"></strong></div></div>
+<p class="form-hint">预计值按实际占用块估算；硬链接、快照、压缩及仍打开的文件可能影响实际空间。预览10分钟有效；执行前再次检查文件和近期播放活动。</p>
+<template x-for="r in cleanupPlan.rows" :key="r.id"><article class="panel cleanup-item"><strong x-text="r.title"></strong><small x-text="'近30天 '+r.plays_30+' 次 · '+r.file_count+' 个文件 · '+bytes(r.size_bytes)"></small><details><summary>查看原文件清单</summary><template x-for="f in r.files" :key="f.route"><code x-text="f.root+'/'+f.relative"></code></template></details></article></template>
+<template x-for="r in cleanupPlan.blocked" :key="r.id"><div class="inline-notice neutral"><strong x-text="r.title+'：已保护，不会删除'"></strong><span x-text="r.reason"></span></div></template>
+<p class="empty-state compact" x-show="!cleanupPlan.rows.length">没有可清理的内容，请返回重新选择。</p>
+<label class="check cleanup-consent" x-show="cleanupPlan.rows.length"><input id="cleanup-confirm" type="checkbox" x-model="cleanupConfirmed">我确认永久删除上述原视频，无法从普通回收站恢复。</label>
+</div></template>
+<template x-if="cleanupResult"><div class="form-stack"><h3 x-text="cleanupStatus(cleanupResult.status)"></h3><p x-text="'已清理 '+cleanupResult.ok.length+' 部、'+cleanupResult.deleted_files+' 个文件；删除文件大小合计 '+bytes(cleanupResult.deleted_bytes)"></p><p class="form-hint" x-text="cleanupResult.message"></p><template x-for="r in cleanupResult.failed" :key="r.id"><div class="inline-notice failure"><strong x-text="r.title"></strong><span x-text="r.reason"></span></div></template><p x-show="cleanupResult.failed.length">未完成作品保留在已归档，清理计划已留档。不要将部分完成误认为全部成功；可在文件中心核对剩余文件。</p></div></template>
+</div>
+<footer class="drawer-foot drawer-footer"><button class="btn" @click="close()" :disabled="busy" x-text="cleanupResult?'关闭结果':'取消清理'"></button><button class="btn danger" x-show="!cleanupResult" @click="executeMediaCleanup()" :disabled="busy||!cleanupConfirmed||!cleanupPlan?.rows.length" x-text="busy?'正在清理，请稍候…':'永久删除所列原视频'"></button></footer>
+</aside>

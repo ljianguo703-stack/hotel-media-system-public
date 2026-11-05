@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "release": "IN19-public-20261106",
+  "date": "2026-11-06",
+  "versions": {
+    "backend": "v1-0-0-rc5-pl04",
+    "tv": "0.1.16/code17",
+    "installer_tool": "2.0.2"
+  },
+  "source_base": "6548049e3df8a1f81b82e243153733c62fde47e0",
+  "runtime_files_identical_to_base": 199,
+  "runtime_payload_sha256": "d347637e64e2916694565ecb006d2b1d88f8741d2a1f18904efd3ad5dcf882ba",
+  "installer": {
+    "name": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public.run",
+    "bytes": 8007014,
+    "sha256": "03c88841f7ccbb98f1a33da6bbd4da80206895a3f11de802da355c79744d4e94"
+  },
+  "privacy_review": {
+    "source_snapshot_excludes_internal_documents": true,
+    "no_git_history_in_snapshot": true,
+    "all_tool_archives_and_nested_archives_reviewed": true,
+    "generic_apk_default_configurations_reviewed": 5,
+    "common_tool_extras_and_payload_files_match_all_platforms": 7,
+    "gitleaks_findings_reviewed": "DLL SHA digests and APK public-key fingerprints only"
+  },
+  "verification": {
+    "deploy_and_online_wrapper_unit_tests": 55,
+    "plan": "passed",
+    "full_new_site_install": "requires site acceptance",
+    "24h_and_target_concurrency": "requires site acceptance"
+  }
+}

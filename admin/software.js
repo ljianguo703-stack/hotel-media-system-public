@@ -1,0 +1,24 @@
+/* Administrator software inventory and manual installation workflow. */
+function softwareUi(){return {
+  softwareMarkup:'',softwareData:{revision:0,packages:[],jobs:[],inventory:[],targets:[],agent:{}},softwareTab:new URLSearchParams(location.search).get('software_tab')||'packages',softwarePlatform:'all',softwareQuery:'',softwareBusy:false,softwareUploading:false,softwareProgress:0,softwareError:'',softwareSerial:0,softwareChosen:null,softwareTargets:[],softwareConfirmed:false,softwareRequest:'',softwareTargetDraft:{id:'',address:'',port:5555,confirm:false},softwareExpanded:'',
+  get softwarePackages(){return this.softwareData.packages.filter(p=>(this.softwarePlatform==='all'||p.platform===this.softwarePlatform)&&(`${p.name} ${p.software_id} ${p.version}`).toLowerCase().includes(this.softwareQuery.toLowerCase()))},
+  get softwareDevices(){return this.data.devices.filter(d=>d.enabled!==false&&!d._archived)},
+  get softwareActive(){return this.softwareData.jobs.filter(j=>['queued','running'].includes(j.status)).length},
+  softwareStatus(status){return ({queued:'等待执行',running:'正在安装',completed:'已核验完成',failed:'执行失败',waiting_authorization:'维护授权需核验',waiting_online:'等待上线',waiting_idle:'等待空闲',waiting_retry:'等待重连核验',superseded:'已被新发布替代',interrupted:'执行中断',cancelled:'已取消',rolled_back:'已恢复旧版本'})[status]||status},
+  softwareKind(kind){return ({apk:'电视 APK',deb:'Ubuntu DEB',compose:'容器应用',system:'影院系统'})[kind]||kind},
+  softwareSize(bytes){return bytes>=1073741824?(bytes/1073741824).toFixed(2)+' GiB':bytes>=1048576?(bytes/1048576).toFixed(1)+' MiB':Math.ceil(bytes/1024)+' KiB'},
+  softwareTargetName(id){if(id==='server')return '本机 Ubuntu';const d=this.data.devices.find(d=>d.id===id);return d?`${d.room} · ${id}`:id},
+  async loadSoftware(){if(this.view!=='software'||!this.administrator)return;const serial=++this.softwareSerial;try{const result=await this.api('/software');if(serial===this.softwareSerial&&this.view==='software'){this.softwareData=result;this.softwareError=''}}catch(e){this.softwareError=e.message}},
+  async uploadSoftware(file,input){if(!file||this.softwareUploading)return;this.softwareUploading=true;this.softwareProgress=0;this.softwareError='';try{
+    const result=await new Promise((resolve,reject)=>{const xhr=new XMLHttpRequest();xhr.open('POST','/api/admin/software/upload');xhr.setRequestHeader('X-CSRF-Token',this.user.csrf);xhr.setRequestHeader('X-Filename',encodeURIComponent(file.name));xhr.upload.onprogress=e=>{if(e.lengthComputable)this.softwareProgress=Math.round(e.loaded/e.total*100)};xhr.onerror=()=>reject(Error('上传连接中断，请检查软件版本列表后重试'));xhr.onabort=()=>reject(Error('上传已取消'));xhr.onload=()=>{try{const value=JSON.parse(xhr.responseText);if(xhr.status<200||xhr.status>=300)reject(Error(value.error||'软件上传失败'));else resolve(value)}catch(e){reject(Error('服务器返回了无法识别的上传结果'))}};xhr.send(file)});
+    await this.loadSoftware();this.softwareTab='packages';this.notify('已保存版本 '+result.package.version+'，尚未安装');
+  }catch(e){this.softwareError=e.message;this.notify(e.message)}finally{this.softwareUploading=false;if(input)input.value=''}},
+  openSoftwareInstall(item){this.softwareChosen=item;this.softwareTargets=item.platform==='server'?['server']:[];this.softwareConfirmed=false;this.softwareRequest='install-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);this.softwareError='';this.modal='software-install'},
+  toggleSoftwareTarget(id){this.softwareTargets=this.softwareTargets.includes(id)?this.softwareTargets.filter(x=>x!==id):this.softwareChosen?.platform==='tv'?[id]:[...this.softwareTargets,id]},
+  async softwareMutation(path,body){if(this.softwareBusy)return;this.softwareBusy=true;this.softwareError='';try{const result=await this.api('/software/'+path,{...body,revision:this.softwareData.revision});await this.loadSoftware();return result}catch(e){this.softwareError=e.message;this.notify(e.message)}finally{this.softwareBusy=false}},
+  async installSoftware(){if(!this.softwareConfirmed||!this.softwareTargets.length)return;const result=await this.softwareMutation('install',{package_id:this.softwareChosen.id,targets:[...this.softwareTargets],confirm:true,request_id:this.softwareRequest});if(result){this.modal=null;this.softwareTab='jobs';this.notify('已创建 '+result.jobs.length+' 个安装任务')}},
+  async controlSoftware(job,action){const request='retry-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);const result=await this.softwareMutation('job',{id:job.id,action,request_id:request});if(result)this.notify(action==='cancel'?'待执行任务已取消':'已创建新的重试任务')},
+  openSoftwareTarget(){this.softwareTargetDraft={id:this.softwareDevices[0]?.id||'',address:'',port:5555,confirm:false};this.softwareError='';this.modal='software-target'},
+  async saveSoftwareTarget(){const r=await this.softwareMutation('target',this.softwareTargetDraft);if(r){this.modal=null;this.notify('电视维护连接已登记')}},
+  softwareEnrolled(id){return this.softwareData.targets.some(t=>t.id===id)}
+}}

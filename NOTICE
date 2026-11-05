@@ -1,0 +1,16 @@
+Hotel TV is an independent local hotel client.
+Desktop takeover and device compatibility source derived from Aerial, Copyright (c) 2026 pengchujin, MIT License.
+Upstream: https://github.com/pengchujin/aerial-tv
+Source revision: 166fc3f81f648cb4777594dc64a62de39fe5dbf2
+Original MIT terms are preserved in LICENSE. Upstream Inter font uses SIL Open Font License; terms are preserved in third-party/Inter-OFL.txt.
+Hotel TV uses its own package ID and signing key; it does not update official Aerial installations.
+
+PK02 installs separately distributed native services from their upstream container images:
+Jellyfin https://github.com/jellyfin/jellyfin
+Seerr https://github.com/seerr-team/seerr
+Radarr https://github.com/Radarr/Radarr
+Sonarr https://github.com/Sonarr/Sonarr
+Bazarr https://github.com/morpheus65535/bazarr
+Prowlarr https://github.com/Prowlarr/Prowlarr
+qBittorrent https://github.com/qbittorrent/qBittorrent
+Version and digest pins are in deploy/images.lock.json. Their own upstream licenses apply; these services are not reimplemented here.

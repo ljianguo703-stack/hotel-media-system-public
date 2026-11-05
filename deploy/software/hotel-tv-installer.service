@@ -1,0 +1,22 @@
+[Unit]
+Description=Hotel TV manual software install task
+After=network.target
+ConditionPathExists=/srv/hotel-tv/data/events.sqlite3
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+User=root
+Group=hotel-tv
+WorkingDirectory=/opt/hotel-tv-installer/current
+Environment=PYTHONUTF8=1
+Environment=DEBIAN_FRONTEND=noninteractive
+Environment=ANDROID_USER_HOME=/var/lib/hotel-tv-installer/android
+EnvironmentFile=-/etc/hotel-tv/software-installer.env
+ExecStart=/usr/bin/python3 -u /opt/hotel-tv-installer/current/software_agent.py --drain
+UMask=0027
+PrivateTmp=true
+# Ubuntu ADB also reads HOME/.android; expose only this private directory.
+ProtectHome=tmpfs
+BindPaths=/var/lib/hotel-tv-installer/android:/root/.android
+TimeoutStartSec=2h

@@ -1,0 +1,31 @@
+services:
+  npc:
+    image: ghcr.io/djylb/npc:v0.34.10@sha256:64b05938c189edbdcb90865427f6e28e6aeb3e8e38f4a01495b69a0760944812
+    container_name: nas-npc
+    restart: unless-stopped
+    network_mode: host
+    user: "65534:65534"
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    cpus: 0.25
+    mem_limit: 128m
+    pids_limit: 64
+    env_file:
+      - path: ./connection.env
+        format: raw
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh:ro
+      - /srv/nas/appdata/npc:/conf:ro
+    tmpfs:
+      - /tmp:size=16m,mode=1777,noexec,nosuid,nodev
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "3"
+    labels:
+      io.hotel.component: npc
+      io.hotel.npc.version: "0.34.10"

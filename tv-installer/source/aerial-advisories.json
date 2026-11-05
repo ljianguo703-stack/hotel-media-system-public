@@ -1,0 +1,113 @@
+[
+  {
+    "brand": "TCL",
+    "sdk_min": 0,
+    "sdk_max": 0,
+    "devices": [
+      "T966D5"
+    ],
+    "level": "warn",
+    "note": "雷鸟 75S78A Plus（FFALCON T966D5）：固件约每分钟清空无障碍设置，HOME 键接管不了（Aerial 记为接管失败；已降为“不建议”，可试装）",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/ffalcon-t966d5.md"
+  },
+  {
+    "brand": "FFALCON",
+    "sdk_min": 0,
+    "sdk_max": 0,
+    "devices": [
+      "T966D5"
+    ],
+    "level": "warn",
+    "note": "雷鸟 75S78A Plus（FFALCON T966D5）：固件约每分钟清空无障碍设置，HOME 键接管不了（Aerial 记为接管失败；已降为“不建议”，可试装）",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/ffalcon-t966d5.md"
+  },
+  {
+    "brand": "TCL",
+    "sdk_min": 0,
+    "sdk_max": 0,
+    "devices": [
+      "tcl_mt9655_cn"
+    ],
+    "level": "warn",
+    "note": "雷鸟 MT9655 国行（55S595C Ultra、鹤6 Ultra、75T7M Pro）：能装但接管不了 HOME 键，Android 14 上守护开不起来（Aerial 记为接管失败；已降为“不建议”，可试装）",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/tcl-mt9655-cn.md"
+  },
+  {
+    "brand": "Skyworth",
+    "sdk_min": 33,
+    "sdk_max": 33,
+    "models_contains": [
+      "8R710",
+      "75A6E"
+    ],
+    "level": "warn",
+    "note": "创维 75A6E（8R710）：standard 版按主页键整机卡死，影院窗口拿不到焦点（Aerial 记为接管失败；已降为“不建议”，可试装）",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/skyworth-coocaa.md"
+  },
+  {
+    "brand": "Skyworth",
+    "sdk_min": 33,
+    "sdk_max": 33,
+    "models_contains": [
+      "7T641",
+      "7T634",
+      "8R721",
+      "8R734"
+    ],
+    "level": "warn",
+    "note": "创维 Android 13（7T641/7T634_P3H/8R721 等）：Aerial 实测黑屏或约 30 秒后“没有焦点窗口”被系统结束；试装后重点看冷启动和 30 秒后画面",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/skyworth-coocaa.md"
+  },
+  {
+    "brand": "Skyworth",
+    "sdk_min": 26,
+    "sdk_max": 30,
+    "level": "warn",
+    "note": "创维/酷开 Android 8–11：开机先进酷开桌面，或被系统清理后 20–30 秒才回到影院；冷启动验证会等待最长约 2 分钟",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/skyworth-coocaa.md"
+  },
+  {
+    "brand": "Hisense",
+    "sdk_min": 24,
+    "sdk_max": 34,
+    "models_contains": [
+      "VIDAA"
+    ],
+    "level": "warn",
+    "note": "海信 VIDAA_TV：主页键能接管，开机多数先进聚好看；冷启动验证可能不通过并自动还原",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/hisense-vidaa.md"
+  },
+  {
+    "brand": "*",
+    "sdk_min": 33,
+    "sdk_max": 33,
+    "models_contains": [
+      "S621"
+    ],
+    "level": "warn",
+    "note": "坚果 S621：固件不让写无障碍设置，守护读回会失败并自动还原",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/README.md"
+  },
+  {
+    "brand": "*",
+    "sdk_min": 34,
+    "sdk_max": 34,
+    "models_contains": [
+      "BA101"
+    ],
+    "level": "warn",
+    "note": "腾讯极光 7S（BA101）：开机停在原桌面",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/docs/devices/tencent-aurora-box.md"
+  },
+  {
+    "brand": "TCL",
+    "sdk_min": 34,
+    "sdk_max": 34,
+    "models_contains": [
+      "Q9L"
+    ],
+    "level": "warn",
+    "note": "TCL Q9L Pro：只能 USB 线连 adb，要在电视管家允许自启",
+    "source": "https://github.com/pengchujin/aerial-tv/blob/719db23/README.md"
+  }
+]

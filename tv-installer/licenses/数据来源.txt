@@ -1,0 +1,4 @@
+机型元数据：udhaykumarbala/cleanyourtv-app
+线上核对提交：8ec0679f0a3b04cbf1a23d7762f68b35679f8b59
+profile-meta.json标记的上游提交：b06ab21
+仅提取品牌、型号、SDK、固件指纹限制与验证元数据；不打包清理列表或执行脚本。

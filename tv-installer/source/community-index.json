@@ -1,0 +1,1688 @@
+{
+  "checked_at": "2026-11-03",
+  "repo": "Gathin23/cleanyourtv",
+  "commit": "572ce2cbe98b53654cea3d262ee8558a5872dfd1",
+  "note": "上游社区目录索引，不代表本影院安装或接管已验",
+  "examples": [
+    {
+      "id": "acer-ar3-r3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/acer-ar3-r3"
+    },
+    {
+      "id": "acer-ar32ap2841hdfl",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/acer-ar32ap2841hdfl"
+    },
+    {
+      "id": "acer-ar32hdigu2841at",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/acer-ar32hdigu2841at"
+    },
+    {
+      "id": "acer-ar55ar2851udpro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/acer-ar55ar2851udpro"
+    },
+    {
+      "id": "aipro2k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/aipro2k"
+    },
+    {
+      "id": "aiwa-ai-pont-sa",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/aiwa-ai-pont-sa"
+    },
+    {
+      "id": "alwtniet-hy320-mini",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/alwtniet-hy320-mini"
+    },
+    {
+      "id": "amazon-fire-tv-aftdec012e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-aftdec012e"
+    },
+    {
+      "id": "amazon-fire-tv-afteu014",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-afteu014"
+    },
+    {
+      "id": "amazon-fire-tv-afttiff43",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-afttiff43"
+    },
+    {
+      "id": "amazon-fire-tv-stick-2020",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-stick-2020"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-2018",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-stick-4k-2018"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-2023",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-stick-4k-2023"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-max-2021",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-stick-4k-max-2021"
+    },
+    {
+      "id": "amazon-fire-tv-stick-4k-max-2023",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-stick-4k-max-2023"
+    },
+    {
+      "id": "amazon-fire-tv-stick-lite-2020",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/amazon-fire-tv-stick-lite-2020"
+    },
+    {
+      "id": "anker-nebula-d2140",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/anker-nebula-d2140"
+    },
+    {
+      "id": "anker-nebula-d2426",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/anker-nebula-d2426"
+    },
+    {
+      "id": "anker-nebula-mars-3-air",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/anker-nebula-mars-3-air"
+    },
+    {
+      "id": "aqua-matrixtv-ee-50",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/aqua-matrixtv-ee-50"
+    },
+    {
+      "id": "artel-43d1200b",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/artel-43d1200b"
+    },
+    {
+      "id": "artel-cvte-mt5863",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/artel-cvte-mt5863"
+    },
+    {
+      "id": "asus-m1g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/asus-m1g"
+    },
+    {
+      "id": "beko-b43b880b",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/beko-b43b880b"
+    },
+    {
+      "id": "bell-fibe-tv-vip7802",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/bell-fibe-tv-vip7802"
+    },
+    {
+      "id": "benq-e55-735",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/benq-e55-735"
+    },
+    {
+      "id": "benq-e55-750",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/benq-e55-750"
+    },
+    {
+      "id": "benq-e55-760",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/benq-e55-760"
+    },
+    {
+      "id": "benq-gv32",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/benq-gv32"
+    },
+    {
+      "id": "benq-qs01",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/benq-qs01"
+    },
+    {
+      "id": "benq-qs02",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/benq-qs02"
+    },
+    {
+      "id": "bgh-smart-tv-android14",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/bgh-smart-tv-android14"
+    },
+    {
+      "id": "byintek-t5-max",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/byintek-t5-max"
+    },
+    {
+      "id": "byintek-u4",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/byintek-u4"
+    },
+    {
+      "id": "caxium-58-realtek-rtk2851p",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/caxium-58-realtek-rtk2851p"
+    },
+    {
+      "id": "cecotec-shandao",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/cecotec-shandao"
+    },
+    {
+      "id": "challenger-32t22bt",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/challenger-32t22bt"
+    },
+    {
+      "id": "chiq-ai-pont",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/chiq-ai-pont"
+    },
+    {
+      "id": "chiq-gtvu65",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/chiq-gtvu65"
+    },
+    {
+      "id": "compac-atv-r2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/compac-atv-r2"
+    },
+    {
+      "id": "coocaa-k3-pro-90p3d-max",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/coocaa-k3-pro-90p3d-max"
+    },
+    {
+      "id": "coocaa-p9-projector",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/coocaa-p9-projector"
+    },
+    {
+      "id": "dcolor-gd2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/dcolor-gd2"
+    },
+    {
+      "id": "dexp-a651",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/dexp-a651"
+    },
+    {
+      "id": "dialog-viu-sei103dl",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/dialog-viu-sei103dl"
+    },
+    {
+      "id": "dyon-2k-android-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/dyon-2k-android-tv"
+    },
+    {
+      "id": "eko-2k-google-tv-tennoji",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/eko-2k-google-tv-tennoji"
+    },
+    {
+      "id": "eko-4k-bangbae",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/eko-4k-bangbae"
+    },
+    {
+      "id": "epson-ls800",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/epson-ls800"
+    },
+    {
+      "id": "ffalcon-65s585c-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/ffalcon-65s585c-pro"
+    },
+    {
+      "id": "ffalcon-r34a0-cn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/ffalcon-r34a0-cn"
+    },
+    {
+      "id": "formovie-laser-4k-hanlla",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/formovie-laser-4k-hanlla"
+    },
+    {
+      "id": "formovie-mprojm05",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/formovie-mprojm05"
+    },
+    {
+      "id": "formovie-xming-page-one-tianshan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/formovie-xming-page-one-tianshan"
+    },
+    {
+      "id": "freebox-player-pop",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/freebox-player-pop"
+    },
+    {
+      "id": "gadnic-proj100w",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/gadnic-proj100w"
+    },
+    {
+      "id": "google-chromecast-gtv-4k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/google-chromecast-gtv-4k"
+    },
+    {
+      "id": "google-chromecast-gtv-hd",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/google-chromecast-gtv-hd"
+    },
+    {
+      "id": "google-tv-streamer-4k-kirkwood",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/google-tv-streamer-4k-kirkwood"
+    },
+    {
+      "id": "grundig-50gfu7850b",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/grundig-50gfu7850b"
+    },
+    {
+      "id": "grundig-50vlx22ldlbv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/grundig-50vlx22ldlbv"
+    },
+    {
+      "id": "grundig-kunyang",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/grundig-kunyang"
+    },
+    {
+      "id": "haam-hm4k75s11tnd",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haam-hm4k75s11tnd"
+    },
+    {
+      "id": "haier-android-tv-dvb2k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haier-android-tv-dvb2k"
+    },
+    {
+      "id": "haier-h32s80efx",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haier-h32s80efx"
+    },
+    {
+      "id": "haier-hr9216eu",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haier-hr9216eu"
+    },
+    {
+      "id": "haier-hra962x2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haier-hra962x2"
+    },
+    {
+      "id": "haier-matrixtv-be",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haier-matrixtv-be"
+    },
+    {
+      "id": "haier-matrixtv-de",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/haier-matrixtv-de"
+    },
+    {
+      "id": "hikeen-smart-rtd285o",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hikeen-smart-rtd285o"
+    },
+    {
+      "id": "hisense-65d62qh",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-65d62qh"
+    },
+    {
+      "id": "hisense-65e5h",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-65e5h"
+    },
+    {
+      "id": "hisense-85e7q",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-85e7q"
+    },
+    {
+      "id": "hisense-e5q-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-e5q-pro"
+    },
+    {
+      "id": "hisense-fire-tv-55qd6qf",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-fire-tv-55qd6qf"
+    },
+    {
+      "id": "hisense-fire-tv-aftcibfbd1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-fire-tv-aftcibfbd1"
+    },
+    {
+      "id": "hisense-hg9",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-hg9"
+    },
+    {
+      "id": "hisense-hismart-2k-atv4-hamamatsucho",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-hismart-2k-atv4-hamamatsucho"
+    },
+    {
+      "id": "hisense-hismarttv-a4-android11",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-hismarttv-a4-android11"
+    },
+    {
+      "id": "hisense-hismarttv-a4",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-hismarttv-a4"
+    },
+    {
+      "id": "hisense-smarttv-4k-ffm-android11",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-smarttv-4k-ffm-android11"
+    },
+    {
+      "id": "hisense-smarttv-4k-ffm-lushan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-smarttv-4k-ffm-lushan"
+    },
+    {
+      "id": "hisense-smarttv-4k-ffm",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-smarttv-4k-ffm"
+    },
+    {
+      "id": "hisense-u7-wutaishan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-u7-wutaishan"
+    },
+    {
+      "id": "hisense-u75-hengshan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hisense-u75-hengshan"
+    },
+    {
+      "id": "hitachi-65qledsm20",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hitachi-65qledsm20"
+    },
+    {
+      "id": "hitachi-cdh-le32smart21",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hitachi-cdh-le32smart21"
+    },
+    {
+      "id": "homeplus-stb-6252c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/homeplus-stb-6252c"
+    },
+    {
+      "id": "hotack-l018",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hotack-l018"
+    },
+    {
+      "id": "hotack-smart2kpjt",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hotack-smart2kpjt"
+    },
+    {
+      "id": "hy320",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/hy320"
+    },
+    {
+      "id": "impex-evoq-4k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/impex-evoq-4k"
+    },
+    {
+      "id": "inclo-google-tv-4k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/inclo-google-tv-4k"
+    },
+    {
+      "id": "insignia-ns42f201na22",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/insignia-ns42f201na22"
+    },
+    {
+      "id": "insignia-ns55f301na25",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/insignia-ns55f301na25"
+    },
+    {
+      "id": "jio-stb-c200a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jio-stb-c200a"
+    },
+    {
+      "id": "jmgo-n1s-4k-lonavla",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jmgo-n1s-4k-lonavla"
+    },
+    {
+      "id": "jmgo-n1s-holan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jmgo-n1s-holan"
+    },
+    {
+      "id": "jvc-4k-smart-tv-elliniko",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jvc-4k-smart-tv-elliniko"
+    },
+    {
+      "id": "jvc-android-tv-menlo",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jvc-android-tv-menlo"
+    },
+    {
+      "id": "jvc-lt-43km348",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jvc-lt-43km348"
+    },
+    {
+      "id": "jvc-lt-43km4584",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jvc-lt-43km4584"
+    },
+    {
+      "id": "jvc-lt55mb508",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jvc-lt55mb508"
+    },
+    {
+      "id": "jvc-uk-4k-sadang",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/jvc-uk-4k-sadang"
+    },
+    {
+      "id": "kalley-43g200",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/kalley-43g200"
+    },
+    {
+      "id": "kalley-r10g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/kalley-r10g"
+    },
+    {
+      "id": "karbonn-swtv-20ae",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/karbonn-swtv-20ae"
+    },
+    {
+      "id": "kogan-g7",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/kogan-g7"
+    },
+    {
+      "id": "kogan-gtvu65kg",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/kogan-gtvu65kg"
+    },
+    {
+      "id": "koryo-smart-tv-hi3751v553",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/koryo-smart-tv-hi3751v553"
+    },
+    {
+      "id": "ktc-4k-smart-tv-hongkong",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/ktc-4k-smart-tv-hongkong"
+    },
+    {
+      "id": "liberton-ltv-24h01at",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/liberton-ltv-24h01at"
+    },
+    {
+      "id": "lumio-vision-7",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/lumio-vision-7"
+    },
+    {
+      "id": "lyncast-x3aq",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/lyncast-x3aq"
+    },
+    {
+      "id": "magcubic-hy300-pro-plus",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/magcubic-hy300-pro-plus"
+    },
+    {
+      "id": "magcubic-hy300-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/magcubic-hy300-pro"
+    },
+    {
+      "id": "marq-4k-android-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/marq-4k-android-tv"
+    },
+    {
+      "id": "master-g-2k-atv-martin",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/master-g-2k-atv-martin"
+    },
+    {
+      "id": "master-g-mga3200",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/master-g-mga3200"
+    },
+    {
+      "id": "mecool-km2-plus",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/mecool-km2-plus"
+    },
+    {
+      "id": "motorola-mt4310",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/motorola-mt4310"
+    },
+    {
+      "id": "motorola-swtv-24ae-4k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/motorola-swtv-24ae-4k"
+    },
+    {
+      "id": "motorola-swtv-24ae-fhd",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/motorola-swtv-24ae-fhd"
+    },
+    {
+      "id": "mtc-uk-2k-android-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/mtc-uk-2k-android-tv"
+    },
+    {
+      "id": "next-start-pro-4k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/next-start-pro-4k"
+    },
+    {
+      "id": "noblex-shinjuku",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/noblex-shinjuku"
+    },
+    {
+      "id": "nokia-r4",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nokia-r4"
+    },
+    {
+      "id": "nokia-streaming-box-8000",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nokia-streaming-box-8000"
+    },
+    {
+      "id": "nokia-streaming-box-8010",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nokia-streaming-box-8010"
+    },
+    {
+      "id": "nvidia-shield-tv-2017",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nvidia-shield-tv-2017"
+    },
+    {
+      "id": "nvidia-shield-tv-2019",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nvidia-shield-tv-2019"
+    },
+    {
+      "id": "nvidia-shield-tv-pro-2019",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/nvidia-shield-tv-pro-2019"
+    },
+    {
+      "id": "ok-ai-pont-ikebukuro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/ok-ai-pont-ikebukuro"
+    },
+    {
+      "id": "oneplus-tv-cebu",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/oneplus-tv-cebu"
+    },
+    {
+      "id": "oneplus-tv-dosa",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/oneplus-tv-dosa"
+    },
+    {
+      "id": "oneplus-tv-dubai",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/oneplus-tv-dubai"
+    },
+    {
+      "id": "oneplus-tv-y1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/oneplus-tv-y1"
+    },
+    {
+      "id": "onn-4k-plus-2025",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/onn-4k-plus-2025"
+    },
+    {
+      "id": "onn-4k-pro-gen2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/onn-4k-pro-gen2"
+    },
+    {
+      "id": "onn-4k-streaming-box-2023",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/onn-4k-streaming-box-2023"
+    },
+    {
+      "id": "oppo-k9-55-oppocnm632",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/oppo-k9-55-oppocnm632"
+    },
+    {
+      "id": "panasonic-4ktv-0su",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-4ktv-0su"
+    },
+    {
+      "id": "panasonic-4ktv-3mup",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-4ktv-3mup"
+    },
+    {
+      "id": "panasonic-4ktv-3su",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-4ktv-3su"
+    },
+    {
+      "id": "panasonic-4ktv-jup",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-4ktv-jup"
+    },
+    {
+      "id": "panasonic-gs655",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-gs655"
+    },
+    {
+      "id": "panasonic-kowloon",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-kowloon"
+    },
+    {
+      "id": "panasonic-th-40hs550k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panasonic-th-40hs550k"
+    },
+    {
+      "id": "panavox-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/panavox-google-tv"
+    },
+    {
+      "id": "peaq-ptv43aqu-5023c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/peaq-ptv43aqu-5023c"
+    },
+    {
+      "id": "philips-49pus6561",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-49pus6561"
+    },
+    {
+      "id": "philips-50pud7406",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-50pud7406"
+    },
+    {
+      "id": "philips-50puf7099-t3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-50puf7099-t3"
+    },
+    {
+      "id": "philips-50pus8517",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-50pus8517"
+    },
+    {
+      "id": "philips-55oled707",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-55oled707"
+    },
+    {
+      "id": "philips-55oled708",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-55oled708"
+    },
+    {
+      "id": "philips-55oled820",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-55oled820"
+    },
+    {
+      "id": "philips-55pos9002",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-55pos9002"
+    },
+    {
+      "id": "philips-55pus7503",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-55pus7503"
+    },
+    {
+      "id": "philips-65oled706",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-65oled706"
+    },
+    {
+      "id": "philips-65oled807",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-65oled807"
+    },
+    {
+      "id": "philips-65oled907",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-65oled907"
+    },
+    {
+      "id": "philips-65pml9506",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-65pml9506"
+    },
+    {
+      "id": "philips-65pus8102",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-65pus8102"
+    },
+    {
+      "id": "philips-65pus9435",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-65pus9435"
+    },
+    {
+      "id": "philips-75pus8505",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-75pus8505"
+    },
+    {
+      "id": "philips-77oled810",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-77oled810"
+    },
+    {
+      "id": "philips-google-tv-ta1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-google-tv-ta1"
+    },
+    {
+      "id": "philips-google-tv-ta7",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-google-tv-ta7"
+    },
+    {
+      "id": "philips-r8g-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-r8g-google-tv"
+    },
+    {
+      "id": "philips-smart-4k-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-smart-4k-google-tv"
+    },
+    {
+      "id": "philips-tpm191e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/philips-tpm191e"
+    },
+    {
+      "id": "polytron-2k-hayward",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/polytron-2k-hayward"
+    },
+    {
+      "id": "portronics-beem-470",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/portronics-beem-470"
+    },
+    {
+      "id": "pptv-p34a4p",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/pptv-p34a4p"
+    },
+    {
+      "id": "prismplus-p4ka-sw6h",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/prismplus-p4ka-sw6h"
+    },
+    {
+      "id": "prismplus-q65-ultra-r10g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/prismplus-q65-ultra-r10g"
+    },
+    {
+      "id": "prosonic-bodrum-finch",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/prosonic-bodrum-finch"
+    },
+    {
+      "id": "rca-2k-android-tv-lasalle",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/rca-2k-android-tv-lasalle"
+    },
+    {
+      "id": "rca-ai-pont",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/rca-ai-pont"
+    },
+    {
+      "id": "rca-rc50a21s-4ksm",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/rca-rc50a21s-4ksm"
+    },
+    {
+      "id": "redmi-mitv-antl0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/redmi-mitv-antl0"
+    },
+    {
+      "id": "redmi-mitv-mftp0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/redmi-mitv-mftp0"
+    },
+    {
+      "id": "redmi-mitv-mooq3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/redmi-mitv-mooq3"
+    },
+    {
+      "id": "rocktek-gb1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/rocktek-gb1"
+    },
+    {
+      "id": "rocktek-gx1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/rocktek-gx1"
+    },
+    {
+      "id": "salora-smart24tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/salora-smart24tv"
+    },
+    {
+      "id": "sankey-smart-tv-hi3751v350",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sankey-smart-tv-hi3751v350"
+    },
+    {
+      "id": "sankey-smart2ktvse",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sankey-smart2ktvse"
+    },
+    {
+      "id": "sanyo-atv-r2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sanyo-atv-r2"
+    },
+    {
+      "id": "sber-salute-tv-at30a6",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sber-salute-tv-at30a6"
+    },
+    {
+      "id": "sber-salute-tv-pb766",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sber-salute-tv-pb766"
+    },
+    {
+      "id": "seleco-tv39020hda9smart",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/seleco-tv39020hda9smart"
+    },
+    {
+      "id": "semp-tcl-50p8m",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/semp-tcl-50p8m"
+    },
+    {
+      "id": "sharp-2k-eu",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-2k-eu"
+    },
+    {
+      "id": "sharp-2t-c32gh3000i",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-2t-c32gh3000i"
+    },
+    {
+      "id": "sharp-4t-c43dl1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-4t-c43dl1"
+    },
+    {
+      "id": "sharp-55gp6260e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-55gp6260e"
+    },
+    {
+      "id": "sharp-85hp5465e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-85hp5465e"
+    },
+    {
+      "id": "sharp-aquos-tve19c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-aquos-tve19c"
+    },
+    {
+      "id": "sharp-aquos-tve21f",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-aquos-tve21f"
+    },
+    {
+      "id": "sharp-aquos-tve23a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-aquos-tve23a"
+    },
+    {
+      "id": "sharp-aquos-tvx18",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-aquos-tvx18"
+    },
+    {
+      "id": "sharp-aquos-tvx19b",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sharp-aquos-tvx19b"
+    },
+    {
+      "id": "siragon-4k-smart-tv-elliniko",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/siragon-4k-smart-tv-elliniko"
+    },
+    {
+      "id": "siragon-58da7000",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/siragon-58da7000"
+    },
+    {
+      "id": "skyworth-43e6a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-43e6a"
+    },
+    {
+      "id": "skyworth-4k-google-tv-stick",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-4k-google-tv-stick"
+    },
+    {
+      "id": "skyworth-65a3f",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-65a3f"
+    },
+    {
+      "id": "skyworth-7s60-a5",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-7s60-a5"
+    },
+    {
+      "id": "skyworth-7t861-a23",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-7t861-a23"
+    },
+    {
+      "id": "skyworth-8r40-k5c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-8r40-k5c"
+    },
+    {
+      "id": "skyworth-sw-22hk-nf",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-sw-22hk-nf"
+    },
+    {
+      "id": "skyworth-sw-22sa",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-sw-22sa"
+    },
+    {
+      "id": "skyworth-swtv-21ae",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-swtv-21ae"
+    },
+    {
+      "id": "skyworth-swtv-22ae-fhd",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-swtv-22ae-fhd"
+    },
+    {
+      "id": "skyworth-swtv-24ae-4k-nf",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-swtv-24ae-4k-nf"
+    },
+    {
+      "id": "skyworth-swtv-24na-4k-nf",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-swtv-24na-4k-nf"
+    },
+    {
+      "id": "skyworth-xiaopai-p3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/skyworth-xiaopai-p3"
+    },
+    {
+      "id": "sony-bravia-4k-gb-us",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-gb-us"
+    },
+    {
+      "id": "sony-bravia-4k-gb",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-gb"
+    },
+    {
+      "id": "sony-bravia-4k-ur2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-ur2"
+    },
+    {
+      "id": "sony-bravia-4k-ur3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-ur3"
+    },
+    {
+      "id": "sony-bravia-4k-vh1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh1"
+    },
+    {
+      "id": "sony-bravia-4k-vh2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh2"
+    },
+    {
+      "id": "sony-bravia-4k-vh21-eu",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh21-eu"
+    },
+    {
+      "id": "sony-bravia-4k-vh21-sa",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh21-sa"
+    },
+    {
+      "id": "sony-bravia-4k-vh21-tw",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh21-tw"
+    },
+    {
+      "id": "sony-bravia-4k-vh21-us",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh21-us"
+    },
+    {
+      "id": "sony-bravia-4k-vh21",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-4k-vh21"
+    },
+    {
+      "id": "sony-bravia-9-ii",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-9-ii"
+    },
+    {
+      "id": "sony-bravia-ae1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-ae1"
+    },
+    {
+      "id": "sony-bravia-ae2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-ae2"
+    },
+    {
+      "id": "sony-bravia-bf1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-bf1"
+    },
+    {
+      "id": "sony-bravia-tl2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-tl2"
+    },
+    {
+      "id": "sony-bravia-vu1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-vu1"
+    },
+    {
+      "id": "sony-bravia-vu2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-vu2"
+    },
+    {
+      "id": "sony-bravia-vu3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-vu3"
+    },
+    {
+      "id": "sony-bravia-vu31",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-bravia-vu31"
+    },
+    {
+      "id": "sony-kd-43x8000g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-43x8000g"
+    },
+    {
+      "id": "sony-kd-43x80l",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-43x80l"
+    },
+    {
+      "id": "sony-kd-49x8000g-hk",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-49x8000g-hk"
+    },
+    {
+      "id": "sony-kd-49x8307c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-49x8307c"
+    },
+    {
+      "id": "sony-kd-55x7500-cn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55x7500-cn"
+    },
+    {
+      "id": "sony-kd-55x8000c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55x8000c"
+    },
+    {
+      "id": "sony-kd-55x8509c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55x8509c"
+    },
+    {
+      "id": "sony-kd-55x85j",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55x85j"
+    },
+    {
+      "id": "sony-kd-55x9500g-cn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55x9500g-cn"
+    },
+    {
+      "id": "sony-kd-55xe8596",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55xe8596"
+    },
+    {
+      "id": "sony-kd-55xf7596",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55xf7596"
+    },
+    {
+      "id": "sony-kd-55xf8096",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-55xf8096"
+    },
+    {
+      "id": "sony-kd-65x80j",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-65x80j"
+    },
+    {
+      "id": "sony-kd-65x82l",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-65x82l"
+    },
+    {
+      "id": "sony-kd-65x9300d",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kd-65x9300d"
+    },
+    {
+      "id": "sony-kdl-43w950d",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kdl-43w950d"
+    },
+    {
+      "id": "sony-kdl-55w800c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-kdl-55w800c"
+    },
+    {
+      "id": "sony-x9000h-cn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-x9000h-cn"
+    },
+    {
+      "id": "sony-xbr-55x850c",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xbr-55x850c"
+    },
+    {
+      "id": "sony-xbr-55x850d",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xbr-55x850d"
+    },
+    {
+      "id": "sony-xbr-65x900f",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xbr-65x900f"
+    },
+    {
+      "id": "sony-xbr-x900e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xbr-x900e"
+    },
+    {
+      "id": "sony-xr-65a80j",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xr-65a80j"
+    },
+    {
+      "id": "sony-xr-65x90j-cn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xr-65x90j-cn"
+    },
+    {
+      "id": "sony-xr-77a80l",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xr-77a80l"
+    },
+    {
+      "id": "sony-xr-85x90l-cn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/sony-xr-85x90l-cn"
+    },
+    {
+      "id": "stellamore-t950s",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/stellamore-t950s"
+    },
+    {
+      "id": "strong-leap-s3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/strong-leap-s3"
+    },
+    {
+      "id": "super-general-cvte-t972",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/super-general-cvte-t972"
+    },
+    {
+      "id": "tcl-32es570f",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-32es570f"
+    },
+    {
+      "id": "tcl-32l5a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-32l5a"
+    },
+    {
+      "id": "tcl-32s334",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-32s334"
+    },
+    {
+      "id": "tcl-32s5400a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-32s5400a"
+    },
+    {
+      "id": "tcl-32s5k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-32s5k"
+    },
+    {
+      "id": "tcl-32sf560-fire-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-32sf560-fire-tv"
+    },
+    {
+      "id": "tcl-40s5400a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-40s5400a"
+    },
+    {
+      "id": "tcl-43c645",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43c645"
+    },
+    {
+      "id": "tcl-43ep660",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43ep660"
+    },
+    {
+      "id": "tcl-43p615",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43p615"
+    },
+    {
+      "id": "tcl-43p725",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43p725"
+    },
+    {
+      "id": "tcl-43s450f-ca",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43s450f-ca"
+    },
+    {
+      "id": "tcl-43s5400a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43s5400a"
+    },
+    {
+      "id": "tcl-43s5k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-43s5k"
+    },
+    {
+      "id": "tcl-50c725k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-50c725k"
+    },
+    {
+      "id": "tcl-50dp660",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-50dp660"
+    },
+    {
+      "id": "tcl-50ep680",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-50ep680"
+    },
+    {
+      "id": "tcl-50j7000a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-50j7000a"
+    },
+    {
+      "id": "tcl-50p615",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-50p615"
+    },
+    {
+      "id": "tcl-50p735",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-50p735"
+    },
+    {
+      "id": "tcl-55a300w",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55a300w"
+    },
+    {
+      "id": "tcl-55c715",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55c715"
+    },
+    {
+      "id": "tcl-55c725",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55c725"
+    },
+    {
+      "id": "tcl-55c745",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55c745"
+    },
+    {
+      "id": "tcl-55c7k-uk",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55c7k-uk"
+    },
+    {
+      "id": "tcl-55c815",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55c815"
+    },
+    {
+      "id": "tcl-55ep640",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55ep640"
+    },
+    {
+      "id": "tcl-55p638",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55p638"
+    },
+    {
+      "id": "tcl-55p7k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55p7k"
+    },
+    {
+      "id": "tcl-55p8ls",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55p8ls"
+    },
+    {
+      "id": "tcl-55q6cx1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55q6cx1"
+    },
+    {
+      "id": "tcl-55s470g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55s470g"
+    },
+    {
+      "id": "tcl-55s546-us",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-55s546-us"
+    },
+    {
+      "id": "tcl-58s571f-fire-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-58s571f-fire-tv"
+    },
+    {
+      "id": "tcl-65c6k-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65c6k-google-tv"
+    },
+    {
+      "id": "tcl-65c725",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65c725"
+    },
+    {
+      "id": "tcl-65c735",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65c735"
+    },
+    {
+      "id": "tcl-65c7k-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65c7k-google-tv"
+    },
+    {
+      "id": "tcl-65c7l-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65c7l-google-tv"
+    },
+    {
+      "id": "tcl-65c8l-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65c8l-google-tv"
+    },
+    {
+      "id": "tcl-65ep640",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65ep640"
+    },
+    {
+      "id": "tcl-65ep68",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65ep68"
+    },
+    {
+      "id": "tcl-65mqled80-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65mqled80-google-tv"
+    },
+    {
+      "id": "tcl-65p615",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65p615"
+    },
+    {
+      "id": "tcl-65q550g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65q550g"
+    },
+    {
+      "id": "tcl-65q650g",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65q650g"
+    },
+    {
+      "id": "tcl-65qm8l-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65qm8l-google-tv"
+    },
+    {
+      "id": "tcl-65x10",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-65x10"
+    },
+    {
+      "id": "tcl-75a300-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-75a300-pro"
+    },
+    {
+      "id": "tcl-75p635",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-75p635"
+    },
+    {
+      "id": "tcl-75p8k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-75p8k"
+    },
+    {
+      "id": "tcl-85rm7l-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-85rm7l-google-tv"
+    },
+    {
+      "id": "tcl-ak30a5",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-ak30a5"
+    },
+    {
+      "id": "tcl-beyondtv-pl",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-beyondtv-pl"
+    },
+    {
+      "id": "tcl-beyondtv-rt2851",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-beyondtv-rt2851"
+    },
+    {
+      "id": "tcl-beyondtv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-beyondtv"
+    },
+    {
+      "id": "tcl-beyondtv2-android-11",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-beyondtv2-android-11"
+    },
+    {
+      "id": "tcl-beyondtv2-latin-america",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-beyondtv2-latin-america"
+    },
+    {
+      "id": "tcl-beyondtv4-uk",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-beyondtv4-uk"
+    },
+    {
+      "id": "tcl-c635",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-c635"
+    },
+    {
+      "id": "tcl-c755-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-c755-google-tv"
+    },
+    {
+      "id": "tcl-c845x2-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-c845x2-google-tv"
+    },
+    {
+      "id": "tcl-c89b-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-c89b-google-tv"
+    },
+    {
+      "id": "tcl-g03-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g03-google-tv"
+    },
+    {
+      "id": "tcl-g05-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g05-google-tv"
+    },
+    {
+      "id": "tcl-g06-google-tv-indonesia",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g06-google-tv-indonesia"
+    },
+    {
+      "id": "tcl-g06-us-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g06-us-google-tv"
+    },
+    {
+      "id": "tcl-g07-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g07-google-tv"
+    },
+    {
+      "id": "tcl-g08-au-android12",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g08-au-android12"
+    },
+    {
+      "id": "tcl-g08-eu-android12",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g08-eu-android12"
+    },
+    {
+      "id": "tcl-g08-us-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g08-us-google-tv"
+    },
+    {
+      "id": "tcl-g09-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g09-google-tv"
+    },
+    {
+      "id": "tcl-g10-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-g10-google-tv"
+    },
+    {
+      "id": "tcl-l40s66e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-l40s66e"
+    },
+    {
+      "id": "tcl-mt9655-cn-android14",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-mt9655-cn-android14"
+    },
+    {
+      "id": "tcl-q10g-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-q10g-pro"
+    },
+    {
+      "id": "tcl-q7c-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-q7c-google-tv"
+    },
+    {
+      "id": "tcl-qm6k-google-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-qm6k-google-tv"
+    },
+    {
+      "id": "tcl-tc8000-ay30a2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-tc8000-ay30a2"
+    },
+    {
+      "id": "tcl-uniontv-latin-america",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tcl-uniontv-latin-america"
+    },
+    {
+      "id": "tdsystems-ch17f40s-redwood",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tdsystems-ch17f40s-redwood"
+    },
+    {
+      "id": "telekom-tv-sdmc-dv8519b",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/telekom-tv-sdmc-dv8519b"
+    },
+    {
+      "id": "telesystem-ont2hd",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/telesystem-ont2hd"
+    },
+    {
+      "id": "thomson-32he5800",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/thomson-32he5800"
+    },
+    {
+      "id": "thomson-43rt1055",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/thomson-43rt1055"
+    },
+    {
+      "id": "thomson-sppl-4k-sw6h",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/thomson-sppl-4k-sw6h"
+    },
+    {
+      "id": "thomson-t32rtl6000",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/thomson-t32rtl6000"
+    },
+    {
+      "id": "tim-timvision-box-uzw4010tim",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tim-timvision-box-uzw4010tim"
+    },
+    {
+      "id": "tivo-stream-4k",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tivo-stream-4k"
+    },
+    {
+      "id": "tornado-65ua1400e",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tornado-65ua1400e"
+    },
+    {
+      "id": "toshiba-55m550lp",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/toshiba-55m550lp"
+    },
+    {
+      "id": "toshiba-65ua2363dg",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/toshiba-65ua2363dg"
+    },
+    {
+      "id": "toshiba-cosmos-android-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/toshiba-cosmos-android-tv"
+    },
+    {
+      "id": "toshiba-fire-tv-aftha004",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/toshiba-fire-tv-aftha004"
+    },
+    {
+      "id": "turkcell-tv-plus-4k-box-dv6069y",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/turkcell-tv-plus-4k-box-dv6069y"
+    },
+    {
+      "id": "tuvio-td43ufbcv5",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/tuvio-td43ufbcv5"
+    },
+    {
+      "id": "verizon-stream-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/verizon-stream-tv"
+    },
+    {
+      "id": "vidda-c1s-mt9669",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/vidda-c1s-mt9669"
+    },
+    {
+      "id": "vidda-mt9653",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/vidda-mt9653"
+    },
+    {
+      "id": "vision-2024vision43stv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/vision-2024vision43stv"
+    },
+    {
+      "id": "vu-4k-lushan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/vu-4k-lushan"
+    },
+    {
+      "id": "vu-premium-fhd-43-hamamatsucho",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/vu-premium-fhd-43-hamamatsucho"
+    },
+    {
+      "id": "vu-vibe-tv",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/vu-vibe-tv"
+    },
+    {
+      "id": "wanbo-x5-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/wanbo-x5-pro"
+    },
+    {
+      "id": "xgimi-horizon-20",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-horizon-20"
+    },
+    {
+      "id": "xgimi-horizon-s-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-horizon-s-pro"
+    },
+    {
+      "id": "xgimi-mogo-2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-mogo-2"
+    },
+    {
+      "id": "xgimi-mogo-3-pro",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-mogo-3-pro"
+    },
+    {
+      "id": "xgimi-mogo-4-laser",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-mogo-4-laser"
+    },
+    {
+      "id": "xgimi-mogo-4",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-mogo-4"
+    },
+    {
+      "id": "xgimi-rs10-ultra",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xgimi-rs10-ultra"
+    },
+    {
+      "id": "xiaomi-f2-fire-tv-aftma2857f",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-f2-fire-tv-aftma2857f"
+    },
+    {
+      "id": "xiaomi-mi-box-3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mi-box-3"
+    },
+    {
+      "id": "xiaomi-mi-box-s-2nd-gen",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mi-box-s-2nd-gen"
+    },
+    {
+      "id": "xiaomi-mi-box-s-android12",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mi-box-s-android12"
+    },
+    {
+      "id": "xiaomi-mi-box-s",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mi-box-s"
+    },
+    {
+      "id": "xiaomi-mi-tv-4a",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mi-tv-4a"
+    },
+    {
+      "id": "xiaomi-mitv-aesp0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-aesp0"
+    },
+    {
+      "id": "xiaomi-mitv-afmu0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-afmu0"
+    },
+    {
+      "id": "xiaomi-mitv-afmu1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-afmu1"
+    },
+    {
+      "id": "xiaomi-mitv-ansp0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-ansp0"
+    },
+    {
+      "id": "xiaomi-mitv-astp0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-astp0"
+    },
+    {
+      "id": "xiaomi-mitv-astp1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-astp1"
+    },
+    {
+      "id": "xiaomi-mitv-astr0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-astr0"
+    },
+    {
+      "id": "xiaomi-mitv-axfr0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axfr0"
+    },
+    {
+      "id": "xiaomi-mitv-axfr1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axfr1"
+    },
+    {
+      "id": "xiaomi-mitv-axfr2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axfr2"
+    },
+    {
+      "id": "xiaomi-mitv-axfu0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axfu0"
+    },
+    {
+      "id": "xiaomi-mitv-axso0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axso0"
+    },
+    {
+      "id": "xiaomi-mitv-axso1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axso1"
+    },
+    {
+      "id": "xiaomi-mitv-axso2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-axso2"
+    },
+    {
+      "id": "xiaomi-mitv-ayfr0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-ayfr0"
+    },
+    {
+      "id": "xiaomi-mitv-mffu0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mffu0"
+    },
+    {
+      "id": "xiaomi-mitv-mftr0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mftr0"
+    },
+    {
+      "id": "xiaomi-mitv-moeu0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-moeu0"
+    },
+    {
+      "id": "xiaomi-mitv-mooq0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mooq0"
+    },
+    {
+      "id": "xiaomi-mitv-mooq2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mooq2"
+    },
+    {
+      "id": "xiaomi-mitv-moor0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-moor0"
+    },
+    {
+      "id": "xiaomi-mitv-moor2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-moor2"
+    },
+    {
+      "id": "xiaomi-mitv-mosr1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mosr1"
+    },
+    {
+      "id": "xiaomi-mitv-mosr4",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mosr4"
+    },
+    {
+      "id": "xiaomi-mitv-mssp0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mssp0"
+    },
+    {
+      "id": "xiaomi-mitv-mssp1",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mssp1"
+    },
+    {
+      "id": "xiaomi-mitv-mssp2",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mssp2"
+    },
+    {
+      "id": "xiaomi-mitv-mssp3-android9",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mssp3-android9"
+    },
+    {
+      "id": "xiaomi-mitv-mssp3",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mssp3"
+    },
+    {
+      "id": "xiaomi-mitv-mteq0",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv-mteq0"
+    },
+    {
+      "id": "xiaomi-mitv4i-magnolia",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-mitv4i-magnolia"
+    },
+    {
+      "id": "xiaomi-smart-projector-c025rgn",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-smart-projector-c025rgn"
+    },
+    {
+      "id": "xiaomi-smart-projector-l1-pro-tianshan",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-smart-projector-l1-pro-tianshan"
+    },
+    {
+      "id": "xiaomi-tv-a-pro-2026",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-tv-a-pro-2026"
+    },
+    {
+      "id": "xiaomi-tv-a43-2025",
+      "url": "https://github.com/Gathin23/cleanyourtv/tree/572ce2cbe98b53654cea3d262ee8558a5872dfd1/examples/xiaomi-tv-a43-2025"
+    }
+  ]
+}

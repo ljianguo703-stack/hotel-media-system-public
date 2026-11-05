@@ -1,0 +1,17 @@
+<article class="panel access-panel" id="remote-access" x-show="administrator">
+  <div class="panel-head"><div><div class="access-heading"><h2>远程访问入口</h2><span class="tag" x-text="accessServices.length+' 项端口'"></span></div><p>复制本地目标到 NPS，再填写分配的公网地址。</p></div><button class="btn" type="button" @click="copyAccessTargets()" :disabled="!accessServices.length">复制端口清单</button></div>
+  <form class="panel-pad access-config" @submit.prevent="saveAccess()" @input="if($event.target.id!=='access-mode')accessDirty=true">
+    <div class="access-mode"><label class="form-label" for="access-mode">按钮使用的入口</label><select class="form-input" id="access-mode" :value="accessMode" @change="setAccessMode($event.target.value)"><option value="auto">自动判断</option><option value="local">内网地址</option><option value="remote">公网地址</option></select><span class="access-status" x-text="accessRemote?'当前使用公网入口':'当前使用内网入口'"></span></div>
+    <div class="access-host"><label class="form-label" for="access-host">Ubuntu 内网 IP</label><input id="access-host" class="form-input mono" x-model="accessDraft.local_host" required :disabled="accessBusy" autocomplete="off" spellcheck="false"></div>
+    <div class="access-summary"><span x-text="accessConfigured+' 项已填写公网地址'"></span><span>每个服务各建一条 NPS TCP 隧道；多行目标是负载均衡，不能合并不同服务。</span></div>
+    <p class="error-message" x-show="accessError" x-text="accessError" role="alert"></p>
+    <p class="form-hint" x-show="accessLoading&&!accessConfig">正在读取入口配置…</p>
+    <div class="access-list"><template x-for="service in accessServices" :key="service.id"><div class="access-row">
+      <div class="access-service"><strong x-text="service.name"></strong><small x-text="'TCP · '+service.port"></small></div>
+      <div><span class="access-target-label">NPS 目标（IP:端口）</span><div class="access-target"><code x-text="accessTarget(service)"></code><button class="btn" type="button" @click="copyAccessTargets(service)" :aria-label="'复制'+service.name+'目标地址'">复制</button></div></div>
+      <div class="access-public"><template x-if="service.scheme!=='ssh'"><div><label :for="'access-url-'+service.id">公网完整地址</label><input class="form-input mono" type="url" :id="'access-url-'+service.id" x-model="accessDraft.urls[service.id]" :disabled="accessBusy" :placeholder="service.id==='cockpit'?'https://服务器域名:公网端口/':'http://服务器域名:公网端口/'" autocomplete="off" spellcheck="false"><small x-text="service.note||'留空时，公网模式会提示先配置入口。'"></small></div></template><template x-if="service.scheme==='ssh'"><small>在 NPS 创建 TCP 隧道后，用 SSH 客户端连接服务端 IP 与分配端口。</small></template></div>
+    </div></template></div>
+    <p class="form-hint">保存会更新后台各处按钮，不会自动创建隧道或验证公网连通。下载工具与酒店后台须使用相同域名和协议，以共享管理员登录；公网端口可以不同。硬盘与系统管理仍使用 HTTPS 和 Ubuntu 账号。</p>
+    <div class="access-actions"><button class="btn primary" type="submit" :disabled="accessBusy||!accessConfig" x-text="accessBusy?'正在保存…':'保存入口地址'"></button><button class="btn" type="button" @click="loadAccess(true)" :disabled="accessBusy||accessLoading" x-text="accessDirty?'撤销修改并重读':'重新读取'"></button><span class="access-status" x-show="accessDirty">有未保存的修改</span></div>
+  </form>
+</article>

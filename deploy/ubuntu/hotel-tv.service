@@ -1,0 +1,25 @@
+[Unit]
+Description=Hotel TV LAN media and advertisement API
+After=network.target
+
+[Service]
+Type=simple
+User=hotel-tv
+Group=hotel-tv
+WorkingDirectory=/opt/hotel-tv/current
+Environment=PYTHONUTF8=1
+ExecStart=/usr/bin/python3 -u /opt/hotel-tv/current/server/server.py --host 0.0.0.0 --port 18790 --admin-port 18791 --admin-web /opt/hotel-tv/current/admin --config /etc/hotel-tv/devices.json --data /srv/hotel-tv/data --media /srv/hotel-tv/media --library-root /mnt --library-root /media
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/hotel-tv/data /srv/hotel-tv/media
+RestrictSUIDSGID=true
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

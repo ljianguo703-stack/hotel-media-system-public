@@ -1,0 +1,27 @@
+[Unit]
+Description=Hotel NPC configuration and lifecycle controller
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+Group=hotel-tv
+RuntimeDirectory=hotel-npc
+RuntimeDirectoryMode=0750
+UMask=0007
+WorkingDirectory=/usr/local/lib/hotel-npc
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -u /usr/local/lib/hotel-npc/control.py
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/stacks/npc /srv/nas/appdata/npc /run/hotel-npc
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX
+
+[Install]
+WantedBy=multi-user.target
