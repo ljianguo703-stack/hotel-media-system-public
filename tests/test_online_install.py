@@ -1,8 +1,8 @@
 import hashlib
-import json
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import tempfile
 import unittest
@@ -18,10 +18,17 @@ class OnlineInstallTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.bin = self.root / 'bin'
         self.bin.mkdir()
+        for name in ('bash', 'python3', 'sha256sum', 'shasum', 'mkdir', 'mktemp', 'rm', 'mv'):
+            executable = shutil.which(name)
+            if executable:
+                (self.bin / name).symlink_to(executable)
         self.fixture = self.root / 'fixture.run'
         self.fixture.write_text(
             '#!/usr/bin/env bash\n'
-            'printf "%s\\n" "$@" > "$HOTEL_TEST_ARGUMENTS"\n'
+            ': > "$HOTEL_TEST_ARGUMENTS"\n'
+            'for argument in "$@"; do\n'
+            '  printf "%s\\n" "$argument" >> "$HOTEL_TEST_ARGUMENTS"\n'
+            'done\n'
             'exit "${HOTEL_TEST_INSTALL_EXIT:-0}"\n'
         )
         expected = hashlib.sha256(self.fixture.read_bytes()).hexdigest()
@@ -32,25 +39,28 @@ class OnlineInstallTests(unittest.TestCase):
         )
         self.script = self.root / 'install-online.sh'
         self.script.write_text(source)
-        self.write_program('curl', '''#!/usr/bin/env python3
+        downloader = '''#!/usr/bin/env python3
 import os
 from pathlib import Path
 import sys
 arguments = sys.argv[1:]
 Path(os.environ['HOTEL_TEST_DOWNLOAD_LOG']).write_text('called')
-output = Path(arguments[arguments.index('--output') + 1])
+option = '--output-document' if '--output-document' in arguments else '--output'
+output = Path(arguments[arguments.index(option) + 1])
 mode = os.environ.get('HOTEL_TEST_DOWNLOAD_MODE', 'valid')
 output.write_bytes(Path(os.environ['HOTEL_TEST_FIXTURE']).read_bytes()
                    if mode == 'valid' else b'partial or corrupt download')
 sys.exit(22 if mode == 'network-failure' else 0)
-''')
+'''
+        self.write_program('curl', downloader)
+        self.write_program('wget', downloader)
         self.write_program('sudo', '''#!/usr/bin/env bash
 printf 'called' > "$HOTEL_TEST_SUDO_LOG"
 exec "$@"
 ''')
         self.environment = dict(os.environ)
         self.environment.update({
-            'PATH': str(self.bin) + os.pathsep + os.environ['PATH'],
+            'PATH': str(self.bin),
             'HOTEL_DOWNLOAD_DIR': str(self.root / 'download with spaces'),
             'HOTEL_TEST_FIXTURE': str(self.fixture),
             'HOTEL_TEST_ARGUMENTS': str(self.root / 'arguments.txt'),
@@ -74,6 +84,21 @@ exec "$@"
         result = self.run_installer(*arguments)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual((self.root / 'arguments.txt').read_text().splitlines(), arguments)
+
+    def test_no_arguments_are_required_or_injected(self):
+        result = self.run_installer()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual((self.root / 'arguments.txt').read_text(), '')
+
+    def test_wget_only_host_can_download_and_run_preview(self):
+        (self.bin / 'curl').unlink()
+        result = self.run_installer('--plan')
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_curl_only_host_can_download_and_run_preview(self):
+        (self.bin / 'wget').unlink()
+        result = self.run_installer('--plan')
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_corrupt_download_stops_before_running_installer(self):
         self.environment['HOTEL_TEST_DOWNLOAD_MODE'] = 'corrupt'

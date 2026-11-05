@@ -3,7 +3,7 @@
 set -euo pipefail
 umask 077
 
-readonly HOTEL_RELEASE='IN19-public-20261106'
+readonly HOTEL_RELEASE='IN19-public-20261106-r2'
 readonly HOTEL_PACKAGE='hotel-media-system-v1-0-0-rc5-pl04-IN19-public.run'
 readonly HOTEL_PACKAGE_SHA256='03c88841f7ccbb98f1a33da6bbd4da80206895a3f11de802da355c79744d4e94'
 readonly HOTEL_PACKAGE_URL="https://github.com/ljianguo703-stack/hotel-media-system-public/releases/download/${HOTEL_RELEASE}/${HOTEL_PACKAGE}"
@@ -26,14 +26,18 @@ hotel_sha256() {
 }
 
 if [[ ! -f "$hotel_installer" ]] || [[ "$(hotel_sha256 "$hotel_installer")" != "$HOTEL_PACKAGE_SHA256" ]]; then
-    command -v curl >/dev/null 2>&1 || {
-        printf '%s\n' '请先执行 sudo apt install -y curl ca-certificates。' >&2
-        exit 1
-    }
     hotel_partial=$(mktemp "$hotel_download_dir/.download.XXXXXX")
     trap 'rm -f -- "$hotel_partial"' EXIT
-    curl --fail --location --retry 3 --connect-timeout 20 \
-        --proto '=https' --tlsv1.2 --output "$hotel_partial" "$HOTEL_PACKAGE_URL"
+    if command -v wget >/dev/null 2>&1; then
+        wget --https-only --timeout=20 --tries=3 \
+            --output-document "$hotel_partial" "$HOTEL_PACKAGE_URL"
+    elif command -v curl >/dev/null 2>&1; then
+        curl --fail --location --retry 3 --connect-timeout 20 \
+            --proto '=https' --tlsv1.2 --output "$hotel_partial" "$HOTEL_PACKAGE_URL"
+    else
+        printf '%s\n' '请先执行 sudo apt install -y wget ca-certificates。' >&2
+        exit 1
+    fi
     if [[ "$(hotel_sha256 "$hotel_partial")" != "$HOTEL_PACKAGE_SHA256" ]]; then
         printf '%s\n' '安装包 SHA256 校验失败，请检查网络后重试。' >&2
         exit 1

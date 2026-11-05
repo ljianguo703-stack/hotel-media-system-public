@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "release": "IN19-public-20261106",
+  "release": "IN19-public-20261106-r2",
   "date": "2026-11-06",
   "versions": {
     "backend": "v1-0-0-rc5-pl04",
@@ -24,9 +24,22 @@
     "gitleaks_findings_reviewed": "DLL SHA digests and APK public-key fingerprints only"
   },
   "verification": {
-    "deploy_and_online_wrapper_unit_tests": 55,
+    "deploy_and_online_wrapper_unit_tests": 58,
     "plan": "passed",
     "full_new_site_install": "requires site acceptance",
     "24h_and_target_concurrency": "requires site acceptance"
+  },
+  "entrypoint": {
+    "arguments_required": false,
+    "defaults": {
+      "hotel": "酒店影院",
+      "lan_ip": "route discovery",
+      "timezone": "Ubuntu host timezone",
+      "storage_root": "/srv/hotel-tv/media/.automation"
+    },
+    "downloaders": [
+      "wget",
+      "curl"
+    ]
   }
 }

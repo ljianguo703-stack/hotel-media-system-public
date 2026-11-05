@@ -4,34 +4,32 @@
 
 当前版本为 IN19，后台 `v1-0-0-rc5-pl04`，电视 `0.1.16 / code17`，员工安装工具 `2.0.2`。首装基线为 Ubuntu 24.04 LTS amd64，首次安装需要联网下载系统依赖与容器。
 
-## 联网一键安装
+## 一条命令安装
 
-先安装 Ubuntu，配置服务器固定局域网地址，并确认影片盘已经挂载。本例使用 `/mnt/hotel-media`，影院数据使用其下新空子目录 `/mnt/hotel-media/data`。完整施工步骤见 [安装教程](docs/INSTALL.md)。
-
-Ubuntu 如需准备下载工具，先执行这一条。
+全新 Ubuntu 接通网络后，复制下面这一条命令执行即可。安装使用已有默认值，终端会在需要时提示输入 Ubuntu 管理员密码。
 
 ```bash
-sudo apt update && sudo apt install -y curl ca-certificates
+sudo apt-get update && sudo apt-get install -y wget ca-certificates && wget -qO hotel-install.sh https://raw.githubusercontent.com/ljianguo703-stack/hotel-media-system-public/main/install-online.sh && bash hotel-install.sh
 ```
 
-把店名、IP、业务时区和存储路径换成本店实际值，再整段复制执行。入口会匿名下载固定版本的安装包，校验 SHA256，随后调用 full 首装。
+安装程序自动下载、校验 SHA256 并执行 full 首装。完成后终端显示后台地址与初始凭据的位置，登录后台再完成本店设置。
 
-```bash
-curl -fL --retry 3 -o hotel-install.sh \
-  https://raw.githubusercontent.com/ljianguo703-stack/hotel-media-system-public/main/install-online.sh \
-  && bash hotel-install.sh \
-    --profile full --hotel "本店影院" \
-    --lan-ip 192.168.10.10 --timezone Asia/Shanghai \
-    --storage-root /mnt/hotel-media/data
-```
+| 项目 | 自动处理 | 安装后设置 |
+|---|---|---|
+| 店名 | 默认“酒店影院” | 后台“系统设置 → 酒店与播放”修改 |
+| 服务器 IP | 根据本机网络路由自动识别 | 后台按当前访问地址显示电视接口 |
+| 业务时区 | 默认沿用 Ubuntu 主机时区 | 后台“系统设置 → 酒店与播放”修改 |
+| 存储 | 自动创建标准目录 `/srv/hotel-tv/media/.automation` | 后台管理下载保存位置，或在“影片片库”接入已有影片目录 |
 
-先看计划可在命令末尾加 `--plan`。本次首装中断后，使用原参数加 `--resume`。完成后查看终端显示的后台地址，在本店私有环境读取初始凭据。
+系统会为本店生成独立账号、设备凭据和员工 PIN。初始凭据在服务器本机私下查看。
 
 ```bash
 sudo cat /etc/hotel-tv/setup-credentials.txt
 ```
 
-后台使用 `http://服务器IP:18791`，电视接口使用 `http://服务器IP:18790`。每次新店安装生成本店独立凭据和员工 PIN。
+后台使用 `http://服务器IP:18791`，电视接口使用 `http://服务器IP:18790`。完整操作和存储说明见 [施工教程](docs/INSTALL.md)。
+
+先看安装计划时可运行 `bash hotel-install.sh --plan`。本次安装中断后运行 `bash hotel-install.sh --resume`。高级安装参数可通过 `bash hotel-install.sh --help` 查看。
 
 ## 电视接入与下载
 
@@ -39,7 +37,7 @@ sudo cat /etc/hotel-tv/setup-credentials.txt
 
 需要后台 ADB 维护时勾选“纳入后台全程维护”，完成真实遥控、播放、声音、字幕、待机及断电恢复验收。机型支持范围以工具检测结果和随包说明为准。
 
-公开发布包含 Ubuntu 首装、源码、标准/守护电视 APK、Mac ARM/Intel、Linux x64、Windows x64 安装工具及 SHA256 清单。[下载当前发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106)
+公开发布包含 Ubuntu 首装、源码、标准/守护电视 APK、Mac ARM/Intel、Linux x64、Windows x64 安装工具及 SHA256 清单。[电视 APK 与四平台工具下载](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106) / [当前 Ubuntu 首装发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106-r2)
 
 ## 源码与验证范围
 
