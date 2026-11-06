@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "release": "IN19-dependencies-20261107",
+  "release": "IN19-public-20261107-r4",
   "date": "2026-11-07",
   "versions": {
     "backend": "v1-0-0-rc5-pl04",
@@ -9,12 +9,13 @@
   },
   "source_base": "6548049e3df8a1f81b82e243153733c62fde47e0",
   "runtime_files_identical_to_base": 199,
-  "runtime_payload_sha256": "bc209fddc2fa86b4fba9091f5ee0bde355317bbc3f88eb7ae868880b699fcd49",
+  "runtime_payload_sha256": "842305e83a98c3735e8aa64d92746e7fdc1255209db67fd30c7fbfc5184d72b2",
   "installer": {
-    "name": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public-r3.run",
-    "bytes": 9557353,
-    "sha256": "847d276c53cacbf744c4e72b125bfdaa091ea65a077ea59d1ad6006f912fedba",
-    "source_commit": "e7516984de51f51e51057c93e1b0306d95e635ba"
+    "name": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public-r4.run",
+    "bytes": 9573891,
+    "sha256": "d160f52ca81f7abf8eabaf4c99d3b0ff18d7b6d48628c8ada32a1585c491fc12",
+    "source_commit": "266c13ff31dc35867400d6d8be6912b4f2eccdff",
+    "asset_id": 718876203
   },
   "privacy_review": {
     "source_snapshot_excludes_internal_documents": true,
@@ -25,12 +26,16 @@
     "gitleaks_findings_reviewed": "DLL SHA digests and APK public-key fingerprints only"
   },
   "verification": {
-    "deploy_and_online_wrapper_unit_tests": 70,
+    "deploy_and_online_wrapper_unit_tests": 73,
     "plan": "passed",
     "full_new_site_install": "requires site acceptance",
     "24h_and_target_concurrency": "requires site acceptance",
     "dependency_cloud_jobs": 14,
-    "ubuntu_anonymous_download_sha256": 3
+    "ubuntu_anonymous_download_sha256": 3,
+    "ubuntu_python312_unit_tests": 73,
+    "mock_e2e": "passed; 390/1280/1440 screenshots",
+    "seerr_fresh_partial_initialized_and_legacy_regressions": "passed",
+    "site_seerr_resume": "pending PowerEdge R740 acceptance"
   },
   "entrypoint": {
     "arguments_required": false,
@@ -45,14 +50,15 @@
       "Python3 urllib"
     ],
     "file": "install-from-release.py",
-    "asset_id": 718751190,
-    "sha256": "2768ee80d86393b7af4e653d8efb9a1e0d43ead70c0f5e9427f4431add897251"
+    "asset_id": 718888359,
+    "sha256": "73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203"
   },
   "dependencies": {
     "manifest": "deploy/dependencies.lock.json",
     "images": 14,
     "image_archive_bytes": 4696456704,
     "rest_asset_ids": true,
-    "source_archives": 22
+    "source_archives": 22,
+    "release": "IN19-dependencies-20261107"
   }
 }
