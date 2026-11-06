@@ -9,10 +9,10 @@
 全新 Ubuntu 接通网络后，复制下面这一条命令执行即可。安装使用已有默认值，终端会在需要时提示输入 Ubuntu 管理员密码。
 
 ```bash
-sudo apt-get update && sudo apt-get install -y wget ca-certificates && wget -qO hotel-install.sh https://raw.githubusercontent.com/ljianguo703-stack/hotel-media-system-public/main/install-online.sh && bash hotel-install.sh
+sudo apt-get update && sudo apt-get install -y python3 wget ca-certificates && wget --timeout=20 --tries=3 --header='Accept: application/octet-stream' -O hotel-install.py https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/718751190 && echo '2768ee80d86393b7af4e653d8efb9a1e0d43ead70c0f5e9427f4431add897251  hotel-install.py' | sha256sum -c - && sudo python3 hotel-install.py
 ```
 
-安装程序自动下载、校验 SHA256 并执行 full 首装。完成后终端显示后台地址与初始凭据的位置，登录后台再完成本店设置。
+入口从本仓库 Release 下载固定依赖，校验 SHA256 后导入镜像并执行 full 首装，已有安装记录自动续装。Ubuntu 系统包和 Docker 软件包使用 APT。完成后终端显示后台地址与初始凭据的位置，登录后台再完成本店设置。
 
 | 项目 | 自动处理 | 安装后设置 |
 |---|---|---|
@@ -29,7 +29,7 @@ sudo cat /etc/hotel-tv/setup-credentials.txt
 
 后台使用 `http://服务器IP:18791`，电视接口使用 `http://服务器IP:18790`。完整操作见[施工教程](docs/INSTALL.md)。需要把完整媒体目录搬到新盘时，按[手动存储切换指南](docs/STORAGE-MIGRATION.md)操作。
 
-先看安装计划时可运行 `bash hotel-install.sh --plan`。本次安装中断后运行 `bash hotel-install.sh --resume`。高级安装参数可通过 `bash hotel-install.sh --help` 查看。
+查看固定依赖清单可运行 `python3 hotel-install.py --plan`。中断后重跑同一条命令，或运行 `sudo python3 hotel-install.py`。需要先准备依赖时使用 `sudo python3 hotel-install.py --cache-only`。详见[仓库依赖与续装说明](docs/RELEASE-DEPENDENCIES.md)。
 
 ## 电视接入与下载
 
@@ -37,7 +37,7 @@ sudo cat /etc/hotel-tv/setup-credentials.txt
 
 需要后台 ADB 维护时勾选“纳入后台全程维护”，完成真实遥控、播放、声音、字幕、待机及断电恢复验收。机型支持范围以工具检测结果和随包说明为准。
 
-公开发布包含 Ubuntu 首装、源码、标准/守护电视 APK、Mac ARM/Intel、Linux x64、Windows x64 安装工具及 SHA256 清单。[电视 APK 与四平台工具下载](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106) / [当前 Ubuntu 首装发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106-r2)
+公开发布包含 Ubuntu 首装、源码、标准/守护电视 APK、Mac ARM/Intel、Linux x64、Windows x64 安装工具及 SHA256 清单。[电视 APK 与四平台工具下载](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106) / [当前 Ubuntu 首装发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-dependencies-20261107)
 
 ## 源码与验证范围
 

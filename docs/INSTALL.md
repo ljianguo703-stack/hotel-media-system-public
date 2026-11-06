@@ -46,7 +46,7 @@ df -hT /mnt/hotel-media
 
 复制仓库首页的一条命令直接执行。安装时使用“酒店影院”、自动识别的 IP、Ubuntu 主机时区和标准存储目录。安装完成后在后台“系统设置 → 酒店与播放”设置店名和业务时区。中国可用 `Asia/Shanghai`，缅甸可用 `Asia/Yangon`，新加坡可用 `Asia/Singapore`。
 
-需要先检查安装计划时运行 `bash hotel-install.sh --plan`。正式安装需等待终端明确显示“安装完成”。本次安装中断后运行 `bash hotel-install.sh --resume`。终端会显示已校验安装包的下载位置，便于复查与恢复。
+需要先检查安装计划时运行 `python3 hotel-install.py --plan`。正式安装需等待终端明确显示“安装完成”。本次安装中断后运行 `sudo python3 hotel-install.py`。入口会复用已校验文件和本机固定镜像，下载中断后续传。仓库依赖清单、支持条件和缓存位置见[依赖与续装说明](RELEASE-DEPENDENCIES.md)。
 
 ## 后台与媒体
 

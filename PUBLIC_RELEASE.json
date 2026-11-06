@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "release": "IN19-public-20261106-r2",
-  "date": "2026-11-06",
+  "release": "IN19-dependencies-20261107",
+  "date": "2026-11-07",
   "versions": {
     "backend": "v1-0-0-rc5-pl04",
     "tv": "0.1.16/code17",
@@ -9,11 +9,12 @@
   },
   "source_base": "6548049e3df8a1f81b82e243153733c62fde47e0",
   "runtime_files_identical_to_base": 199,
-  "runtime_payload_sha256": "d347637e64e2916694565ecb006d2b1d88f8741d2a1f18904efd3ad5dcf882ba",
+  "runtime_payload_sha256": "bc209fddc2fa86b4fba9091f5ee0bde355317bbc3f88eb7ae868880b699fcd49",
   "installer": {
-    "name": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public.run",
-    "bytes": 8007014,
-    "sha256": "03c88841f7ccbb98f1a33da6bbd4da80206895a3f11de802da355c79744d4e94"
+    "name": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public-r3.run",
+    "bytes": 9557353,
+    "sha256": "847d276c53cacbf744c4e72b125bfdaa091ea65a077ea59d1ad6006f912fedba",
+    "source_commit": "e7516984de51f51e51057c93e1b0306d95e635ba"
   },
   "privacy_review": {
     "source_snapshot_excludes_internal_documents": true,
@@ -24,10 +25,12 @@
     "gitleaks_findings_reviewed": "DLL SHA digests and APK public-key fingerprints only"
   },
   "verification": {
-    "deploy_and_online_wrapper_unit_tests": 58,
+    "deploy_and_online_wrapper_unit_tests": 70,
     "plan": "passed",
     "full_new_site_install": "requires site acceptance",
-    "24h_and_target_concurrency": "requires site acceptance"
+    "24h_and_target_concurrency": "requires site acceptance",
+    "dependency_cloud_jobs": 14,
+    "ubuntu_anonymous_download_sha256": 3
   },
   "entrypoint": {
     "arguments_required": false,
@@ -39,7 +42,17 @@
     },
     "downloaders": [
       "wget",
-      "curl"
-    ]
+      "Python3 urllib"
+    ],
+    "file": "install-from-release.py",
+    "asset_id": 718751190,
+    "sha256": "2768ee80d86393b7af4e653d8efb9a1e0d43ead70c0f5e9427f4431add897251"
+  },
+  "dependencies": {
+    "manifest": "deploy/dependencies.lock.json",
+    "images": 14,
+    "image_archive_bytes": 4696456704,
+    "rest_asset_ids": true,
+    "source_archives": 22
   }
 }
