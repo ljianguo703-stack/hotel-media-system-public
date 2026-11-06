@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import os
 from pathlib import Path
 import tempfile
@@ -8,6 +9,63 @@ ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('media_install',ROOT/'deploy/nas/media_automation.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 
 class MediaInstallTests(unittest.TestCase):
+    def test_seerr_uses_jellyfin_password_for_fresh_partial_and_initialized_installs(self):
+        for configured, initialized, legacy in [(False, False, False), (True, False, False), (True, True, False), (False, False, True)]:
+            with self.subTest(configured=configured, initialized=initialized, legacy=legacy), tempfile.TemporaryDirectory() as tmp:
+                config = Path(tmp) / 'settings.json'
+                settings = {'main': {'apiKey': 'test-api-key'}, 'jellyfin': {'ip': 'nas-jellyfin' if configured else ''}}
+                config.write_text(json.dumps(settings))
+                client = Mock(headers={})
+                client.wait.return_value = {'initialized': initialized}
+                def call(path, body=None, method=None):
+                    if path == '/auth/jellyfin':
+                        self.assertEqual(body['password'], 'legacy-password' if legacy else 'jellyfin-password')
+                        self.assertEqual('hostname' in body, not configured)
+                        return {'id': 1}
+                    if path in ('/settings/radarr', '/settings/sonarr'):
+                        return [{'id': 0}] if initialized else []
+                    if path == '/settings/jellyfin/library/sync':
+                        return [{'id': 'a', 'name': '自动归档电影'}, {'id': 'b', 'name': '电影'}]
+                client.call.side_effect = call
+                setup = object.__new__(m.Setup)
+                setup.state = {'nas_password': 'legacy-password'}
+                if not legacy: setup.state['service_passwords'] = {'jellyfin': 'jellyfin-password', 'qbittorrent': 'different-qb-password'}
+                setup.status = {name: {'profile': 1, 'root': '/data/' + name} for name in ('radarr', 'sonarr')}
+                with patch.object(m, 'Path', return_value=config), patch.object(m, 'Native', return_value=client), patch.object(m, 'app_key', return_value='arr-key'):
+                    setup.seerr()
+                calls = client.call.call_args_list
+                self.assertEqual(client.headers['X-Api-Key'], 'test-api-key')
+                self.assertEqual(sum(c.args[0] == '/settings/initialize' for c in calls), int(not initialized))
+                self.assertIn(unittest.mock.call('/settings/jellyfin/library/a', {'enabled': True}, 'PUT'), calls)
+                self.assertIn(unittest.mock.call('/settings/jellyfin/library/b', {'enabled': False}, 'PUT'), calls)
+                self.assertEqual(sum(c.args[0] == '/settings/radarr/test' for c in calls), int(not initialized))
+                self.assertEqual(calls[-1].args, ('/auth/logout', {}, 'POST'))
+
+    def test_native_http_error_context_excludes_secrets_and_preserves_error_type(self):
+        from urllib.error import HTTPError
+        client = m.Native('http://127.0.0.1:5055/api/v1', {'X-Api-Key': 'private-header'})
+        error = HTTPError('http://127.0.0.1:5055/api/v1/auth/jellyfin?apiKey=private-query', 401, 'private-response', {}, None)
+        with patch.object(client.opener, 'open', side_effect=error):
+            with self.assertRaises(HTTPError) as raised:
+                client.call('/auth/jellyfin?apiKey=private-query', {'password': 'private-password'}, 'POST')
+        self.assertIs(raised.exception, error)
+        self.assertEqual(error.hotel_request, 'POST /api/v1/auth/jellyfin (port 5055)')
+        self.assertNotIn('private', error.hotel_request)
+
+    def test_native_wait_retries_service_unavailable_but_stops_on_auth_failure(self):
+        from urllib.error import HTTPError
+        client = m.Native('http://127.0.0.1:5055/api/v1')
+        response = Mock()
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        response.read.return_value = b'{"initialized": false}'
+        with patch.object(client.opener, 'open', side_effect=[HTTPError(client.base, 503, 'unavailable', {}, None), response]), patch.object(m.time, 'sleep') as sleep:
+            self.assertEqual(client.wait('/settings/public'), {'initialized': False})
+            sleep.assert_called_once_with(1)
+        with patch.object(client.opener, 'open', side_effect=HTTPError(client.base, 401, 'unauthorized', {}, None)), patch.object(m.time, 'sleep') as sleep:
+            with self.assertRaises(HTTPError): client.wait('/settings/public')
+            sleep.assert_not_called()
+
     def test_native_form_repeats_language_values_instead_of_sending_a_json_string(self):
         from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
         from urllib.parse import parse_qs

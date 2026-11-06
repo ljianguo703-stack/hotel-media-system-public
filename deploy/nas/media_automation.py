@@ -15,7 +15,7 @@ import time
 import uuid
 import xml.etree.ElementTree as ET
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
 from urllib.request import build_opener, HTTPCookieProcessor, ProxyHandler, Request
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -51,11 +51,16 @@ class Native:
             headers['Content-Type'] = 'application/x-www-form-urlencoded' if form else 'application/json'
             data = (urlencode(body, doseq=True) if form else json.dumps(body)).encode()
         request = Request(self.base + path, data=data, headers=headers, method=method)
-        with self.opener.open(request, timeout=45) as response:
-            raw = response.read(32 * 1024 * 1024)
-            if not raw: return None
-            try: return json.loads(raw)
-            except ValueError: return raw.decode()
+        try:
+            with self.opener.open(request, timeout=45) as response:
+                raw = response.read(32 * 1024 * 1024)
+                if not raw: return None
+                try: return json.loads(raw)
+                except ValueError: return raw.decode()
+        except HTTPError as exc:
+            # Keep HTTPError for wait/retry callers. Exclude query, headers and upstream body.
+            exc.hotel_request = f'{request.get_method()} {urlsplit(request.full_url).path} (port {urlsplit(self.base).port})'
+            raise
 
     def wait(self, path):
         for attempt in range(180):
@@ -420,7 +425,8 @@ class Setup:
     def seerr(self):
         client = Native('http://127.0.0.1:5055/api/v1')
         public = client.wait('/settings/public')
-        login = {'username': 'admin', 'password': self.state.get('service_passwords',{}).get('qbittorrent',self.state['nas_password'])}
+        # Seerr authenticates against Jellyfin, whose generated password is independent of qBittorrent.
+        login = {'username': 'admin', 'password': self.state.get('service_passwords',{}).get('jellyfin',self.state['nas_password'])}
         # A partial initial binding may already exist when resuming.
         config = Path('/srv/nas/appdata/seerr/settings.json')
         configured = config.exists() and json.loads(config.read_text()).get('jellyfin', {}).get('ip')
@@ -557,5 +563,6 @@ if __name__ == '__main__':
         Setup(state).execute()
     except Exception as exc:
         if isinstance(exc, RuntimeError): print(str(exc), file=sys.stderr)
+        if isinstance(exc, HTTPError): print(f'片库接口失败 HTTP {exc.code}，{getattr(exc, "hotel_request", "request")}。', file=sys.stderr)
         print('片库安装未完成：' + type(exc).__name__ + '；原因详情只在本机核对，不输出密钥。修复后用同一安装目录 --resume。', file=sys.stderr)
         sys.exit(1)
