@@ -19,6 +19,8 @@
 
 ## Docker 与缓存
 
+中国大陆使用 r4 默认清华 Docker CE APT 源。海外先通过[教程的一键安装段](INSTALL.md#08-海外网络在线一键安装)准备官方 Docker，再执行同一 r4 入口。该段支持 docker-only 模式，供海外本地完整包先准备 Docker。
+
 本 OCI 入口使用 Docker 29+ 的 containerd 镜像存储，导入平台为 linux/amd64。新机由入口准备 Docker。已有 Docker 会先检查版本、Compose 和镜像存储能力。
 
 已校验文件保存在 `/var/cache/hotel-tv-dependencies/IN19-dependencies-20261107`。下载过程保留 `.partial`，再次运行时续传。文件完整且 SHA256 一致后才导入。终端每约 10 秒显示下载进度。
@@ -38,3 +40,9 @@ r4 修正 Seerr 使用 Jellyfin 独立密码登录的初始化流程，兼容早
 73 项安装、部署、在线入口和依赖测试通过，包含 REST 附件编号、断点续传、损坏文件拒绝、缓存复用、预载 aria2 身份及正常入口参数传递。Ubuntu Python 环境已通过公开 API 实际下载 AriaNg、搜索插件和配套安装包，三份 SHA256 一致。
 
 GitHub 云端 14 项任务全部完成 OCI 导出、linux/amd64 导入及固定摘要识别。安装包在 Ubuntu 环境完成 plan 验证，同版本不同 payload 并存与重复执行通过。整店业务和真实设备验收由安装酒店完成。[镜像发布核验](https://github.com/ljianguo703-stack/hotel-media-system-public/actions/runs/42298617912)
+
+## 本地完整包
+
+完整方式携带 14 份 OCI 镜像、Docker 官方公钥、两项原生附件与 r4 安装包。入口、清单和 payload 合计 20 项校验内容。在准备电脑运行[教程第 9 节](INSTALL.md#09-准备本地完整包)命令，再将整个目录复制到目标 Ubuntu。第 10 节校验并复制 payload 到标准缓存，使用原 r4 入口导入与续装。Ubuntu 与 Docker 的 APT 包保持联网安装。
+
+用户于 2026-11-07 确认 R740 full 安装成功。随后反馈的 TMDB 提示，按[设置与排查章节](INSTALL.md#13-tmdb-提示与基本网络设置)独立验收。
