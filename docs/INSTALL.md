@@ -313,7 +313,8 @@ import hashlib, importlib.util, json
 from pathlib import Path
 entry = Path('install-from-release.py')
 expected = '73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203'
-assert hashlib.sha256(entry.read_bytes()).hexdigest() == expected
+if hashlib.sha256(entry.read_bytes()).hexdigest() != expected:
+    raise SystemExit('入口 SHA256 校验失败')
 spec = importlib.util.spec_from_file_location('installer', entry)
 installer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(installer)
