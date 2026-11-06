@@ -27,7 +27,7 @@ sudo apt-get update && sudo apt-get install -y wget ca-certificates && wget -qO 
 sudo cat /etc/hotel-tv/setup-credentials.txt
 ```
 
-后台使用 `http://服务器IP:18791`，电视接口使用 `http://服务器IP:18790`。完整操作和存储说明见 [施工教程](docs/INSTALL.md)。
+后台使用 `http://服务器IP:18791`，电视接口使用 `http://服务器IP:18790`。完整操作见[施工教程](docs/INSTALL.md)。需要把完整媒体目录搬到新盘时，按[手动存储切换指南](docs/STORAGE-MIGRATION.md)操作。
 
 先看安装计划时可运行 `bash hotel-install.sh --plan`。本次安装中断后运行 `bash hotel-install.sh --resume`。高级安装参数可通过 `bash hotel-install.sh --help` 查看。
 
