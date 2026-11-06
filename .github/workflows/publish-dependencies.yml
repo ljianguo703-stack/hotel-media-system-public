@@ -1,0 +1,34 @@
+name: Publish IN19 installation dependencies
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: in19-dependency-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        component: [jellyfin, dockge, filebrowser, qbittorrent, npc, prowlarr, radarr, sonarr, bazarr, seerr, alpine, jackett, nginx, aria2]
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: docker/setup-docker-action@e43656e248c0bd0647d3f5c195d116aacf6fcaf4
+        with:
+          version: v29.9.3
+          daemon-config: |
+            {"features":{"containerd-snapshotter":true}}
+      - name: Install pinned OCI exporter
+        run: |
+          curl --fail --location --retry 3 --header 'Accept: application/octet-stream' https://api.github.com/repos/regclient/regclient/releases/assets/660897960 --output /tmp/regctl
+          echo '3737fbbdd791e04e7a831640b681f3397a376498e80e2ad9b1b2d27296f239bc  /tmp/regctl' | sha256sum -c -
+          sudo install -m 0755 /tmp/regctl /usr/local/bin/regctl
+      - name: Export, import-check and publish dependency
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMPONENT: ${{ matrix.component }}
+        run: python3 tools/export_dependency_image.py "$COMPONENT"
