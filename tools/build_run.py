@@ -65,7 +65,7 @@ if preview:
         root=Path(folder);extract(root)
         raise SystemExit(subprocess.call([sys.executable,str(root/'deploy/bootstrap.py'),*arguments]))
 base=Path('/var/lib/hotel-tv-setup/sources');base.mkdir(parents=True,exist_ok=True,mode=0o700)
-root=base/version
+root=base/(version+'-'+expected[:16])
 if root.is_symlink():raise SystemExit('Unsafe setup directory')
 if root.exists():
     proof=root/'.package-sha256'

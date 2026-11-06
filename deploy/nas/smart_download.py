@@ -20,7 +20,7 @@ from urllib.parse import urlencode
 from urllib.request import ProxyHandler, Request, build_opener
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from docker_images import pull_image
+from docker_images import native_platform, pull_image
 
 QB_IMAGE = 'qbittorrentofficial/qbittorrent-nox@sha256:43b2d352cf76330a7ca34c7320b9b74227d6f31e662e0e123d0457206b09a7ea'  # 5.3.0, tested DL03
 ALPINE = 'alpine@sha256:d9e853e87e55526f6b2917df91a2115c36dd7c696a35be12163d44e6e2a4b6bc'  # 3.20, aria2 1.37.0 tested DL03
@@ -101,7 +101,17 @@ def prepare(a):
     write(stacks / STACKS['aria2'] / 'compose.yaml', compose_aria2(a)); write(stacks / STACKS['aria2'] / 'Dockerfile', DOCKERFILE)
     pull_image(QB_IMAGE)
     pull_image(ALPINE)
-    run(['docker', 'compose', '-f', str(stacks / STACKS['aria2'] / 'compose.yaml'), 'build'])
+    prebuilt = os.environ.get('HOTEL_PREBUILT_ARIA2_ID')
+    if prebuilt:
+        if not re.fullmatch(r'sha256:[0-9a-f]{64}', prebuilt):
+            raise RuntimeError('预载 aria2 的镜像身份格式错误')
+        info = json.loads(subprocess.check_output([
+            'docker', 'image', 'inspect', '--platform', native_platform(), 'hotel-aria2:1.37'
+        ], text=True))[0]
+        if info['Id'] != prebuilt or info['Os'] + '/' + info['Architecture'] != native_platform():
+            raise RuntimeError('预载 aria2 的身份或架构不符，请重新导入依赖包')
+    else:
+        run(['docker', 'compose', '-f', str(stacks / STACKS['aria2'] / 'compose.yaml'), 'build'])
     lock = {'qbittorrent': QB_IMAGE, 'aria2_base': ALPINE}
     if a.with_prowlarr:
         pull_image(PROWLARR)
