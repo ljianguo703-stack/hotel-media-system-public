@@ -36,3 +36,16 @@ python3 tools/build_connection_guide.py
 ```
 
 四平台完整便携包的构建参数见 `tools/build_tv_bundle.py --help`，产物核验见 `tools/verify_tv_bundle.py --help`。机型支持由精确身份与固件条件决定。
+
+
+## 单文件服务器直升DEB
+
+在Ubuntu准备Python3.9+及dpkg-deb。程序包不含本店数据、签名材料、APK或容器镜像。
+
+```bash
+python3 deploy/software/package_upgrade.py --source . \
+  --output dist/hotel-tv-upgrade-latest.deb
+python3 -m unittest discover -s tests -p test_unified_upgrade.py
+```
+
+构建器仅收集server/admin允许的109个程序文件和统一安装控制器，生成Architecture all的DEB。隔离原IN17执行器/HTTP/dpkg闭环脚本为tools/unified_upgrade_e2e.py，必须在一次性root Docker环境运行，不用于现场。

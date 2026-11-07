@@ -63,7 +63,7 @@
     "release": "IN19-dependencies-20261107"
   },
   "documentation": {
-    "version": "IN20-DOC05",
+    "version": "IN20-DOC06",
     "date": "2026-11-07",
     "pages": 34,
     "network_paths": [
@@ -82,6 +82,35 @@
     "installer_sha256": "ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e",
     "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source"
   },
-  "source_ref": "refs/tags/IN20-20261107",
-  "installer_tool_source_commit": "8b5b6258eed5115adbce4c744c7d7d6859d0b13a"
+  "source_ref": "refs/tags/IN20-U1-20261107",
+  "installer_tool_source_commit": "8b5b6258eed5115adbce4c744c7d7d6859d0b13a",
+  "unified_upgrade": {
+    "file": "hotel-tv-upgrade-latest.deb",
+    "sha256": "cce6f9be1aeb81d1ff371055d0de7aadadbd01285b737fe79e80090ac57d2695",
+    "bytes": 7842150,
+    "target": "v1-0-0-rc5-in20u1",
+    "deb_version": "1.0.0~in20u1",
+    "runtime_files": 109,
+    "supported_bases": [
+      "v1-0-0-rc5-pl04",
+      "v1-0-0-rc5-rq02",
+      "v1-0-0-rc5-rq04",
+      "v1-0-0-rc5-rq04u1",
+      "v1-0-0-rc5-in20",
+      "v1-0-0-rc5-in20-from-pl04",
+      "v1-0-0-rc5-in20-from-rq02",
+      "v1-0-0-rc5-in20-from-rq04",
+      "v1-0-0-rc5-in20-from-rq04u1",
+      "v1-0-0-rc5-in20u1"
+    ],
+    "release": "IN20-U1-20261107",
+    "legacy_worker": "1.0.0~rc5.in17; five modules byte-identical to current",
+    "unit_tests": 9,
+    "installer_tests": 82,
+    "linux_dpkg_cases": [
+      "PL04",
+      "RQ04 with injected failure and same-DEB retry"
+    ],
+    "site_installation": false
+  }
 }
