@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>想看什么 · 酒店影院</title>
+<style>
+:root {
+  color-scheme:light;
+  --paper:#f5f2eb;
+  --ink:#202d33;
+  --muted:#687576;
+  --accent:#7d6335;
+  --line:#dcded7
+}
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
+  line-height:1.6
+}
+main {
+  max-width:560px;
+  margin:0 auto;
+  padding:64px 24px 40px
+}
+.brand {
+  font-size:12px;
+  letter-spacing:.18em;
+  color:var(--accent);
+  margin:0 0 40px
+}
+.brand span {
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:var(--accent);
+  transform:rotate(45deg);
+  margin-right:10px
+}
+h1 {
+  font-size:34px;
+  line-height:1.3;
+  font-weight:600;
+  letter-spacing:-.03em;
+  margin:0 0 14px
+}
+.intro {
+  color:var(--muted);
+  margin:0 0 32px;
+  font-size:16px
+}
+label {
+  display:block;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:10px
+}
+textarea {
+  width:100%;
+  min-height:190px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  padding:16px;
+  font:inherit;
+  line-height:1.7;
+  color:var(--ink);
+  resize:vertical;
+  transition:border-color .18s,box-shadow .18s
+}
+textarea:focus {
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px #7d63351a
+}
+.hint {
+  font-size:12px;
+  color:var(--muted);
+  margin:8px 0 24px
+}
+button {
+  display:block;
+  width:100%;
+  min-height:52px;
+  border:0;
+  border-radius:10px;
+  background:var(--ink);
+  color:#fff;
+  font:inherit;
+  font-weight:600;
+  cursor:pointer;
+  transition:transform .15s,opacity .15s
+}
+button:active {
+  transform:scale(.98)
+}
+button:disabled {
+  opacity:.6;
+  cursor:wait
+}
+#feedback {
+  color:#9b3e31;
+  font-size:14px;
+  min-height:24px;
+  overflow-wrap:anywhere
+}
+footer {
+  margin-top:48px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px
+}
+.receipt {
+  padding-top:16px;
+  animation:arrive .25s ease-out
+}
+.receipt-mark {
+  font-size:28px;
+  color:var(--accent);
+  margin-bottom:20px
+}
+.receipt p {
+  color:var(--muted)
+}
+.receipt code {
+  font-size:12px;
+  overflow-wrap:anywhere
+}
+.content {
+  animation:arrive .3s ease-out
+}
+[hidden] {
+  display:none!important
+}
+@keyframes arrive {
+  from {
+    opacity:0;
+    transform:translateY(8px)
+  }
+  to {
+    opacity:1;
+    transform:none
+  }
+}
+@media(min-width:700px) {
+  main {
+    padding-top:100px
+  }
+  .brand {
+    margin-bottom:56px
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important
+  }
+}
+</style>
+</head>
+<body><main>
+<p class="brand"><span aria-hidden="true"></span>HOTEL CINEMA</p>
+<section id="request-content" class="content" $form_hidden>
+<h1>下一部，想看什么？</h1>
+<p class="intro">留下片名或故事描述，我们会收到你的观影心愿。</p>
+<form id="request-form" action="/request" method="post">
+<input type="hidden" name="entry" value="$entry">
+<input type="hidden" name="submission_id" value="$submission_id">
+<label for="message">想看的影片或留言</label>
+<textarea id="message" name="message" maxlength="500" required placeholder="影片名称、剧集名称，或你记得的故事…">$message</textarea>
+<p class="hint">最多 500 字 · 留言将交给影院管理员</p>
+<button type="submit">提交观影心愿</button>
+<p id="feedback" role="status" aria-live="polite">$error</p>
+</form></section>
+<section id="receipt" class="receipt" $receipt_hidden aria-live="polite">
+<div class="receipt-mark" aria-hidden="true">✓</div><h1>留言已收到</h1>
+<p>谢谢你的推荐，管理员会查看并安排处理。</p><p>留言编号 <code id="receipt-id">$receipt</code></p>
+</section>
+<footer>酒店影院 · 观众留言</footer>
+</main>
+<script nonce="$nonce">
+const form=document.getElementById('request-form');
+form.addEventListener('submit',async event=>{
+  event.preventDefault();
+  const button=form.querySelector('button'),feedback=document.getElementById('feedback');
+  if(button.disabled)return;
+  button.disabled=true;button.textContent='正在提交…';feedback.textContent='';
+  try{
+    const response=await fetch('/request',{method:'POST',headers:{Accept:'application/json'},body:new URLSearchParams(new FormData(form)),credentials:'same-origin'});
+    const result=await response.json();
+    if(!response.ok)throw new Error(result.error||'提交未完成，请重试');
+    document.getElementById('receipt-id').textContent=result.receipt;
+    document.getElementById('request-content').hidden=true;
+    document.getElementById('receipt').hidden=false;
+  }catch(error){feedback.textContent=error.message||'网络暂不可用，请稍后重试';}
+  finally{button.disabled=false;button.textContent='提交观影心愿';}
+});
+</script>
+</body></html>

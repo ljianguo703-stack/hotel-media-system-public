@@ -39,6 +39,7 @@ data class HomeContent(
     val guide: List<GuideCard> = emptyList(), val topics: List<Topic> = emptyList(),
     val menu: List<HomeMenuCard> = HomeMenu.defaults(),
     val appsReporting: Boolean = false,
+    val guestRequest: GuestRequestConfig = GuestRequestConfig(),
 ) {
     val hasQr: Boolean get() = showQr && (contactQr.isNotBlank() || wifiQr.isNotBlank())
     companion object {
@@ -48,7 +49,8 @@ data class HomeContent(
             json.optJSONArray("guide").objects().map { GuideCard(it.optString("id"), it.optString("title"), it.optString("body"), it.optString("image")) },
             json.optJSONArray("topics").objects().map { t -> Topic(t.optString("id"), t.optString("name"), t.optString("description"),
                 t.optJSONArray("item_ids").let { a -> (0 until (a?.length() ?: 0)).map { a!!.getString(it) } }) },
-            HomeMenu.parse(json.optJSONArray("menu")), json.optBoolean("apps_reporting", false))
+            HomeMenu.parse(json.optJSONArray("menu")), json.optBoolean("apps_reporting", false),
+            GuestRequestConfig.parse(json.optJSONObject("guest_request")))
     }
 }
 

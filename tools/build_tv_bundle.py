@@ -79,7 +79,7 @@ def build(runtime, payload, output, jdk=None, sdk=None):
             shutil.copy2(ROOT / 'tv-installer' / n, folder / n)
         shutil.copy2(ROOT / 'tv-installer/先看这里.txt', folder / '先看这里.txt')
         (folder / 'docs').mkdir()
-        for n in ['第一版共同候选与实机验收.md','CANDIDATE_BUILD.md']:
+        for n in ['BUILD.md','INSTALL.md','USAGE.md','CHANGELOG-IN20.md']:
             shutil.copy2(ROOT / 'docs' / n, folder / 'docs' / n)
         for n in ['upstream-2026-11-03.json', 'community-index.json']:
             shutil.copy2(ROOT / 'tv-installer/source' / n, folder / 'docs' / n)

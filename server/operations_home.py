@@ -137,6 +137,7 @@ class HomeOperations(HomeMenuOperations):
         result['topics'] = [t for t in result['topics'] if t['item_ids']]
         result['menu'] = self.home_menu_payload(db, result['topics'])
         result['apps_reporting'] = True
+        result['guest_request'] = self.guest_public_config(db)
         return result
 
     def home_admin_state(self):

@@ -608,6 +608,8 @@ private fun clock(ms: Long, timezone:String="UTC"): String = java.text.SimpleDat
         if (ad?.kind == "image") key(playId) { Poster(vm.repo, ad.path, "", "#183C4A", Modifier.fillMaxSize(), onReady = { vm.adReady(playId) }, onFailed = { vm.adImageFailed(playId) }, contentScale = ContentScale.Fit) }
         if (ad?.kind == "card") key(playId) { SponsorAdCard(vm.repo, ad.card, { vm.adReady(playId) }, { vm.adImageFailed(playId) }) }
         PlaybackChrome(vm)
+        GuestRequestPrompt(vm.repo, vm.catalog?.home?.guestRequest ?: GuestRequestConfig(), vm.showGuestRequest,
+            topInset = if (vm.ticker != null) 56.dp else 24.dp)
         if (vm.playbackError) {
             Column(Modifier.align(Alignment.Center).background(Panel, RoundedCornerShape(12.dp)).padding(28.dp), horizontalAlignment = Alignment.CenterHorizontally) {
                 Label(stringResource(R.string.ht_play_failed), 20)

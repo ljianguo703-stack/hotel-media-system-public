@@ -1,22 +1,13 @@
 {
   "schema": 1,
-  "release": "IN19-public-20261107-r4",
+  "release": "IN20-20261107",
   "date": "2026-11-07",
   "versions": {
-    "backend": "v1-0-0-rc5-pl04",
-    "tv": "0.1.16/code17",
-    "installer_tool": "2.0.2"
+    "backend": "v1-0-0-rc5-in20",
+    "tv": "0.1.17/code18",
+    "installer_tool": "2.0.4"
   },
-  "source_base": "6548049e3df8a1f81b82e243153733c62fde47e0",
-  "runtime_files_identical_to_base": 199,
-  "runtime_payload_sha256": "842305e83a98c3735e8aa64d92746e7fdc1255209db67fd30c7fbfc5184d72b2",
-  "installer": {
-    "name": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public-r4.run",
-    "bytes": 9573891,
-    "sha256": "d160f52ca81f7abf8eabaf4c99d3b0ff18d7b6d48628c8ada32a1585c491fc12",
-    "source_commit": "266c13ff31dc35867400d6d8be6912b4f2eccdff",
-    "asset_id": 718876203
-  },
+  "source_base": "4216f349bc99f30a7804005cd4dec86ef1262e3f",
   "privacy_review": {
     "source_snapshot_excludes_internal_documents": true,
     "no_git_history_in_snapshot": true,
@@ -26,17 +17,19 @@
     "gitleaks_findings_reviewed": "DLL SHA digests and APK public-key fingerprints only"
   },
   "verification": {
-    "deploy_and_online_wrapper_unit_tests": 73,
-    "plan": "passed",
-    "full_new_site_install": "owner confirmed full installation completed on PowerEdge R740, Ubuntu 24.04 amd64, 2026-11-07",
-    "24h_and_target_concurrency": "requires site acceptance",
-    "dependency_cloud_jobs": 14,
-    "ubuntu_anonymous_download_sha256": 3,
-    "ubuntu_python312_unit_tests": 73,
-    "mock_e2e": "passed; 390/1280/1440 screenshots",
-    "seerr_fresh_partial_initialized_and_legacy_regressions": "passed",
-    "site_seerr_resume": "owner confirmed r4 full installation succeeded, 2026-11-07",
-    "tmdb_site_configuration": "warning reported; DOC04 sections 13-15 provide settings and verification"
+    "backend_full": 380,
+    "runtime_targeted": 9,
+    "frontend": 79,
+    "installer": 73,
+    "console_routes": 41,
+    "roles": [
+      "admin",
+      "operator",
+      "viewer"
+    ],
+    "go_race": "passed",
+    "android": "debug unit tests, release lint and signed release passed",
+    "site": "not installed by this task"
   },
   "entrypoint": {
     "arguments_required": false,
@@ -74,5 +67,6 @@
     "local_payload_files": 18,
     "local_checksum_entries": 20,
     "seerr_screenshots": "v3.5.1 isolated demonstration, zh-CN, documentation example address"
-  }
+  },
+  "status": "candidate-building"
 }

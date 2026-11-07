@@ -1,50 +1,15 @@
-# 酒店影院公开安装版
+# 酒店影院 IN20
 
-一台 Ubuntu 服务一家酒店，提供局域网选片、电影/剧集播放、广告、字幕、下载与电视管理。
+一台 Ubuntu 服务一家酒店，提供局域网媒体、广告、字幕、下载、电视与设备维护。
 
-当前版本为 IN19，后台 `v1-0-0-rc5-pl04`，电视 `0.1.16 / code17`，员工安装工具 `2.0.2`。首装基线为 Ubuntu 24.04 LTS amd64，首次安装需要联网下载系统依赖与容器。
+当前统一版：后台 `v1-0-0-rc5-in20`、标准/守护电视 `0.1.17/code18`、四平台施工工具 `2.0.4`。首装复用14份固定镜像，包含RQ04留言/地址修复、r4初始化修复和TI21安装缺项提示。
 
-## 一条命令安装
+[安装教程](docs/INSTALL.md) · [日常使用教程](docs/USAGE.md) · [升级说明](docs/CHANGELOG-IN20.md) · [构建](docs/BUILD.md)
 
-2026-11-07，用户已确认 PowerEdge R740 全新 Ubuntu 一键安装成功。新装 Ubuntu 先按教程开启 SSH。中国大陆命令见下方，海外使用[官方 Docker 源的一键安装段](docs/INSTALL.md#08-海外网络在线一键安装)，本地完整包按[准备与安装步骤](docs/INSTALL.md#09-准备本地完整包)执行，APT 保持联网。TMDB 提示与图示设置见[第 13-15 节](docs/INSTALL.md#13-tmdb-提示与基本网络设置)。
+首次安装使用当前Release中的固定下载入口与校验清单，完成后无需另补RQ02/RQ04。已有系统使用对应当前版本的升级包，保留原数据；不要把首装用于覆盖已运行的酒店。
 
-全新 Ubuntu 接通网络后，复制下面这一条命令执行即可。安装使用已有默认值，终端会在需要时提示输入 Ubuntu 管理员密码。
+A版分组菜单保留41个功能入口。运行概览显示在线电视、影院业务流量、Linux资源和网口总量；这些流量范围不同，未采样时明确显示未采集。
 
-```bash
-sudo apt-get update && sudo apt-get install -y python3 wget ca-certificates && wget --timeout=20 --tries=3 --header='Accept: application/octet-stream' -O hotel-install.py https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/718888359 && echo '73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203  hotel-install.py' | sha256sum -c - && sudo python3 hotel-install.py
-```
+本版本机隔离验证与酒店现场验收分别记录。连续24小时、真实目标房数并发和实体电源行为仍需现场验收。未知机型按施工工具支持级别单独验证。
 
-当前安装器为 r4，修正 Seerr 初始化误用下载器密码的问题。入口从本仓库 Release 下载固定依赖，校验 SHA256 后导入镜像并执行 full 首装，已有安装记录自动续装。Ubuntu 系统包和 Docker 软件包使用 APT。完成后终端显示后台地址与初始凭据的位置，登录后台再完成本店设置。
-
-| 项目 | 自动处理 | 安装后设置 |
-|---|---|---|
-| 店名 | 默认“酒店影院” | 后台“系统设置 → 酒店与播放”修改 |
-| 服务器 IP | 根据本机网络路由自动识别 | 后台按当前访问地址显示电视接口 |
-| 业务时区 | 默认沿用 Ubuntu 主机时区 | 后台“系统设置 → 酒店与播放”修改 |
-| 存储 | 自动创建标准目录 `/srv/hotel-tv/media/.automation` | 后台管理下载保存位置，或在“影片片库”接入已有影片目录 |
-
-系统会为本店生成独立账号、设备凭据和员工 PIN。初始凭据在服务器本机私下查看。
-
-```bash
-sudo cat /etc/hotel-tv/setup-credentials.txt
-```
-
-后台使用 `http://服务器IP:18791`，电视接口使用 `http://服务器IP:18790`。完整操作见[施工教程](docs/INSTALL.md)。需要把完整媒体目录搬到新盘时，按[手动存储切换指南](docs/STORAGE-MIGRATION.md)操作。
-
-查看固定依赖清单可运行 `python3 hotel-install.py --plan`。中断后重跑同一条命令，或运行 `sudo python3 hotel-install.py`。需要先准备依赖时使用 `sudo python3 hotel-install.py --cache-only`。详见[仓库依赖与续装说明](docs/RELEASE-DEPENDENCIES.md)。
-
-## 电视接入与下载
-
-从发布页下载施工电脑对应的完整 `hotel-tv-installer-2.0.2-*` ZIP，解压并启动工具。新酒店创建自己的工具资料目录。开启电视调试后检测精确型号、固件与设备身份，填写本店服务器地址、当前后台账号和唯一房号，选择“已有员工 PIN”复用新服务器生成的 PIN。
-
-需要后台 ADB 维护时勾选“纳入后台全程维护”，完成真实遥控、播放、声音、字幕、待机及断电恢复验收。机型支持范围以工具检测结果和随包说明为准。
-
-公开发布包含 Ubuntu 首装、源码、标准/守护电视 APK、Mac ARM/Intel、Linux x64、Windows x64 安装工具及 SHA256 清单。[电视 APK 与四平台工具下载](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261106) / [当前 Ubuntu 首装发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261107-r4)
-
-## 源码与验证范围
-
-运行源码基线为 `6548049e3df8a1f81b82e243153733c62fde47e0`。公开安装包的运行文件与该版本逐项核对，来源及校验记录见 `PUBLIC_RELEASE.json`。本仓库以经筛选的当前源码快照建立，内部施工记录单独管理。
-
-连续播放满 24 小时和实际目标房数并发，需要在使用酒店记录结果。已验电视为 MiTV-ASTP0/mulan、Android 9/SDK28、OS3.0.104.0.PSTAATV，其他型号按工具支持级别单独验证。
-
-开发构建见 [构建说明](docs/BUILD.md)。项目许可证见 [LICENSE](LICENSE)，第三方来源与许可见 [NOTICE](NOTICE) 和 `third-party/`。
+源码、许可证和第三方来源见 LICENSE、NOTICE、third-party 与 PUBLIC_RELEASE.json。公开源不包含本店密码、设备凭据、私钥或业务数据库。

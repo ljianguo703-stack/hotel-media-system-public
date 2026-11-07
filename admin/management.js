@@ -6,7 +6,7 @@ function managementUi(){return {
   syncDraft:{url:'http://127.0.0.1:8096',token:'',paused:false,interval_seconds:120},syncDirty:false,syncRevision:0,connectionResult:null,policyDraft:{trash_days:30,cleanup_enabled:true},policyDirty:false,policyRevision:0,
   scheduleAt:'',scheduleGroup:'全部客房',scheduleData:null,releasePreview:null,restoreConfirmed:false,fileHealth:null,overviewTasks:{},serverHealth:null,mediaWarnings:[],
   reportFilters:{from:'',until:'',merchant:'',group:'',placement:'',dimension:'campaign'},reportDirty:false,
-  get opsTabs(){return [{id:'advertisers',name:'广告主'},{id:'orders',name:'投放单'},{id:'packages',name:'广告套餐'},{id:'control',name:'广告总控'},{id:'ad_playback',name:'播放规则'},{id:'home',name:'电视首页'},{id:'topics',name:'专题'},{id:'compat',name:'兼容检查'},{id:'channels',name:'频道'},{id:'assets',name:'素材库'},{id:'groups',name:'设备组',admin:true},{id:'trash',name:'回收站'},{id:'tasks',name:'任务中心'},{id:'audit',name:'操作审计'},{id:'backups',name:'数据库备份',admin:true},{id:'sync',name:'同步设置',admin:true},{id:'health',name:'服务器状态'}].filter(t=>!t.admin||this.administrator)},
+  get opsTabs(){return [{id:'advertisers',name:'广告主'},{id:'orders',name:'投放单'},{id:'packages',name:'广告套餐'},{id:'control',name:'广告总控'},{id:'ad_playback',name:'播放规则'},{id:'home',name:'电视首页'},{id:'guest_requests',name:'观众留言',admin:true},{id:'topics',name:'专题'},{id:'compat',name:'兼容检查'},{id:'channels',name:'频道'},{id:'assets',name:'素材库'},{id:'groups',name:'设备组',admin:true},{id:'trash',name:'回收站'},{id:'tasks',name:'任务中心'},{id:'audit',name:'操作审计'},{id:'backups',name:'数据库备份',admin:true},{id:'sync',name:'同步设置',admin:true},{id:'health',name:'服务器状态'}].filter(t=>!t.admin||this.administrator)},
   get visibleCategories(){return this.data.categories.filter(c=>!c._archived)},
   async moveCategory(c,direction){const all=this.visibleCategories,i=all.findIndex(x=>x.id===c.id),j=i+direction;if(j<0||j>=all.length)return;const edge=all[j].sort,outer=all[j+direction]?.sort;await this.action('/categories/'+encodeURIComponent(c.id),{...c,sort:outer==null?edge+direction*10:outer===edge?edge+direction:(edge+outer)/2},'分类顺序已更新',false)},
   get managementModal(){return ['entity','asset-preview','csv-import','credentials','device-detail','source-edit','release-preview','schedule-choose','schedule-preview','op-result','media-warnings','currency','package-edit','order-edit','order-detail','report-choose','guide-edit','topic-edit','channel-edit','channel-detail'].includes(this.modal)},
@@ -33,6 +33,7 @@ function managementUi(){return {
       const section=this.opsTab==='health'?'health':this.opsTab==='sync'?'sync':this.opsTab==='control'?'ad_control':['home','topics'].includes(this.opsTab)?'home':this.opsTab;
       const q=new URLSearchParams({section,q:this.opsQuery,offset:String(this.opsPage*this.opsLimit),limit:String(this.opsLimit)});
       if(this.opsTab==='tasks'&&this.opsStatus)q.set('status',this.opsStatus);
+      if(this.opsTab==='guest_requests'&&this.opsStatus)q.set('status',this.opsStatus);
       if(this.opsTab==='orders')for(const [k,v] of Object.entries(this.orderQueryParams()))q.set(k,v);
       this.opsLoading=true;
       try{const result=await this.api('/operations?'+q);if(this.opsTab!==requestedTab||this.view!==requestedView||this.opsRequest!==ticket)return;this.opsData=result;
@@ -42,6 +43,7 @@ function managementUi(){return {
       if(this.opsTab==='control')this.controlLoaded(result);
       if(this.opsTab==='ad_playback'&&typeof this.playbackLoaded==='function')this.playbackLoaded(result);
       if(['home','topics'].includes(this.opsTab))this.homeLoaded(result);
+      if(this.opsTab==='guest_requests')this.guestLoaded(result);
       if(this.opsTab==='compat')this.compatLoaded(result);
       }finally{if(this.opsRequest===ticket)this.opsLoading=false}
     }
@@ -106,6 +108,7 @@ cinemaAdmin=function(){
   if(typeof advertisingUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(advertisingUi()));
   if(typeof ordersUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(ordersUi()));
   if(typeof homeUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(homeUi()));
+  if(typeof guestRequestsUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(guestRequestsUi()));
   if(typeof compatUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(compatUi()));
   if(typeof channelsUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(channelsUi()));
   if(typeof downloadsUi==='function')Object.defineProperties(app,Object.getOwnPropertyDescriptors(downloadsUi()));

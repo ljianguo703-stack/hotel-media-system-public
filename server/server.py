@@ -15,6 +15,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote, urlsplit
 from admin_http import AdminMixin
 from management import Store, Problem, encoded
+from runtime_monitor import RuntimeMonitor, MeteredStream
 
 ROOT = Path(__file__).resolve().parent
 
@@ -34,6 +35,10 @@ def make_server(host, port, config_path, data_dir, media_dir, store=None, admin_
     data_dir, media_dir = Path(data_dir), Path(media_dir).resolve()
     data_dir.mkdir(parents=True, exist_ok=True)
     store = store or Store(data_dir, media_dir, config_path)
+    if not getattr(store, 'runtime_monitor', None):
+        with store.db() as db: zone=store.kv(db,'settings').get('timezone','UTC')
+        store.runtime_monitor=RuntimeMonitor(data_dir,zone)
+        store.runtime_monitor_users=0
     db_path = data_dir / "events.sqlite3"
     database(db_path).close()
 
@@ -42,6 +47,17 @@ def make_server(host, port, config_path, data_dir, media_dir, store=None, admin_
         def setup(self):
             super().setup()
             self.connection.settimeout(60)
+            self._traffic_device=None;self._traffic_body=False
+            self.wfile=MeteredStream(self.wfile,self,True)
+            self.rfile=MeteredStream(self.rfile,self,False)
+
+        def handle_one_request(self):
+            self._traffic_device=None;self._traffic_body=False
+            return super().handle_one_request()
+
+        def end_headers(self):
+            super().end_headers()
+            self._traffic_body=True
 
         @property
         def store(self):
@@ -58,7 +74,11 @@ def make_server(host, port, config_path, data_dir, media_dir, store=None, admin_
         def device(self):
             token = self.headers.get("X-TV-Token", "")
             touch = urlsplit(self.path).path in ('/api/v1/catalog', '/api/v1/ads', '/api/v1/messages', '/api/v1/managed-status') and self.headers.get('X-TV-Probe') != '1'
-            return store.device(token, self.client_address[0], touch)
+            device=store.device(token, self.client_address[0], touch)
+            if device and self.headers.get('X-TV-Probe') != '1':
+                self._traffic_device=device['id']
+                if touch:store.runtime_monitor.touch(device['id'],self.client_address[0])
+            return device
 
         def send_json(self, status, data):
             raw = json.dumps(data, ensure_ascii=False).encode()
@@ -219,7 +239,18 @@ def make_server(host, port, config_path, data_dir, media_dir, store=None, admin_
 
     class HotelHTTPServer(ThreadingHTTPServer):
         request_queue_size = 128
+        def server_close(self):
+            super().server_close()
+            if getattr(self,'_monitor_registered',False) and not getattr(self,'_monitor_closed',False):
+                self._monitor_closed=True
+                store.runtime_monitor_users-=1
+                if store.runtime_monitor_users==0:
+                    self.runtime_monitor.close();store.runtime_monitor=None
     server = HotelHTTPServer((host, port), Handler)
+    server.runtime_monitor=store.runtime_monitor
+    server._monitor_registered=True
+    store.runtime_monitor_users+=1
+    store.runtime_monitor.start()
     server.daemon_threads = True
     return server
 
@@ -234,6 +265,7 @@ def main():
     parser.add_argument('--admin-port', type=int)
     parser.add_argument('--admin-web', type=Path, default=ROOT.parent / 'admin')
     parser.add_argument('--library-root', action='append', default=[])
+    parser.add_argument('--guest-port', type=int, default=18792)
     args = parser.parse_args()
     store = Store(args.data, args.media, args.config, [args.media] + args.library_root)
     store.run_jellyfin_scheduler()
@@ -244,17 +276,30 @@ def main():
     server = make_server(args.host, args.port, args.config, args.data, args.media, store=store)
     store.tv_port=server.server_port
     admin_server = None
+    guest_server = None
     if args.admin_port:
         if not args.admin_web.is_dir(): parser.error('admin web folder does not exist')
         admin_server = make_server(args.host, args.admin_port, args.config, args.data, args.media, store=store, admin_web=args.admin_web)
         threading.Thread(target=admin_server.serve_forever, daemon=True).start()
         print('Hotel TV administration listening on port', admin_server.server_port, flush=True)
+        from guest_http import make_guest_server
+        try:
+            guest_server = make_guest_server('127.0.0.1', args.guest_port, store, args.admin_web)
+            threading.Thread(target=guest_server.serve_forever, daemon=True).start()
+            print('Hotel TV guest listener ready on loopback port', guest_server.server_port, flush=True)
+        except OSError:
+            store.guest_listener = {'available': False, 'host': '127.0.0.1', 'port': args.guest_port}
+            print('Hotel TV guest listener unavailable; check its loopback port', flush=True)
     print("Hotel TV LAN server listening on port", server.server_port, flush=True)
+    import signal
+    signal.signal(signal.SIGTERM,lambda *_:threading.Thread(target=server.shutdown,daemon=True).start())
     try:
         server.serve_forever()
     except KeyboardInterrupt:
         pass
     finally:
+        if guest_server:
+            guest_server.shutdown(); guest_server.server_close()
         if admin_server:
             admin_server.shutdown(); admin_server.server_close()
         server.server_close()

@@ -70,6 +70,10 @@ class HotelViewModel(app: Application) : AndroidViewModel(app) {
             }
         }
     var content by mutableStateOf<ContentRef?>(null)
+    private val guestRequestSchedule = GuestRequestSchedule()
+    private var guestRequestVisible by mutableStateOf(false)
+    val showGuestRequest: Boolean get() = guestRequestVisible && content != null && ad == null &&
+        !paused && !playbackError && !settings && guestPanel == null && !showPlaybackControls
     var ad by mutableStateOf<Ad?>(null)
     var ticker by mutableStateOf<Ad?>(null)
     var player by mutableStateOf<ExoPlayer?>(null)
@@ -285,6 +289,8 @@ class HotelViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
     fun play(ref: ContentRef, restart: Boolean = false) {
+        guestRequestSchedule.reset()
+        guestRequestVisible = false
         if (HotelMaintenance.busy(getApplication())) return
         closePlayback(); resetRecovery()
         content = ref; playbackError = false; lastContentTick = 0
@@ -650,6 +656,10 @@ class HotelViewModel(app: Application) : AndroidViewModel(app) {
         return if (SystemClock.elapsedRealtime()-tickerSelectedAt >= (policy.playback?.textItemSeconds ?: 15)*1000L) list[(at+1)%list.size] else list[at]
     }
     private fun tick() {
+        val guestPlaying = visible && screenAwake && !settings && content != null && ad == null &&
+            channel == null && !playbackError && player?.isPlaying == true && !HotelMaintenance.busy(getApplication())
+        guestRequestVisible = guestRequestSchedule.update(content?.id, catalog?.home?.guestRequest ?: GuestRequestConfig(),
+            SystemClock.elapsedRealtime(), guestPlaying, guestPanel == null && !showPlaybackControls)
         HotelMaintenance.pulse()
         if (HotelMaintenance.busy(getApplication())) { updateTicker(null); return }
         checkServerConnection()

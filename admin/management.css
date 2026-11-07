@@ -56,3 +56,82 @@ section:has(.report-filters) .chart-column{height:100px}
 .mc-pick:hover,.mc-pick:focus-visible{border-color:var(--ink)}.mc-pick strong{font-size:13px;line-height:1.4;overflow-wrap:anywhere}.mc-pick small{color:var(--muted);font-size:11.5px;overflow-wrap:anywhere}
 .mc-pick-art{display:block;aspect-ratio:2/3;background:var(--soft);border-radius:4px;overflow:hidden;margin-bottom:4px}.mc-pick-art img{width:100%;height:100%;object-fit:cover;display:block}
 @media(max-width:520px){.mc-pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* RQ02 guest suggestions reuse the console form and table components. */
+.guest-settings {
+  padding:20px;
+  margin-bottom:24px
+}
+.guest-settings summary {
+  cursor:pointer;
+  font-weight:600;
+  margin-bottom:18px
+}
+.guest-settings .check {
+  margin-bottom:18px
+}
+.guest-settings .form-grid {
+  margin-bottom:18px
+}
+.guest-timing {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px
+}
+.guest-entry {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid var(--line)
+}
+.guest-entry img {
+  flex:0 0 112px;
+  image-rendering:pixelated
+}
+.guest-entry>div {
+  min-width:0;
+  max-width:100%;
+  flex:1
+}
+.guest-url {
+  display:block;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  font-size:12px
+}
+.guest-entry code {
+  white-space:normal;
+  overflow-wrap:anywhere
+}
+.guest-message {
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  min-width:180px;
+  max-width:640px
+}
+.guest-pages {
+  margin-top:18px;
+  flex-wrap:wrap
+}
+@media(max-width:700px) {
+  .guest-settings {
+    padding:16px
+  }
+  .guest-settings .form-grid,.guest-timing {
+    grid-template-columns:1fr
+  }
+  .guest-entry>div {
+    width:100%
+  }
+  .guest-entry {
+    align-items:flex-start;
+    flex-direction:column
+  }
+  .guest-message {
+    min-width:0;
+    max-width:none
+  }
+}

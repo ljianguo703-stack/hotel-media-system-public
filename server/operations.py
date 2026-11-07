@@ -37,6 +37,7 @@ class OperationsMixin(MediaCleanupOperations, AdvertisingOperations, DeviceOpera
         from software_store import initialize as initialize_software
         initialize_software(db)
         self.initialize_home_menu(db)
+        self.initialize_guest_requests(db)
         db.execute("INSERT OR IGNORE INTO kv VALUES('management_policy',?)", (json.dumps({'trash_days':30,'cleanup_enabled':True}),))
         # Existing names remain the public contract; register them without changing the business revision.
         for table, kind, key in [('devices','group','group'),('campaigns','group','group'),('campaigns','advertiser','merchant')]:
@@ -290,6 +291,9 @@ class OperationsMixin(MediaCleanupOperations, AdvertisingOperations, DeviceOpera
 
     def operations_get(self, section, args, user, local_service_host=None):
         m=core()
+        if section=='guest_requests':
+            if user['role']!='admin':raise m.Problem('观众留言需要管理员权限',403)
+            return self.guest_admin_state(args)
         if section=='overview':return self.management_overview()
         if section=='library_scan':return self.library_scan_plan(user)
         if section=='media_files':return self.media_files(m.text(args.get('id',[''])[0],200,True))
@@ -341,6 +345,9 @@ class OperationsMixin(MediaCleanupOperations, AdvertisingOperations, DeviceOpera
         expected={'devices_import':'device','devices_batch':'device','campaign_batch':'campaign','discover_assets':'asset','library_update':'media','source_save':'source'}
         expected.update({a:'download' for a in ('download_create','download_action','download_settings','download_test','download_mkdir')})
         if action in expected and kind!=expected[action]:raise m.Problem('操作与管理对象不匹配')
+        if action in ('guest_settings','guest_status'):
+            if kind!='guest_request' or user['role']!='admin':raise m.Problem('观众留言需要管理员权限',403)
+            return self.guest_settings_save(body,user,revision) if action=='guest_settings' else self.guest_status_save(body,user)
         if action in ('save','source_save') and not isinstance(body.get('item'),dict):raise m.Problem('资料表单必须为对象')
         if action=='trash_clear':return self.clear_trash(body,actor,revision)
         if action=='currency_save':return self.save_currency(body,actor,revision)

@@ -21,7 +21,7 @@ def validate_names(names):
             raise ValueError('禁止打包酒店数据：' + name)
 
 
-def build(root, output):
+def build(root, output, installer_payload=False):
     root, output = Path(root).resolve(), Path(output).resolve()
     if subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=normal'], cwd=root):
         raise RuntimeError('请先审阅并提交干净源码；不从未提交目录制作发布')
@@ -29,7 +29,13 @@ def build(root, output):
     validate_names(names)
     output.parent.mkdir(parents=True, exist_ok=True)
     if output.exists(): raise ValueError('输出已存在，未覆盖')
-    subprocess.run(['git', 'archive', '--format=tar.gz', '-o', str(output), 'HEAD'], cwd=root, check=True)
+    command=['git', 'archive', '--format=tar.gz', '-o', str(output), 'HEAD']
+    if installer_payload:
+        # The pinned online downloader refers to this archive's eventual hash.
+        # Keep it and the download instructions outside the embedded payload.
+        command+=['--','.',' :(exclude)install-from-release.py'.strip(),':(exclude)install-online.sh',
+                  ':(exclude)PUBLIC_RELEASE.json',':(exclude)README.md',':(exclude)docs/INSTALL.md']
+    subprocess.run(command, cwd=root, check=True)
     with tarfile.open(output) as archive:
         validate_names(archive.getnames())
         if any(m.issym() or m.islnk() for m in archive.getmembers()):
@@ -41,4 +47,5 @@ def build(root, output):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__); p.add_argument('--output', type=Path, required=True)
-    a = p.parse_args(); print(json.dumps(build(Path(__file__).resolve().parents[1], a.output)))
+    p.add_argument('--installer-payload',action='store_true')
+    a = p.parse_args(); print(json.dumps(build(Path(__file__).resolve().parents[1], a.output,a.installer_payload)))

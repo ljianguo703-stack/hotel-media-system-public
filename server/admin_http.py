@@ -97,6 +97,20 @@ class AdminMixin(SoftwareHTTP, FleetHTTP):
                 return self.send_json(200, self.software_repository().state())
             if route.startswith('/api/admin/') or route.startswith('/media/'):
                 user = self.admin_user()
+                if route == '/api/admin/dashboard':
+                    with self.store.db() as db:
+                        settings=self.store.kv(db,'settings')
+                        devices=[]
+                        for record in db.execute('SELECT id,body,last_seen,ip FROM devices'):
+                            device=json.loads(record['body']);device.update(id=record['id'],ip=record['ip'],online=bool(record['last_seen'] and 0<=now_ms()-record['last_seen']<120000))
+                            devices.append(device)
+                    snapshot=self.server.runtime_monitor.snapshot(devices,settings.get('timezone'),self.connection.getsockname()[0])
+                    import shutil
+                    try:
+                        disk=shutil.disk_usage(self.store.media)
+                        snapshot['server']['disk']={'total':disk.total,'used':disk.used,'percent':round(100*disk.used/disk.total,1)}
+                    except OSError:snapshot['server']['disk']=None
+                    return self.send_json(200,snapshot)
                 if route == '/api/admin/npc':
                     if user['role'] != 'admin': raise Problem('远程管理配置需要管理员权限', 403)
                     return self.send_json(200, npc_client.request())

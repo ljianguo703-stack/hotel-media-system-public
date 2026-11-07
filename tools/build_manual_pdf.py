@@ -123,7 +123,7 @@ def decorate(c, doc):
     c.restoreState()
 
 
-def parse_body(lines, story, s, width):
+def parse_body(lines, story, s, width, table_padding=7, table_widths=None):
     index = 0
     while index < len(lines):
         line = lines[index].strip()
@@ -156,6 +156,7 @@ def parse_body(lines, story, s, width):
             weights = [0.36, 0.64] if cols == 2 else [1/cols]*cols
             if cols == 2 and rows[0][0].getPlainText() == '文件':
                 weights = [0.58, 0.42]
+            weights = (table_widths or {}).get(rows[0][0].getPlainText(), weights)
             table = Table(rows, colWidths=[width*x for x in weights], repeatRows=1,
                           hAlign='LEFT', spaceBefore=3, spaceAfter=12)
             table.setStyle(TableStyle([
@@ -164,8 +165,8 @@ def parse_body(lines, story, s, width):
                 ('VALIGN', (0,0), (-1,-1), 'TOP'),
                 ('LEFTPADDING', (0,0), (-1,-1), 8),
                 ('RIGHTPADDING', (0,0), (-1,-1), 8),
-                ('TOPPADDING', (0,0), (-1,-1), 7),
-                ('BOTTOMPADDING', (0,0), (-1,-1), 7),
+                ('TOPPADDING', (0,0), (-1,-1), table_padding),
+                ('BOTTOMPADDING', (0,0), (-1,-1), table_padding),
                 ('LINEBELOW', (0,0), (-1,0), .6, LINE),
             ]))
             story.append(table)

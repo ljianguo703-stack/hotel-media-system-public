@@ -63,8 +63,12 @@ if '--fleet' in sys.argv:
     import fleet_mock_seed
     fleet_mock_seed.seed(store)
 servers=[make_server('127.0.0.1',0,config,data,media,store=store),make_server('127.0.0.1',0,config,data,media,store=store,admin_web=program/'admin')]
+if '--guest-requests' in sys.argv:
+    from guest_http import make_guest_server
+    servers.append(make_guest_server('127.0.0.1',0,store,program/'admin'))
 for s in servers:threading.Thread(target=s.serve_forever,daemon=True).start()
 info={'url':'http://127.0.0.1:'+str(servers[1].server_port),'tv_url':'http://127.0.0.1:'+str(servers[0].server_port),'data':str(root)}
+if '--guest-requests' in sys.argv:info['guest_url']='http://127.0.0.1:'+str(servers[2].server_port)
 output=Path(__file__).resolve().parents[1]/'artifacts/management/AD08';output.mkdir(parents=True,exist_ok=True);(output/'dev.json').write_text(json.dumps(info));print(json.dumps(info),flush=True)
 try:
     while True:

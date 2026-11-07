@@ -331,4 +331,43 @@ class HotelPresentationUiTest {
         assertTrue("Default production motion advances the text",scroll.value>0)
         assertEquals(qr,compose.onNodeWithTag("sponsor-fixed-qr").fetchSemanticsNode().boundsInRoot)
     }
+    private fun guestPrompt(size: String) {
+        val visible = mutableStateOf(true)
+        val requestUrl = System.getenv("RQ02_QR_URL") ?: "https://wish.example.test/request?entry=local-test-entry-1234567890123456"
+        val matrix = QRCodeWriter().encode(requestUrl, BarcodeFormat.QR_CODE, 256, 256)
+        images["/media/guest-qr.png"] = System.getenv("RQ02_QR_PNG")?.let { File(it).readBytes() }
+            ?: bytes(Bitmap.createBitmap(IntArray(256 * 256) { i ->
+                if (matrix[i % 256, i / 256]) PixelColor.BLACK else PixelColor.WHITE
+            }, 256, 256, Bitmap.Config.ARGB_8888))
+        val config = GuestRequestConfig(enabled = true, qr = "/media/guest-qr.png")
+        compose.setContent {
+            Box(Modifier.fillMaxSize().background(Color(0xFF293B43))) {
+                Poster(repo, "/media/busy.png", "", "#293B43", Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
+                GuestRequestPrompt(repo, config, visible.value)
+            }
+        }
+        compose.waitUntil(15000) {
+            runCatching {
+                val bounds = compose.onNodeWithContentDescription("扫码留言二维码").fetchSemanticsNode().boundsInRoot
+                val image = bitmap()
+                try {
+                    val width = bounds.width.toInt()
+                    val height = bounds.height.toInt()
+                    val pixels = IntArray(width * height)
+                    image.getPixels(pixels, 0, width, bounds.left.toInt(), bounds.top.toInt(), width, height)
+                    QRCodeReader().decode(BinaryBitmap(HybridBinarizer(RGBLuminanceSource(width, height, pixels)))).text == requestUrl
+                } finally { image.recycle() }
+            }.getOrDefault(false)
+        }
+        compose.onNodeWithText(config.prompt).assertIsDisplayed()
+        bitmap().let { save(it, "request-visible-$size"); it.recycle() }
+        compose.runOnIdle { visible.value = false }
+        compose.mainClock.advanceTimeBy(300)
+        compose.onNodeWithContentDescription("扫码留言二维码").assertDoesNotExist()
+        bitmap().let { save(it, "request-hidden-$size"); it.recycle() }
+    }
+    @Test fun requestPromptOnTv() { guestPrompt("1280x720") }
+    @Test @Config(qualifiers="w1440dp-h900dp-mdpi") fun requestPromptOnWideScreen() { guestPrompt("1440x900") }
+    @Test @Config(qualifiers="w390dp-h844dp-mdpi") fun requestPromptOnNarrowScreen() { guestPrompt("390x844") }
+
 }

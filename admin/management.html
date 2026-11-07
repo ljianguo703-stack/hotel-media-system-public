@@ -1,6 +1,39 @@
 <div class="page-head"><div><h1>管理中心</h1></div><button class="btn" @click="reload()" :disabled="busy">刷新</button></div>
-<div class="management-tabs" role="tablist" aria-label="管理模块"><template x-for="t in opsTabs" :key="t.id"><button role="tab" :aria-selected="opsTab===t.id" :class="{active:opsTab===t.id}" @click="setOpsTab(t.id)" x-text="t.name"></button></template></div>
+<div class="management-tabs" role="tablist" aria-label="管理模块"><template x-for="t in consoleOpsTabs" :key="t.id"><button role="tab" :aria-selected="opsTab===t.id" :class="{active:opsTab===t.id}" @click="setOpsTab(t.id)" x-text="t.name"></button></template></div>
 <p class="managed-loading" role="status" aria-live="polite" x-show="opsLoading">正在读取管理数据…</p>
+<template x-if="opsTab==='guest_requests'&&guestDraft"><div>
+<div class="managed-head"><div><h2>观众留言</h2><p class="muted"><span x-text="opsData.counts?.new||0"></span> 条待处理 · 手机扫码提交观影心愿</p></div></div>
+<details class="panel guest-settings" :open="guestSettingsOpen" @toggle="guestSettingsOpen=$event.target.open">
+<summary>播放中扫码提示与公网入口</summary>
+<form @submit.prevent="guestSettingsSave()" @input="guestDirty=true" @change="guestDirty=true">
+<label class="check"><input type="checkbox" x-model="guestDraft.enabled">启用正片右上角间歇扫码提示</label>
+<div class="form-grid">
+<div><label class="form-label" for="guest-public-url">留言网址或公网 IP</label><input id="guest-public-url" class="form-input" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" maxlength="160" placeholder="wish.example.com 或 203.0.113.10:8080" aria-describedby="guest-url-hint" x-model="guestDraft.public_url" :required="guestDraft.enabled"><p id="guest-url-hint" class="form-hint">可填写域名或 IP，可带端口。省略协议时，域名使用 HTTPS，IP 使用 HTTP。</p></div>
+<div><label class="form-label" for="guest-prompt">电视提示文字</label><input id="guest-prompt" class="form-input" maxlength="60" required x-model="guestDraft.prompt"></div>
+</div>
+<div class="guest-timing">
+<div><label class="form-label" for="guest-first">首次延迟（分钟）</label><input id="guest-first" class="form-input" type="number" min="0" max="1440" step="0.5" required x-model.number="guestDraft.first_minutes"></div>
+<div><label class="form-label" for="guest-interval">重复间隔（分钟）</label><input id="guest-interval" class="form-input" type="number" min="1" max="1440" step="1" required x-model.number="guestDraft.interval_minutes"></div>
+<div><label class="form-label" for="guest-duration">每次停留（秒）</label><input id="guest-duration" class="form-input" type="number" min="10" max="120" step="1" required x-model.number="guestDraft.visible_seconds"></div>
+</div>
+<p class="form-hint">按实际正片观看时长计时，暂停、缓冲和广告期间避让。底板与文字适度透明，二维码保留清晰白底。</p>
+<div class="row"><button class="btn primary" type="submit" :disabled="busy">保存留言设置</button><button class="btn" type="button" @click="guestDirty=false;reload()" :disabled="busy">重新读取设置</button><span class="form-hint" x-show="guestDirty">有待保存修改</span></div>
+</form>
+<div class="guest-entry" x-show="opsData.settings?.entry_url">
+<img x-show="opsData.settings?.qr" :src="opsData.settings?.qr||null" alt="观众留言二维码" width="112" height="112">
+<div><strong x-text="opsData.listener?.available?'本地留言入口已就绪':'本地留言入口待启动'"></strong><p class="form-hint">在云端 NPS 将此公网入口转发到酒店 <code>127.0.0.1:18792</code>。</p><a class="text-btn guest-url" :href="opsData.settings?.entry_url||null" target="_blank" rel="noopener noreferrer" x-text="opsData.settings?.entry_url"></a></div>
+</div>
+</details>
+<div class="managed-filters"><input class="form-input" aria-label="搜索观众留言" placeholder="搜索影片名称或留言" x-model="opsQuery" @input.debounce.300ms="opsPage=0;loadOperations()"><select class="form-input" aria-label="留言状态" x-model="opsStatus" @change="opsPage=0;loadOperations()"><option value="">全部状态</option><option value="new">待处理</option><option value="processing">处理中</option><option value="done">已处理</option></select></div>
+<div class="managed-table"><table><thead><tr><th>收到时间</th><th>观影心愿</th><th>处理状态</th></tr></thead><tbody>
+<template x-for="row in (opsData.rows||[])" :key="row.id"><tr>
+<td data-label="收到时间"><span x-text="guestTime(row.created_at)"></span><small class="sub mono" x-text="row.id"></small></td>
+<td data-label="观影心愿" class="guest-message" x-text="row.message"></td>
+<td data-label="处理状态"><select class="form-input" :aria-label="'处理留言 '+row.id" :value="row.status" @change="guestStatusSave(row,$event.target.value)" :disabled="busy"><template x-for="(label,key) in guestStates" :key="key"><option :value="key" :selected="row.status===key" x-text="label"></option></template></select></td>
+</tr></template>
+</tbody></table><div class="empty-state" x-show="!opsLoading&&!(opsData.rows||[]).length">暂无符合条件的观众留言。</div></div>
+<div class="row guest-pages"><button class="btn" @click="opsPage--;loadOperations()" :disabled="opsLoading||opsPage===0">上一页</button><span class="muted" x-text="'共 '+(opsData.total||0)+' 条 · 第 '+(opsPage+1)+' 页'"></span><button class="btn" @click="opsPage++;loadOperations()" :disabled="opsLoading||(opsPage+1)*opsLimit>=(opsData.total||0)">下一页</button></div>
+</div></template>
 <template x-if="opsTab==='ad_playback'"><div x-html="playbackMarkup"></div></template>
 <template x-if="['advertisers','assets','groups'].includes(opsTab)"><div>
 <div class="managed-head"><div><h2 x-text="opsTitle"></h2><p class="muted" x-text="'共 '+opsRows.length+' 项 · 已选 '+opsSelected.length+' 项'"></p></div><div class="head-actions" x-show="writable&&(opsTab!=='groups'||administrator)"><button class="btn" @click="editEntity(opsKind)">新增资料</button><template x-if="opsTab==='assets'"><div class="head-actions"><label class="btn upload-label">上传素材<input type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm,video/quicktime" @change="uploadManagedAsset($event.target.files[0]);$event.target.value=''" :disabled="uploading"></label><button class="btn primary" @click="discoverAssets()" :disabled="busy">发现本地素材</button></div></template></div></div>

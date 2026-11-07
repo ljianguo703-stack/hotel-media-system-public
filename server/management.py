@@ -22,6 +22,7 @@ from jellyfin_sync import JellyfinMixin
 from media_automation import MediaAutomation
 from media_center import MediaCenter
 from media_add import MediaAdd
+from guest_requests import GuestRequests
 
 
 def now_ms():
@@ -78,7 +79,7 @@ from operations import OperationsMixin
 from campaign_bundles import CampaignBundleOperations
 
 
-class Store(CampaignBundleOperations, OperationsMixin, JellyfinMixin, MediaAutomation, MediaCenter, MediaAdd):
+class Store(CampaignBundleOperations, OperationsMixin, JellyfinMixin, MediaAutomation, MediaCenter, MediaAdd, GuestRequests):
     def __init__(self, data, media, config, allowed_roots=None):
         self.data, self.media = Path(data), Path(media).resolve()
         self.path = self.data / 'events.sqlite3'

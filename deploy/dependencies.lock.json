@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "release": "IN19-dependencies-20261107",
-  "backend_release": "v1-0-0-rc5-pl04",
+  "backend_release": "v1-0-0-rc5-in20",
   "platform": "linux/amd64",
   "docker_requirement": "29+ with containerd image store",
   "images": [
