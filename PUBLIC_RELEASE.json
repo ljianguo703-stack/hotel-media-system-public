@@ -83,5 +83,5 @@
     "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source"
   },
   "source_ref": "refs/tags/IN20-20261107",
-  "installer_tool_source_commit": "807ddcfe29c23257cf84897f72351e02cc0578d0"
+  "installer_tool_source_commit": "8b5b6258eed5115adbce4c744c7d7d6859d0b13a"
 }
