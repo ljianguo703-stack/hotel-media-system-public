@@ -1,6 +1,7 @@
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import shutil
 import sys
@@ -151,3 +152,18 @@ class UnifiedUpgradeTests(unittest.TestCase):
                 self.apply()
         self.assertEqual(self.current.resolve(), self.previous)
         self.assertEqual(self.calls, [['systemctl', 'stop', 'hotel-tv'], ['systemctl', 'stop', 'hotel-tv'], ['systemctl', 'start', 'hotel-tv']])
+
+    def test_restrictive_umask_does_not_hide_program_from_service_user(self):
+        before = os.umask(0o077)
+        try:
+            with patch.object(Agent, 'wait_health'):
+                self.apply()
+        finally:
+            os.umask(before)
+        target = self.current.resolve()
+        for p in [target, *target.rglob('*')]:
+            if p.is_dir():
+                self.assertEqual(p.stat().st_mode & 0o777, 0o755, str(p))
+            elif p.name != '.software-package-sha256':
+                self.assertEqual(p.stat().st_mode & 0o777, 0o644, str(p))
+        self.assertEqual(next(self.state.glob('*-before.sqlite3')).stat().st_mode & 0o777, 0o600)

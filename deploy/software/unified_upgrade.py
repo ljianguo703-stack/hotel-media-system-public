@@ -16,11 +16,12 @@ import zipfile
 sys.dont_write_bytecode = True
 
 PACKAGE_ID = 'hotel-tv-system-upgrade'
-TARGET = 'v1-0-0-rc5-in20u1'
+TARGET = 'v1-0-0-rc5-in20u2'
 BASES = ('v1-0-0-rc5-pl04', 'v1-0-0-rc5-rq02', 'v1-0-0-rc5-rq04',
          'v1-0-0-rc5-rq04u1', 'v1-0-0-rc5-in20',
          'v1-0-0-rc5-in20-from-pl04', 'v1-0-0-rc5-in20-from-rq02',
-         'v1-0-0-rc5-in20-from-rq04', 'v1-0-0-rc5-in20-from-rq04u1', TARGET)
+         'v1-0-0-rc5-in20-from-rq04', 'v1-0-0-rc5-in20-from-rq04u1',
+         'v1-0-0-rc5-in20u1', TARGET)
 
 
 class UpgradeError(Exception):

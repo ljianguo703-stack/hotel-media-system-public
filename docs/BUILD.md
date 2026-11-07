@@ -49,3 +49,5 @@ python3 -m unittest discover -s tests -p test_unified_upgrade.py
 ```
 
 构建器仅收集server/admin允许的109个程序文件和统一安装控制器，生成Architecture all的DEB。隔离原IN17执行器/HTTP/dpkg闭环脚本为tools/unified_upgrade_e2e.py，必须在一次性root Docker环境运行，不用于现场。
+
+u2必须在真实APT/dpkg下回归。夹具先清空附加组、以非root用户进入服务工作目录，再执行服务器；严格umask专项同时确认程序目录0755与数据库备份0600。可用`--previous-package`复现旧u1故障，再用`--fault-retry`检查新包回退与重试。

@@ -386,6 +386,11 @@ class Agent(FleetAgent):
                     with archive.open(filename) as source, open(path, 'xb') as output:
                         shutil.copyfileobj(source, output, 1024 * 1024)
                     os.chmod(path, 0o644)
+                # dpkg maintainer scripts run as root:root, with a restrictive
+                # inherited umask. Program directories must remain traversable
+                # by the separate hotel-tv service account regardless of either.
+                for directory in (destination, *(p for p in destination.rglob('*') if p.is_dir())):
+                    os.chmod(directory, 0o755)
                 # Check syntax without importing/executing the uploaded program as root.
                 for path in (destination / 'server').rglob('*.py'):
                     compile(path.read_bytes(), str(path), 'exec')

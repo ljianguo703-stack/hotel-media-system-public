@@ -40,8 +40,8 @@ def build(source, output):
         controller.verify_payload(target)
         control = root / 'DEBIAN'
         control.mkdir()
-        version = '1.0.0~in20u1'
-        (control / 'control').write_text('Package: hotel-tv-system-upgrade\nVersion: ' + version + '\nArchitecture: all\nMaintainer: Hotel Media System\nDepends: python3 (>= 3.9)\nDescription: Hotel cinema automatic program upgrade to IN20u1\n Detects supported current release; preserves media, credentials and rollback backups.\n')
+        version = '1.0.0~in20u2'
+        (control / 'control').write_text('Package: hotel-tv-system-upgrade\nVersion: ' + version + '\nArchitecture: all\nMaintainer: Hotel Media System\nDepends: python3 (>= 3.9)\nDescription: Hotel cinema automatic program upgrade to IN20u2\n Explicit service-readable program permissions, snapshots and rollback.\n')
         (control / 'postinst').write_text('#!/bin/sh\nset -eu\ncase "${1:-}" in configure) ;; *) exit 0 ;; esac\nexec /usr/bin/python3 -I /usr/lib/hotel-tv-system-upgrade/unified_upgrade.py\n')
         for path in root.rglob('*'):
             path.chmod(0o755 if path.is_dir() else 0o644)
