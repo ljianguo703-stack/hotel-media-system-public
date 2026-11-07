@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the IN19 Ubuntu tutorial using the existing manual's components."""
+"""Render the IN20 Ubuntu tutorial using the existing manual's components."""
 import argparse
 import html
 import re
@@ -41,7 +41,7 @@ def decorate(c, doc):
     c.setFont('CN', 8.2)
     c.setFillColor(shared.MUTED)
     c.drawString(19*mm, A4[1]-15*mm, '酒店影院 / 全新 Ubuntu 安装教程')
-    c.drawRightString(A4[0]-19*mm, A4[1]-15*mm, 'IN19-DOC04 · 2026-11-07')
+    c.drawRightString(A4[0]-19*mm, A4[1]-15*mm, 'IN20-DOC05 · 2026-11-07')
     c.setStrokeColor(shared.LINE)
     c.line(19*mm, 18*mm, A4[0]-19*mm, 18*mm)
     c.drawString(19*mm, 12*mm, 'Ubuntu 24.04 amd64 · 在线 / 本地完整包 · 国内 / 海外')
@@ -66,7 +66,7 @@ def render(source, output):
     introduction, *sections = re.split(r'^## ', text, flags=re.M)
     intro = '\n'.join(introduction.splitlines()[2:]).strip()
     doc = Tutorial(str(output), pagesize=A4, leftMargin=19*mm, rightMargin=19*mm,
-                   topMargin=24*mm, bottomMargin=24*mm, title='全新 Ubuntu 安装教程 - IN19',
+                   topMargin=24*mm, bottomMargin=24*mm, title='全新 Ubuntu 安装教程 - IN20',
                    author='酒店影院项目', subject='Ubuntu 系统安装、影片盘、影院首装、电视接入与验收',
                    pageCompression=1)
     doc.section_pages = []
@@ -110,7 +110,7 @@ def render(source, output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, default=Path(__file__).resolve().parents[1]/'docs/全新Ubuntu安装教程_IN19.md')
+    parser.add_argument('--source', type=Path, default=Path(__file__).resolve().parents[1]/'docs/全新Ubuntu安装教程_IN20.md')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)

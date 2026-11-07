@@ -21,7 +21,7 @@ RELEASE = 'IN19-dependencies-20261107'
 DEPENDENCIES = json.loads(r'''{
   "schema": 1,
   "release": "IN19-dependencies-20261107",
-  "backend_release": "v1-0-0-rc5-pl04",
+  "backend_release": "v1-0-0-rc5-in20",
   "platform": "linux/amd64",
   "docker_requirement": "29+ with containerd image store",
   "images": [
@@ -190,10 +190,10 @@ DEPENDENCIES = json.loads(r'''{
     }
   ],
   "installer": {
-    "file": "hotel-media-system-v1-0-0-rc5-pl04-IN19-public-r4.run",
-    "asset_id": 718876203,
-    "sha256": "d160f52ca81f7abf8eabaf4c99d3b0ff18d7b6d48628c8ada32a1585c491fc12",
-    "bytes": 9573891
+    "file": "hotel-media-system-v1-0-0-rc5-in20-IN20.run",
+    "asset_id": 720616939,
+    "sha256": "ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e",
+    "bytes": 9652492
   }
 }''')
 CACHE = Path('/var/cache/hotel-tv-dependencies') / RELEASE

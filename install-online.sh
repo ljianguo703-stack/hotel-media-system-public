@@ -3,9 +3,9 @@
 set -euo pipefail
 umask 077
 
-readonly HOTEL_RELEASE='IN19-public-20261106-r2'
-readonly HOTEL_PACKAGE='hotel-media-system-v1-0-0-rc5-pl04-IN19-public.run'
-readonly HOTEL_PACKAGE_SHA256='03c88841f7ccbb98f1a33da6bbd4da80206895a3f11de802da355c79744d4e94'
+readonly HOTEL_RELEASE='IN20-20261107'
+readonly HOTEL_PACKAGE='hotel-media-system-v1-0-0-rc5-in20-IN20.run'
+readonly HOTEL_PACKAGE_SHA256='ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e'
 readonly HOTEL_PACKAGE_URL="https://github.com/ljianguo703-stack/hotel-media-system-public/releases/download/${HOTEL_RELEASE}/${HOTEL_PACKAGE}"
 
 hotel_download_dir="${HOTEL_DOWNLOAD_DIR:-${HOME:?}/hotel-cinema-installer/${HOTEL_RELEASE}}"

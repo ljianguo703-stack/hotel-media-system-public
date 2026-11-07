@@ -26,7 +26,8 @@ def verify(output, build_tools):
         if len(archives) != 1:
             raise ValueError('Expected one package per platform')
         archive = archives[0]; folder = archive.with_suffix('')
-        files = json.loads((folder / 'manifest.json').read_text())['files']
+        manifest = json.loads((folder / 'manifest.json').read_text())
+        files = manifest['files']
         if 'helpers/power-mode.jar' not in files or 'helpers/provenance.json' not in files:
             raise ValueError('Missing native power helper')
         helper = json.loads((folder / 'helpers/provenance.json').read_text())
@@ -78,7 +79,7 @@ def verify(output, build_tools):
                 raise ValueError('Wrong client HOME role')
         executable = folder / ('hotel-tv-installer.exe' if system == 'windows' else 'hotel-tv-installer')
         build_info = subprocess.check_output(['go','version','-m',str(executable)], text=True)
-        if 'vcs.revision='+provenance['source_commit'] not in build_info or 'vcs.modified=false' not in build_info:
+        if 'vcs.revision='+manifest['source_commit'] not in build_info or 'vcs.modified=false' not in build_info:
             raise ValueError('Installer was not built from the clean candidate commit')
         binary = executable.read_bytes()
         if system == 'windows':

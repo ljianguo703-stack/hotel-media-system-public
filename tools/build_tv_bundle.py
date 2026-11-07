@@ -28,7 +28,9 @@ def verify_files(root, files):
             raise ValueError('Invalid runtime dependency: ' + name)
 
 
-def build(runtime, payload, output, jdk=None, sdk=None):
+def build(runtime, payload, output, jdk=None, sdk=None, helper_platform="android-34"):
+    if subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT):
+        raise ValueError('Commit reviewed source before building the installer')
     runtime, payload, output = Path(runtime).resolve(), Path(payload).resolve(), Path(output).resolve()
     lock = json.loads((ROOT / 'third-party/tv-runtime.lock.json').read_text())
     verify_files(runtime, lock['files'])
@@ -56,10 +58,10 @@ def build(runtime, payload, output, jdk=None, sdk=None):
     output.mkdir(parents=True)
     helper = output / 'helper-build' / 'power-mode.jar'
     subprocess.run([sys.executable, str(ROOT / 'tools/tv_power_mode/build.py'),
-                    '--jdk', str(jdk), '--sdk', str(sdk), '--output', str(helper)], check=True)
+                    '--jdk', str(jdk), '--sdk', str(sdk), '--platform', helper_platform, '--output', str(helper)], check=True)
     helper_sources = ['tools/tv_power_mode/PowerModeTool.java', 'tools/tv_power_mode/build.py']
     helper_provenance = {'schema': 1, 'profile': 'xiaomi-mulan-pstaatv-104-pw01', 'min_api': 28,
-                         'source_snapshot': {n: sha(ROOT / n) for n in helper_sources},
+                         'compile_platform': helper_platform, 'source_snapshot': {n: sha(ROOT / n) for n in helper_sources},
                          'jar_sha256': sha(helper), 'manufacturer_binaries_included': False}
     release = output / 'release'
     release.mkdir()
@@ -120,5 +122,6 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--jdk', type=Path)
     parser.add_argument('--sdk', type=Path)
+    parser.add_argument('--helper-platform', default='android-34')
     args = parser.parse_args()
-    print(json.dumps(build(args.runtime, args.payload, args.output, args.jdk, args.sdk), indent=2))
+    print(json.dumps(build(args.runtime, args.payload, args.output, args.jdk, args.sdk, args.helper_platform), indent=2))

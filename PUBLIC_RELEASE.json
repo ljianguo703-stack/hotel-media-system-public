@@ -11,10 +11,9 @@
   "privacy_review": {
     "source_snapshot_excludes_internal_documents": true,
     "no_git_history_in_snapshot": true,
-    "all_tool_archives_and_nested_archives_reviewed": true,
-    "generic_apk_default_configurations_reviewed": 5,
-    "common_tool_extras_and_payload_files_match_all_platforms": 7,
-    "gitleaks_findings_reviewed": "DLL SHA digests and APK public-key fingerprints only"
+    "apk_defaults_and_signatures": "both current TV variants verified",
+    "tool_archives": "per-file manifest and runtime lock verified for all four platforms",
+    "secret_check": "high-confidence patterns and private-path inventory reviewed; gitleaks unavailable"
   },
   "verification": {
     "backend_full": 380,
@@ -29,7 +28,15 @@
     ],
     "go_race": "passed",
     "android": "debug unit tests, release lint and signed release passed",
-    "site": "not installed by this task"
+    "site": "not installed by this task",
+    "program_upgrade_and_fault_rollback": [
+      "pl04",
+      "rq02",
+      "rq04",
+      "rq04u1"
+    ],
+    "linux_metrics": "real kernel counters in disposable Linux container; ARM64 host, not amd64 whole-machine installation",
+    "pdf": "34 rendered pages and bookmarks checked"
   },
   "entrypoint": {
     "arguments_required": false,
@@ -44,8 +51,8 @@
       "Python3 urllib"
     ],
     "file": "install-from-release.py",
-    "asset_id": 718888359,
-    "sha256": "73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203"
+    "asset_id": 720625080,
+    "sha256": "1682ee506be6c33512659afa7279cdc7600510dd2f9f5fa2a77c2992eb827504"
   },
   "dependencies": {
     "manifest": "deploy/dependencies.lock.json",
@@ -56,9 +63,9 @@
     "release": "IN19-dependencies-20261107"
   },
   "documentation": {
-    "version": "IN19-DOC04",
+    "version": "IN20-DOC05",
     "date": "2026-11-07",
-    "pages": 28,
+    "pages": 34,
     "network_paths": [
       "China mainland online",
       "overseas online with official Docker APT",
@@ -68,5 +75,13 @@
     "local_checksum_entries": 20,
     "seerr_screenshots": "v3.5.1 isolated demonstration, zh-CN, documentation example address"
   },
-  "status": "candidate-building"
+  "status": "locally-verified-awaiting-site-acceptance",
+  "installer_input": {
+    "public_commit": "184cfd6a87453ac2eea4c3d6fc7e6fa5eab6b9d1",
+    "source_archive_sha256": "4d256b92b1dc7d8aa865604753b231a53140ed6d07412cc5d0dd0335d3f905e1",
+    "installer_sha256": "ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e",
+    "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source"
+  },
+  "source_ref": "refs/tags/IN20-20261107",
+  "installer_tool_source_commit": "807ddcfe29c23257cf84897f72351e02cc0578d0"
 }

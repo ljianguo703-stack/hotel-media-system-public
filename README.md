@@ -6,7 +6,21 @@
 
 [安装教程](docs/INSTALL.md) · [日常使用教程](docs/USAGE.md) · [升级说明](docs/CHANGELOG-IN20.md) · [构建](docs/BUILD.md)
 
-首次安装使用当前Release中的固定下载入口与校验清单，完成后无需另补RQ02/RQ04。已有系统使用对应当前版本的升级包，保留原数据；不要把首装用于覆盖已运行的酒店。
+首次安装使用下面的固定入口，下载及 SHA256 校验成功后执行；完整国内/海外/本地说明见安装教程。完成后无需另补RQ02/RQ04。
+
+```bash
+sudo apt-get update &&
+sudo apt-get install -y python3 wget ca-certificates &&
+wget --timeout=20 --tries=3 \
+  --header='Accept: application/octet-stream' \
+  -O hotel-install.py \
+  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/720625080 &&
+echo '1682ee506be6c33512659afa7279cdc7600510dd2f9f5fa2a77c2992eb827504  hotel-install.py' |
+  sha256sum -c - &&
+sudo python3 hotel-install.py
+```
+
+已有系统使用对应当前版本的升级包，保留原数据；不要把首装用于覆盖已运行的酒店。
 
 A版分组菜单保留41个功能入口。运行概览显示在线电视、影院业务流量、Linux资源和网口总量；这些流量范围不同，未采样时明确显示未采集。
 

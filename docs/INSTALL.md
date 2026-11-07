@@ -1,19 +1,19 @@
 # 全新 Ubuntu 安装教程
 
-文档版本 IN19-DOC04，更新于 2026-11-07。包含 SSH 首步、中国大陆与海外在线安装、本地完整包、TMDB 设置图示、电视接入及手动存储切换。R740 一键安装已获用户实机确认。
+文档版本 IN20-DOC05，更新于 2026-11-07。包含首装、A 版菜单与真实状态、旧版升级及日常使用。保留 SSH、国内/海外、本地完整包、TMDB 与存储切换。旧 IN20 的 R740 现场结果和本轮隔离验证分别记录。
 
 ## 01 开工前的准备与安装方式
 
 ### 版本与本次实测
 
-Ubuntu 24.04 LTS amd64，影院后台 v1-0-0-rc5-pl04，r4 首装修订包，电视 0.1.16 / code17，员工工具 2.0.2。2026-11-07，用户确认 PowerEdge R740 一键安装成功，详细记录见第 19 页。
+Ubuntu 24.04 LTS amd64，后台 v1-0-0-rc5-in20，电视 0.1.17 / code18，施工工具 2.0.4。新首装已整合 RQ02/RQ04、IN20 和 TI21 修复，无需安装后再补这些版本。IN20 未在酒店现场部署，验证范围见第 19 页。
 
 ### 先选安装方式
 
 | 方式 | 需要准备与访问的内容 |
 |---|---|
-| 中国大陆在线一键 | 第 6 页 r4 命令，GitHub API 及其附件下载域名、可用 Ubuntu APT 源、清华 Docker APT 源 |
-| 海外在线一键 | 第 8 页完整命令，Docker 官方 APT 源，再进入同一 r4 入口 |
+| 中国大陆在线一键 | 第 6 页 IN20 命令，GitHub API 及其附件下载域名、可用 Ubuntu APT 源、清华 Docker APT 源 |
+| 海外在线一键 | 第 8 页完整命令，Docker 官方 APT 源，再进入同一 IN20 入口 |
 | 本地完整包 | 第 9-10 页，U 盘携带镜像与附件，Ubuntu 与 Docker 系统软件包仍通过 APT 安装 |
 
 本地包安装时，现场按所选地区准备可访问的 APT 源。默认安装使用“酒店影院”、本机路由识别的 IP、Ubuntu 主机时区、`/srv/hotel-tv/media/.automation`，完成后在后台设置本店资料。
@@ -28,7 +28,7 @@ Ubuntu 24.04 LTS amd64，影院后台 v1-0-0-rc5-pl04，r4 首装修订包，电
 
 装 Ubuntu 见第 2 页，先开 SSH 见第 3 页，网络与影片盘见第 4-5 页，安装见第 6-10 页。首次登录与片库配置见第 11-12 页，TMDB 提示及设置见第 13-15 页，首台电视与验收见第 16-17 页。
 
-安装故障见第 18 页，实测记录见第 19 页，手动切换存储与回退见第 20-28 页。已有 Ubuntu 从第 3 页开始。
+安装故障见第 18 页，实测记录见第 19 页，手动切换存储与回退见第 20-28 页。已有 Ubuntu 从第 3 页开始。已有影院版本升级见第 31 页，A 版菜单与首页见第 29-30 页，日常操作见第 32-34 页。
 
 ## 02 安装 Ubuntu 操作系统
 
@@ -119,7 +119,7 @@ timedatectl
 
 电视、施工电脑、手机应能按本店网络规则访问服务器，访客 Wi-Fi 隔离、不同 VLAN 或地址冲突要先处理。影院后台为 `http://服务器IP:18791`，电视接口为 `http://服务器IP:18790`。不需要把这些端口映射到公网。
 
-r4 在线入口从 GitHub Release API 取得固定镜像与附件，系统软件包通过 APT 安装。下列命令检查域名解析，完整下载以第 6 或第 8 页执行结果为准。
+IN20 在线入口从 GitHub Release API 取得固定镜像与附件，系统软件包通过 APT 安装。下列命令检查域名解析，完整下载以第 6 或第 8 页执行结果为准。
 
 ```bash
 getent hosts api.github.com
@@ -181,13 +181,13 @@ df -hT /mnt/hotel-media
 
 ### 3. 在后台接入影片目录
 
-挂载完成后，打开后台“影片片库 → 接入服务器目录”，选择实际影片目录，再扫描入库。可按目录接入多个片库。下载设置中的默认保存位置作用于对应下载流程的新任务。
+挂载完成后，打开后台“片库与下载 → 影片接入与扫描”，选择实际影片目录，再扫描入库。可按目录接入多个片库。下载设置中的默认保存位置作用于对应下载流程的新任务。
 
 一条命令首装的自动加片数据根目录默认为 `/srv/hotel-tv/media/.automation`。接入已有片库和整套自动化数据目录迁移分别管理，整套实际存储切换按第 20-28 页处理。
 
 ## 06 中国大陆在线一键安装
 
-先按第 7 页核对网络。此命令使用已经完成 R740 安装的 r4 入口，店名、IP、时区和存储目录使用默认值，整段复制执行。
+先按第 7 页核对网络。此命令使用 IN20 固定入口，沿用 IN20 已修复的依赖准备流程，店名、IP、时区和存储目录使用默认值，整段复制执行。
 
 ```bash
 sudo apt-get update &&
@@ -195,13 +195,13 @@ sudo apt-get install -y python3 wget ca-certificates &&
 wget --timeout=20 --tries=3 \
   --header='Accept: application/octet-stream' \
   -O hotel-install.py \
-  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/718888359 &&
-echo '73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203  hotel-install.py' |
+  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/720625080 &&
+echo '1682ee506be6c33512659afa7279cdc7600510dd2f9f5fa2a77c2992eb827504  hotel-install.py' |
   sha256sum -c - &&
 sudo python3 hotel-install.py
 ```
 
-入口会校验并导入 14 个固定容器镜像，准备 AriaNg、搜索插件和约 9.6MB 的 r4 安装包，之后执行 full 首装。镜像归档合计约 4.37GiB，预留镜像解包、系统软件和媒体数据所需空间。
+入口会校验并导入 14 个固定容器镜像，准备 AriaNg、搜索插件和约 9.6MB 的 IN20 安装包，之后执行 full 首装。镜像归档合计约 4.37GiB，预留镜像解包、系统软件和媒体数据所需空间。
 
 ### 等待与续装
 
@@ -215,9 +215,9 @@ sudo python3 hotel-install.py
 
 ### 安装后设置本店资料
 
-后台使用 `http://服务器IP:18791`。在“系统设置 → 酒店与播放”设置店名与业务时区，在“影片片库”接入已有媒体。整套存储切换见第 20-28 页。
+后台使用 `http://服务器IP:18791`。在“系统设置 → 酒店与时区”设置店名与业务时区，在“影片片库”接入已有媒体。整套存储切换见第 20-28 页。
 
-[r4 发布与校验信息](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261107-r4)
+[IN20 发布与校验信息](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN20-20261107)
 
 ## 07 中国大陆网络的准备与判断
 
@@ -226,7 +226,7 @@ sudo python3 hotel-install.py
 | 链路 | 本版实际使用与处理方式 |
 |---|---|
 | Ubuntu 系统包 | 使用本机 APT 源。本次 R740 使用 Ubuntu 24.04 noble 清华源完成安装 |
-| Docker 软件包 | r4 在新装 Docker 时默认使用清华 Docker CE APT 源与官方签名公钥 |
+| Docker 软件包 | IN20 在新装 Docker 时默认使用清华 Docker CE APT 源与官方签名公钥 |
 | 镜像与附件 | 使用本仓库 GitHub Release API，下载会跳转至 GitHub 的附件域名 |
 
 在 Ubuntu“软件和更新 → Ubuntu 软件 → 下载自”中选择本地可用源。手动配置者先备份原文件，按清华帮助选择 Ubuntu 24.04 / noble，保留正确的安全更新源和签名校验。[清华 Ubuntu 源帮助](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)
@@ -244,7 +244,7 @@ curl -I --connect-timeout 10 --max-time 20 \
 
 ### GitHub 下载超时的处理
 
-本次试装曾遇到 raw.githubusercontent.com 下载失败、github.com 网页附件无响应，以及 Docker Hub 直连超时。r4 将固定镜像和原生附件集中到自有公开 Release，通过 API 获取。
+本次试装曾遇到 raw.githubusercontent.com 下载失败、github.com 网页附件无响应，以及 Docker Hub 直连超时。IN20 将固定镜像和原生附件集中到自有公开 Release，通过 API 获取。
 
 若当前运营商仍无法完成 GitHub API 或附件下载，使用第 9-10 页本地完整包。准备电脑可位于另一条能完成下载的网络，目标 Ubuntu 继续通过可用的 APT 源安装系统依赖。
 
@@ -256,7 +256,7 @@ curl -I --connect-timeout 10 --max-time 20 \
 
 ## 08 海外网络在线一键安装
 
-海外使用本机可达的 Ubuntu 官方源或当地镜像。下面整段命令先按 Docker 官方 APT 方式准备服务，再执行同一 r4 入口。清华镜像站注明对欧盟用户的访问限制，海外线路优先使用 Docker 官方源。已有 Docker 时由 r4 检查 29+ 及 containerd 镜像存储能力。
+海外使用本机可达的 Ubuntu 官方源或当地镜像。下面整段命令先按 Docker 官方 APT 方式准备服务，再执行同一 IN20 入口。清华镜像站注明对欧盟用户的访问限制，海外线路优先使用 Docker 官方源。已有 Docker 时由 IN20 检查 29+ 及 containerd 镜像存储能力。
 
 本地完整包的海外准备可将第一行 `online` 改为 `docker-only`，执行整段后到第 10 页安装本地包。[Docker Ubuntu 官方安装](https://docs.docker.com/engine/install/ubuntu/) / [清华镜像站说明](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)
 
@@ -287,8 +287,8 @@ if [ "$1" = docker-only ]; then exit 0; fi
 wget --timeout=20 --tries=3 \
   --header='Accept: application/octet-stream' \
   -O hotel-install.py \
-  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/718888359
-echo '73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203  hotel-install.py' |
+  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/720625080
+echo '1682ee506be6c33512659afa7279cdc7600510dd2f9f5fa2a77c2992eb827504  hotel-install.py' |
   sha256sum -c -
 sudo python3 hotel-install.py
 HOTEL_OVERSEAS
@@ -296,23 +296,23 @@ HOTEL_OVERSEAS
 
 ## 09 准备本地完整包
 
-本机交付已整理为 `04_公开发布/hotel-IN19-r4-local`。把整个目录复制到 U 盘，现场复制到 Ubuntu 主目录，保持目录名 `hotel-IN19-r4-local`，然后到第 10 页校验与安装。
+本机交付已整理为 `04_公开发布/hotel-IN20-local`。把整个目录复制到 U 盘，现场复制到 Ubuntu 主目录，保持目录名 `hotel-IN20-local`，然后到第 10 页校验与安装。
 
 ### 异地准备电脑从仓库生成同样的包
 
 准备电脑使用 Ubuntu、macOS 或 Windows 的 WSL Ubuntu，具备 Python 3、curl 和可用证书。在终端复制下面整段，入口校验后复用原下载逻辑，准备约 4.4GiB 固定文件。
 
 ```bash
-mkdir -p hotel-IN19-r4-local && cd hotel-IN19-r4-local &&
+mkdir -p hotel-IN20-local && cd hotel-IN20-local &&
 curl --fail --location --retry 3 \
   -H 'Accept: application/octet-stream' \
   -o install-from-release.py \
-  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/718888359 &&
+  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/720625080 &&
 python3 - <<'PY'
 import hashlib, importlib.util, json
 from pathlib import Path
 entry = Path('install-from-release.py')
-expected = '73284fd39080174fcf690046394b82cb6ac8127b6e19c8d69455ca978bec1203'
+expected = '1682ee506be6c33512659afa7279cdc7600510dd2f9f5fa2a77c2992eb827504'
 if hashlib.sha256(entry.read_bytes()).hexdigest() != expected:
     raise SystemExit('入口 SHA256 校验失败')
 spec = importlib.util.spec_from_file_location('installer', entry)
@@ -338,20 +338,20 @@ print('本地完整包已准备，请复制整个目录')
 PY
 ```
 
-所需入口和文件也可从 [r4 发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261107-r4) 与 [固定依赖发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-dependencies-20261107)取得。
+所需入口和文件也可从 [IN20 发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN20-20261107) 与 [固定依赖发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-dependencies-20261107)取得。
 
 ## 10 本地完整包执行首装与续装
 
 ### 1. 目录与网络
 
-在 Ubuntu 上把资料目录放到 `$HOME/hotel-IN19-r4-local`。目录内应有 `install-from-release.py`、`dependencies.lock.json`、`SHA256SUMS.txt` 和 `payload/`。payload 中包含 14 个 OCI 镜像、Docker 公钥、两项原生附件及 r4 安装包。
+在 Ubuntu 上把资料目录放到 `$HOME/hotel-IN20-local`。目录内应有 `install-from-release.py`、`dependencies.lock.json`、`SHA256SUMS.txt` 和 `payload/`。payload 中包含 14 个 OCI 镜像、Docker 公钥、两项原生附件及 IN20 安装包。
 
-本地安装使用 U 盘内的镜像与附件，APT 仍需联网。中国大陆使用本机可用 Ubuntu 源及 r4 默认清华 Docker 源，海外先执行第 8 页的 `docker-only` 模式，准备官方 Docker。
+本地安装使用 U 盘内的镜像与附件，APT 仍需联网。中国大陆使用本机可用 Ubuntu 源及 IN20 默认清华 Docker 源，海外先执行第 8 页的 `docker-only` 模式，准备官方 Docker。
 
 ### 2. 整包校验并放入标准缓存
 
 ```bash
-cd "$HOME/hotel-IN19-r4-local" &&
+cd "$HOME/hotel-IN20-local" &&
 sha256sum -c SHA256SUMS.txt &&
 sudo install -d -m 0700 \
   /var/cache/hotel-tv-dependencies/IN19-dependencies-20261107 &&
@@ -367,11 +367,11 @@ sudo python3 install-from-release.py
 修复网络、APT 或具体失败原因后，在同一目录执行下面命令。原缓存、已完成阶段和安装状态继续使用。
 
 ```bash
-cd "$HOME/hotel-IN19-r4-local" &&
+cd "$HOME/hotel-IN20-local" &&
 sudo python3 install-from-release.py
 ```
 
-若显示“下载某附件”，先核对 payload 文件完整性、r4 入口、缓存路径和文件名。重新按本页校验并拷贝整套 payload 后再运行。
+若显示“下载某附件”，先核对 payload 文件完整性、IN20 入口、缓存路径和文件名。重新按本页校验并拷贝整套 payload 后再运行。
 
 ### 4. 完成标准
 
@@ -412,9 +412,9 @@ systemctl --failed --no-pager
 
 ### 3. 后台先做这几件事
 
-1. 核对后台版本 `v1-0-0-rc5-pl04`、店名、业务时区和服务器连接地址。
-2. 在现有密码管理入口按本店方案设置并保存当前密码，记下本店员工 PIN，供下一步电视安装复用。
-3. 在“NAS 与应用连接”检查应用地址和连接状态，再到“加片与下载”处理来源、下载、字幕配置。
+1. 核对后台版本 `v1-0-0-rc5-in20`、店名、业务时区和服务器连接地址。
+2. 在“系统设置 → 密码与电视 PIN”按本店方案设置并保存当前密码，记下本店员工 PIN，供下一步电视安装复用。
+3. 在“服务器与应用”检查应用地址和连接状态，再到“片库与下载 → 加片与下载”处理来源、下载、字幕配置。
 
 管理员浏览器先保留登录，便于电视登记，后续不得用旧酒店凭据、旧设备 token 或旧数据库替代这次新店生成的资料。
 
@@ -435,8 +435,8 @@ systemctl --failed --no-pager
 
 ### 2. 通过现有后台完成来源配置
 
-1. 在“NAS 与应用连接”检查影院与下载器、Radarr/Sonarr、Bazarr 等组件的连接。只按本店启用的来源配置，不需要另搭一套相同功能。
-2. 在“加片与下载”配置可用来源和下载方式。需要账号或 API Token 的服务使用本店资料，通用包不带业主账号。
+1. 在“服务器与应用”检查影院与下载器、Radarr/Sonarr、Bazarr 等组件的连接。只按本店启用的来源配置，不需要另搭一套相同功能。
+2. 在“片库与下载 → 加片与下载”配置可用来源和下载方式。需要账号或 API Token 的服务使用本店资料，通用包不带业主账号。
 3. 设置简中字幕偏好及可用字幕来源，例如本店使用的 OpenSubtitles / Assrt。来源无结果、账号受限或片源不匹配时，应看任务结果处理，不能保证每一部都有字幕。
 4. 用一部已授权测试影片完成一次“发现/下载 → 归档 → 影院上架”，再用一集剧验证剧集分类和续播。
 
@@ -492,7 +492,7 @@ sudo docker restart nas-seerr
 
 在 Seerr“设置 → 网络”中启用 `HTTP(S) Proxy`，按下表填写。代理服务需允许 Ubuntu 中的 Seerr 容器访问，具体主机和端口由本店提供。
 
-![代理主机、端口与 SSL 局部。192.0.2.10 为文档示例，需替换](install-images/seerr-network-proxy.png)
+![代理主机、端口与 SSL 局部。192.0.4.10 为文档示例，需替换](install-images/seerr-network-proxy.png)
 
 | 设置项 | 填写与核对方式 |
 |---|---|
@@ -549,7 +549,7 @@ JS
 ### 3. 按顺序验收
 
 1. 在 Seerr 搜索“功夫”，打开正确影片详情，确认简介、年份、海报可加载，再试一部剧集。
-2. 返回影院后台“加片与下载”，点“重新检查”，等待新检查完成，确认 TMDB 提示消失。
+2. 返回影院后台“片库与下载 → 加片与下载”，点“重新检查”，等待新检查完成，确认 TMDB 提示消失。
 3. 若搜索已正常但提示持续，私下核对 `nas-seerr` 和 `hotel-tv` 日志的时间与错误。401/403 检查认证或上游策略，429 等待限流恢复，5xx 检查上游服务状态。
 
 [TMDB 错误码说明](https://developer.themoviedb.org/docs/errors)
@@ -558,9 +558,9 @@ JS
 
 ### 1. 为新酒店建立独立工具目录
 
-从 `电脑与手机安装工具` 选择 2.0.2 的对应平台包。Apple Silicon Mac 用 darwin-arm64，Intel Mac 用 darwin-amd64，Windows x64 用 windows-amd64，Ubuntu x64 用 linux-amd64。完整解压到本店可写目录，保留全部子目录。
+从 `电脑与手机安装工具` 选择 2.0.4 的对应平台包。Apple Silicon Mac 用 darwin-arm64，Intel Mac 用 darwin-amd64，Windows x64 用 windows-amd64，Ubuntu x64 用 linux-amd64。完整解压到本店可写目录，保留全部子目录。
 
-项目根目录“启动最新版电视安装工具.command”会复用现有酒店的私有 data。新酒店使用通用平台包，创建自己的 data，不要复制原酒店的 PIN、备份和连接资料。启动后核对实际工具版本为 2.0.2。
+项目根目录“启动最新版电视安装工具.command”会复用现有酒店的私有 data。新酒店使用通用平台包，创建自己的 data，不要复制原酒店的 PIN、备份和连接资料。启动后核对实际工具版本为 2.0.4。
 
 ### 2. 逐台检测、登记、安装
 
@@ -580,7 +580,7 @@ bash "后台启动手机局域网安装.sh"
 
 手机浏览器打开终端显示的网址，输入当次 8 位连接码，Ubuntu 负责执行 ADB。该码不同于员工 PIN，不要用后台 18791 地址代替手机工具入口。Ubuntu 工具需保持运行，员工网络按实际显示端口放行，不向公网转发。
 
-当前电视应用为 0.1.16/code17，标准或守护变体由工具按适配路线选择。工具安装 APK、配置原生选项，不刷 ROM，盒子启动、HDMI-CEC 和电视面板通电亮屏分别实测。
+当前电视应用为 0.1.17/code18，标准或守护变体由工具按适配路线选择。工具安装 APK、配置原生选项，不刷 ROM，盒子启动、HDMI-CEC 和电视面板通电亮屏分别实测。
 
 ## 17 从首台验收到交付使用
 
@@ -589,7 +589,7 @@ bash "后台启动手机局域网安装.sh"
 | 顺序 | 操作与通过标准 |
 |---|---|
 | 1 [ ] | 重启 Ubuntu，确认当前 IP、后台及 full 组件正常，已接入的影片盘仍正确挂载。 |
-| 2 [ ] | 首台电视在线，房号唯一，后台实际版本与电视 0.1.16/code17 一致。 |
+| 2 [ ] | 首台电视在线，房号唯一，后台实际版本与电视 0.1.17/code18 一致。 |
 | 3 [ ] | 真实电影、剧集能播放，有实际声音，快进、选集、退出、续播可用。 |
 | 4 [ ] | 简中字幕可选择，时间同步，遇到无字幕或不匹配时有明确处理结果。 |
 | 5 [ ] | 片前、插播按配置触发，暂停广告默认只播一组，结束保留画面，视频约回退 1 秒定格，确认或返回可恢复原片。 |
@@ -606,7 +606,7 @@ bash "后台启动手机局域网安装.sh"
 
 ### 后续更新与日常使用
 
-使用后台“软件与更新”发布匹配基线的服务器包和同签名电视 APK，影片播放时等空闲、离线电视等上线。服务器程序更新、系统安全更新和电视固件更新分别管理。日常升级不重跑首装 .run，不卸载电视应用清数据，也不手改升级包基线硬装。
+使用后台“服务器与应用 → 软件与更新”发布匹配基线的服务器包和同签名电视 APK，影片播放时等空闲、离线电视等上线。服务器程序更新、系统安全更新和电视固件更新分别管理。日常升级不重跑首装 .run，不卸载电视应用清数据，也不手改升级包基线硬装。
 
 ## 18 本轮安装故障与断点恢复
 
@@ -615,11 +615,11 @@ bash "后台启动手机局域网安装.sh"
 | 现象 | 处理与后续步骤 |
 |---|---|
 | SSH 未启动 | 按第 3 页安装 OpenSSH 并核对端口 22 |
-| raw 入口、GitHub 网页附件无响应 | 使用第 6 或第 8 页 r4 API 入口，包含重试、可见下载进度和 SHA256 校验 |
+| raw 入口、GitHub 网页附件无响应 | 使用第 6 或第 8 页 IN20 API 入口，包含重试、可见下载进度和 SHA256 校验 |
 | Docker 阶段 URLError | 国内检查清华 Docker 源，海外按第 8 页官方源准备，再续装 |
-| registry-1.docker.io 镜像超时 | r4 从自有 Release 获取固定 OCI 镜像，本地包携带相同归档 |
+| registry-1.docker.io 镜像超时 | IN20 从自有 Release 获取固定 OCI 镜像，本地包携带相同归档 |
 | native-proxy 安装失败 | 使用配套的固定 AriaNg、Nginx 和 aria2 镜像，完整入口准备后续装 |
-| Seerr 阶段 HTTPError | r4 已将错误的密码来源修正为 Jellyfin 独立密码，保留原安装状态续装 |
+| Seerr 阶段 HTTPError | IN20 已将错误的密码来源修正为 Jellyfin 独立密码，保留原安装状态续装 |
 | 安装完成后提示 TMDB | 按第 13-15 页处理出站网络、Seerr 设置及搜索验收 |
 
 ### 续装命令
@@ -632,41 +632,39 @@ bash "后台启动手机局域网安装.sh"
 wget --timeout=20 --tries=3 \
   --header='Accept: application/octet-stream' \
   -O hotel-install.run \
-  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/718876203 &&
-echo 'd160f52ca81f7abf8eabaf4c99d3b0ff18d7b6d48628c8ada32a1585c491fc12  hotel-install.run' |
+  https://api.github.com/repos/ljianguo703-stack/hotel-media-system-public/releases/assets/720616939 &&
+echo 'ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e  hotel-install.run' |
   sha256sum -c - &&
 sudo bash ./hotel-install.run --profile full --resume
 ```
 
-恢复沿用本次 full 安装记录、原目录及已生成的凭据。后续日常软件更新使用后台“软件与更新”。
+恢复沿用本次 full 安装记录、原目录及已生成的凭据。后续日常软件更新使用后台“服务器与应用 → 软件与更新”。
 
-## 19 本次安装记录、版本与验收边界
+## 19 安装记录、版本与验收边界
 
-### 2026-11-07 的实机结果
+### 历史现场结果与本轮验证
 
-用户在全新 Ubuntu 24.04 amd64 的 PowerEdge R740 上试装，先后反馈网络下载、Docker、native-proxy 和 Seerr 初始化问题。固定依赖集中到公开 Release，Seerr 密码来源修正为 r4 后，用户确认“一键安装成功”。
+2026-11-07，用户确认旧 r4 首装在 Ubuntu 24.04 amd64 的 PowerEdge R740 上成功。IN20 复用该版本的依赖与 Seerr 修复，新增菜单和采集；本轮未对该服务器执行安装或升级，不能把旧 r4 的成功视为 IN20 现场验收。
 
-用户随后提供“暂时连不上影片资料库（TMDB）”的后台截图，本版教程新增第 13-15 页，继续按该章节完成网络设置和真实搜索验收。
-
-| 项目 | 记录状态 |
+| 项目 | IN20 本轮记录 |
 |---|---|
-| R740 full 一键安装 | 用户实机确认成功，2026-11-07 |
-| 安装器与依赖回归 | Mac、Ubuntu Python 3.12 的 73 项测试通过 |
-| 后台 Mock e2e | 通过，已检查 390 / 1280 / 1440 三档截图 |
-| r4 安装包 | Ubuntu plan 和匿名 API 下载 SHA256 校验通过 |
-| 本地完整包 | 本文采用 APT 可联网，现场按第 10 页执行并验收 |
-| TMDB 网络设置 | 按第 13-15 页完成后，以实际搜索和新检查结果验收 |
-| 本店播放与容量 | 按第 17 页逐项实测，记录实际设备和起止时间 |
+| 后台与状态采集 | 380 项全量测试；另有 9 项采集专项通过 |
+| 前端与安装器 | 前端 79 项、安装器 73 项通过 |
+| Linux 真实指标 | 隔离容器真实 /proc 与网口采样、认证电视 HTTP 流量通过 |
+| 菜单与界面 | 41 入口、三种角色、390/1280/1440 三档截图通过 |
+| 程序升级 | PL04、RQ02、RQ04、RQ04u1 四起点升级及失败回退通过 |
+| Android 与工具 | 双变体单测/lint/签名构建、Go race 通过 |
+| 目标 Ubuntu 全新整装 | 本轮仅安装 plan 与包核验，现场仍按第 17 页验收 |
 
 ### 固定版本与来源
 
-r4 入口 REST asset 为 `718888359`，安装包 REST asset 为 `718876203`。入口 SHA256 和安装包 SHA256 分别列在第 6、18 页，U 盘方式还会核对完整包内的 SHA256SUMS.txt。
+发布 tag 为 `IN20-20261107`，安装器输入源码提交为 `184cfd6a87453ac2eea4c3d6fc7e6fa5eab6b9d1`。在线下载器和教程在安装包外固定该包的 ID 与 SHA，完整公开源码另附同版发布。14 份固定镜像继续来自 `IN19-dependencies-20261107`。
 
-配套安装器输入源码提交为 `266c13ff31dc35867400d6d8be6912b4f2eccdff`，发布 tag 为 `IN19-public-20261107-r4`，固定依赖发布为 `IN19-dependencies-20261107`。新店默认生成独立凭据，施工与交付时保存在本店私有资料中。
+入口 REST asset 为 `720625080`，安装包为 `720616939`；校验值分别见第 6、18 页。本地包还核对 SHA256SUMS.txt。新店生成独立凭据，施工与交付时保存在本店私有资料中。
 
-设置截图中的 Seerr 来自相同 v3.5.1 固定镜像的隔离演示环境，代理地址使用文档示例。中国大陆及海外网络按本次实际线路分别检查，系统包由所选 APT 源提供。
+A 版截图来自真实 Linux 采样与隔离酒店测试数据；Seerr 图来自相同 v3.5.1 镜像，代理地址使用文档示例。24 小时连播、真实目标房数容量与实体电视通电行为仍需现场验收。
 
-[公开仓库与最新教程](https://github.com/ljianguo703-stack/hotel-media-system-public) / [r4 固定发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN19-public-20261107-r4)
+[公开仓库与最新教程](https://github.com/ljianguo703-stack/hotel-media-system-public) / [IN20 固定发布](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/tag/IN20-20261107)
 
 ## 20 手动切换存储 / 范围与准备
 
@@ -1036,3 +1034,104 @@ sudo systemctl start hotel-tv smbd
 复验后按原状态恢复软件发布。旧盘释放空间以 df 为准，原来另有硬链接的文件可能仍被其它目录引用。
 
 依据为 [Ubuntu mount](https://manpages.ubuntu.com/manpages/noble/man8/mount.8.html)、[systemd 挂载与依赖](https://manpages.ubuntu.com/manpages/noble/man5/systemd.mount.5.html)、[rsync](https://manpages.ubuntu.com/manpages/noble/man1/rsync.1.html) 和 [Docker 重启策略](https://docs.docker.com/engine/containers/start-containers-automatically/)。本节命令已作语法、临时文件夹和配置解析核验，正式存储切换按维护窗口实机验收。
+
+
+## 29 A 版菜单与设置中心
+
+![A 版设置中心：分组侧栏、固定设置入口与功能搜索](install-images/in20-settings.png)
+
+### 找设置的三个入口
+
+- 左侧按工作台、片库与下载、电视与客房、广告经营、服务器与应用、系统设置分组。
+- 侧栏底部“设置中心”始终固定，按账号、电视、片库、连接、维护等用途集中索引。
+- 顶部“搜索功能与设置”或 Ctrl+K / ⌘K 支持旧名称，例如 NAS、管理中心、密码管理、中插。
+
+“全部功能”列出当前角色允许的入口；星标可固定常用项。菜单保留 41 个入口，进入后使用原来的表单与保存校验，收藏不会提升账号权限。
+
+## 30 默认首页与真实状态
+
+![运行概览：只列在线设备，服务器状态与网口流量同屏](install-images/in20-home.png)
+
+### 怎么判断状态
+
+首页只列在线且未停用、未归档的电视；完整设备维护仍在“客房设备”。每台可查看房号、设备组、IP、本次上线时间、已在线时长与影院流量，支持筛选。最近 120 秒有真实业务心跳表示在线，不等于正在播放。
+
+上线会话从启用采集后的有效心跳开始；超时或 IP 变化重开会话，旧 last_seen 不充当上线时间。Linux 卡片显示 CPU、内存、主机运行时长和媒体目录所在文件系统；网口可切换，显示 IP、链路、速率和趋势。刚启动尚无样本时显示待采集或“—”。
+
+## 31 已有系统升级：按当前版本选包
+
+### 先识别当前版本
+
+管理员在“服务器与应用 → 软件与更新”查看当前版本，保留现有数据库、配置和影片备份。在维护窗口上传且只选择对应 ZIP，不对已有服务重新执行首装。
+
+| 当前后台版本 | 上传的 IN20 升级文件 |
+|---|---|
+| v1-0-0-rc5-pl04（包括 r4 首装） | hotel-tv-v1-0-0-rc5-in20-from-pl04.zip |
+| v1-0-0-rc5-rq02 | hotel-tv-v1-0-0-rc5-in20-from-rq02.zip |
+| v1-0-0-rc5-rq04 | hotel-tv-v1-0-0-rc5-in20-from-rq04.zip |
+| v1-0-0-rc5-rq04u1 | hotel-tv-v1-0-0-rc5-in20-from-rq04u1.zip |
+
+四包的 109 个程序文件相同；目标版本带 from 后缀以适配旧执行器的精确基线校验，业务同为 IN20。已经是 IN20 或其 from 版本无需重复安装。其他未知版本先核实基线，不强行选择最接近的包。
+
+### 升级过程与完成标准
+
+核对发布 SHA256，上传后检查版本和校验结果，再提交安装。执行器先备份、切换、健康检查；失败自动回退。页面短暂中断后重新登录，核对版本、41 项菜单、真实状态、已有片库/设备/广告和留言；现场电视抽查一次实际播放。
+
+源码升级 ZIP 不携带影片、本店凭据、业务数据库或 APK。电视及施工工具按原类型单独更新，不自动推送全店。留存原包和维护日志。
+
+## 32 日常片库、电视与扫码留言
+
+### 片库与下载
+
+在“片库与下载”按顺序使用加片与下载、影片接入与扫描、待上架、影片片库。已有影片接入只扫描索引，不搬动视频；Jellyfin 同步、兼容检查与分类管理分别有固定入口。TMDB、字幕与下载器设置继续按第 12-15 页处理。
+
+### 电视与客房
+
+“电视首页与指南”管理入口、背景、二维码和只读酒店图文；专题与频道分别管理。客房设备登记唯一房号、凭据和设备组；批量运维保留空闲升级和诊断，不强制打断播放。
+
+### 观众扫码留言
+
+管理员进入“电视与客房 → 观众留言”，设置实际可达的域名或公网 IP，可带端口。省略协议时域名用 HTTPS、IP 用 HTTP；显式协议沿用实际配置。后台访客监听为 `127.0.0.1:18792`，通过已配置的独立转发入口连接，管理后台端口不用于住客访问。
+
+电视按既有观看提示展示二维码，住客扫码提交求片/建议。后台按待处理、处理中、已完成处理；关闭入口会停止新的提交，已有记录保留。现场需用真实住客网络验证扫码、提交与后台接收，不只在服务器本机检查。
+
+### 广告经营
+
+广告投放、素材库、广告主、投放单、套餐、总控、播放规则及投放报表均有单独入口。保存规则后重新读取核对，抽查电视播放与报表事件；沿用原有业务校验。
+
+## 33 流量口径、账号与恢复
+
+### 网口与设备的两种流量
+
+服务器网口统计 Linux 真实计数，包含下载器和其他服务；选择某个网口查看，不把转发接口简单相加。设备影院业务流量只统计已认证电视的 HTTP body，含影片/广告/字幕/JSON，不含其他 App、HTTP 头或协议开销。设备接收等于服务器发送。
+
+速率为 Mbps，累计为 B/MB/GB；2 秒采样，页面 5 秒刷新，趋势最多约 15 分钟。“今日”按业务时区，只包含开始采集后的时段，不补造历史；改时区用独立日桶。正常关闭会落盘，异常断电最多约 2 秒未落盘计数可能丢失。
+
+### 备份与权限
+
+流量计数保存在数据目录 `runtime-metrics.sqlite3`，随程序升级保留、日累计保留 7 日；趋势在内存中。它与业务数据库分开，不作为广告计费依据。数据库备份保护账号、片库、广告、配置与留言，统计历史不等同于业务备份。
+
+“系统设置”提供酒店与时区、账号与权限、密码与电视 PIN、数据库备份、配置历史与恢复、操作审计和回收站。留空密码不修改，施工复用本店现有员工 PIN。配置恢复与数据库恢复范围不同，先看差异再操作；管理员专用入口仍受服务端鉴权保护。
+
+“服务器与应用”提供文件中心、电脑共享、硬盘/容器管理、应用部署、Jellyfin、NPS、端口与公网入口、软件与任务。原生应用入口未配置时先由管理员补实际地址，不能用猜测地址代替。
+
+## 34 施工工具 2.0.4 与交付检查
+
+### 四平台统一
+
+选择 darwin-arm64、darwin-amd64、linux-amd64 或 windows-amd64 完整 ZIP，解压并保留全部目录。内置标准/守护电视 0.1.17/code18，既有签名；按原应用类型与精确机型策略选择，不随意互换。
+
+本版保留 2.0.3 的缺项说明：已有员工 PIN、唯一房号、精确设备检测或后台登录缺失时，按钮旁说明原因；仅真实任务执行时显示等待。不要为消除提示重新生成本店 PIN。
+
+### 本店资料与通电验收
+
+本店资料单独管理，不把上一家酒店 data 复制进新店。保留原工具与备份；新工具不自动合并两个资料目录。安装后逐间验收遥控、声音、字幕、播放、待机和通电恢复。未知机型、盒子 HDMI-CEC 与电视面板来电亮屏分别实测。
+
+### 本次交付应留的材料
+
+- 服务器最终版本、对应升级 ZIP 与 SHA256、本店备份和维护记录。
+- 四平台工具、两种签名 APK、完整源码和本教程；本店凭据只放私有资料。
+- 一次真实留言、下载归档、广告投放与电视播放的现场结果。
+- 24 小时连播与目标设备数量的容量记录；未完成项目如实登记，不以隔离演练代替现场。
+
+完整日常操作见 [使用教程](https://github.com/ljianguo703-stack/hotel-media-system-public/blob/main/docs/USAGE.md)，本次新增与整合见 [升级说明](https://github.com/ljianguo703-stack/hotel-media-system-public/blob/main/docs/CHANGELOG-IN20.md)。
