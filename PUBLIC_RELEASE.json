@@ -73,9 +73,10 @@
     ],
     "local_payload_files": 18,
     "local_checksum_entries": 20,
-    "seerr_screenshots": "v3.5.1 isolated demonstration, zh-CN, documentation example address"
+    "seerr_screenshots": "v3.5.1 isolated demonstration, zh-CN, documentation example address",
+    "stage": "DOC10 candidate, not formally released"
   },
-  "status": "locally-verified-awaiting-site-acceptance",
+  "status": "tv-field-failed-publication-withheld",
   "installer_input": {
     "public_commit": "184cfd6a87453ac2eea4c3d6fc7e6fa5eab6b9d1",
     "source_archive_sha256": "4d256b92b1dc7d8aa865604753b231a53140ed6d07412cc5d0dd0335d3f905e1",
@@ -83,7 +84,7 @@
     "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source",
     "tv": "0.1.17/code18"
   },
-  "source_ref": "refs/tags/TI23-2.0.6-20261110",
+  "source_ref": "refs/heads/main",
   "installer_tool_source_commit": "c0d9e3fe469d2fb76cdb4f3899825df6004678e8",
   "unified_upgrade": {
     "file": "hotel-tv-upgrade-latest.deb",
@@ -105,7 +106,7 @@
       "v1-0-0-rc5-in20u1",
       "v1-0-0-rc5-in20u2"
     ],
-    "release": "TI23-2.0.6-20261110",
+    "release": "TI22-2.0.5-20261110",
     "legacy_worker": "original IN17 five modules used; updated runtime software_agent fixes permissions",
     "unit_tests": 10,
     "installer_tests": 83,
@@ -122,12 +123,13 @@
     "site_installation": false
   },
   "current_delivery": {
-    "release": "TI23-2.0.6-20261110",
+    "release": "TI22-2.0.5-20261110",
     "date": "2026-11-10",
     "local_directory": "01_最新版交付",
     "guide": "docs/DELIVERY.md",
     "runtime_changed": true,
-    "private_hotel_data_included": false
+    "private_hotel_data_included": false,
+    "tv_candidate_status": "2.0.6/code19 M5 HOME failed; not formally published"
   },
   "installer_tool_update": {
     "version": "2.0.6",
@@ -153,8 +155,20 @@
     },
     "physical_acceptance": {
       "m1_reopen": "pending user retest; macOS version not yet provided",
-      "current_tv_home": "pending user retest; M5 2.0.5 failure recorded, old 2.0.3 success was another physical TV"
+      "current_tv_home": "M5 retest failed, despite bound=true and usage_allowed=true"
     },
-    "private_hotel_data_included": false
+    "private_hotel_data_included": false,
+    "status": "field-failed-publication-withheld",
+    "original_control_trial": {
+      "tool": "2.0.3",
+      "client": "0.1.16/code17",
+      "elapsed_seconds": 90,
+      "home_and_pin": "passed",
+      "software_reboot": false,
+      "backend_registration": false,
+      "restored_after_trial": true,
+      "scope": "one temporary installation on the same physical test target"
+    },
+    "root_cause": "not yet established; initial foreground and AC setting differed, additional one-variable trial requires authorization"
   }
 }
