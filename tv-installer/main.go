@@ -79,6 +79,11 @@ func reply(w http.ResponseWriter, v any) {
 }
 func fail(w http.ResponseWriter, err error) {
 	w.WriteHeader(400)
+	var connection *ADBConnectionError
+	if errors.As(err, &connection) {
+		reply(w, map[string]any{"error": err.Error(), "connection": connection})
+		return
+	}
 	reply(w, map[string]string{"error": err.Error()})
 }
 func decode(w http.ResponseWriter, r *http.Request, v any) error {
@@ -315,6 +320,33 @@ func (a *App) handler() http.Handler {
 				}
 			}
 			reply(w, map[string]any{"targets": targets, "message": "仅列已连接设备和 mDNS 广播；未出现时直接填写电视 IP。"})
+		case "/api/reconnect":
+			if !a.op.TryLock() {
+				fail(w, errors.New("已有设备操作运行"))
+				return
+			}
+			defer a.op.Unlock()
+			var req struct {
+				Target string `json:"target"`
+			}
+			if err := decode(w, r, &req); err != nil {
+				fail(w, err)
+				return
+			}
+			if a.busy() {
+				fail(w, errors.New("请等待当前任务完成"))
+				return
+			}
+			target, err := validTarget(req.Target)
+			if err != nil {
+				fail(w, err)
+				return
+			}
+			if err = reconnectTV(a.Engine.Runner, target); err != nil {
+				fail(w, err)
+				return
+			}
+			reply(w, map[string]string{"message": "这台电脑已取得电视调试连接，请点检测设备继续；未执行安装或恢复。"})
 		case "/api/probe":
 			if !a.op.TryLock() {
 				fail(w, errors.New("已有设备操作运行"))

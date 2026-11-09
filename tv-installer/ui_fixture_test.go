@@ -13,10 +13,28 @@ import (
 
 type uiFixtureRunner struct {
 	*fakeADB
-	power *powerRunner
+	power     *powerRunner
+	restoreTV *tvSim
 }
 
 func (f uiFixtureRunner) Run(serial string, args ...string) (string, error) {
+	if f.restoreTV != nil && (strings.HasPrefix(serial, "192.168.4.97:") || (len(args) > 1 && args[0] == "connect" && strings.HasPrefix(args[1], "192.168.4.97:"))) {
+		return f.restoreTV.Run(serial, args...)
+	}
+
+	if len(args) > 0 && args[0] == "disconnect" {
+		return "disconnected", nil
+	}
+	if len(args) > 1 && args[0] == "connect" && strings.HasPrefix(args[1], "192.168.4.96:") {
+		return "failed to connect: Connection refused", nil
+	}
+	if len(args) > 1 && args[0] == "connect" && strings.HasPrefix(args[1], "192.168.4.95:") {
+		return "failed to authenticate", nil
+	}
+	if len(args) > 0 && args[0] == "get-state" && strings.HasPrefix(serial, "192.168.4.95:") {
+		return "error: device unauthorized", errors.New("exit status 1")
+	}
+
 	if strings.HasPrefix(serial, "192.168.4.98:") && len(args) > 1 && args[0] == "shell" && strings.Contains(args[1], "'PowerModeTool'") {
 		return rcWrap(args, "MODE_BEFORE=unknown", nil)
 	}
@@ -40,7 +58,13 @@ func TestUIFixture(t *testing.T) {
 	f.device = "mulan"
 	f.fingerprint = "Xiaomi/mulan/mulan:9/PPR1.180610.011/OS3.0.104.0.PSTAATV:user/release-keys"
 	e := testEngine(t, f)
-	e.Runner = uiFixtureRunner{fakeADB: f, power: &powerRunner{fakeADB: f, mode: "secondary"}}
+	restoreTV := newSim(t, "restore-from-another-computer-ui")
+	prior := simEngine(t, restoreTV, true)
+	if _, err := prior.install(simRequest(false), hash(), func(string) {}); err != nil {
+		t.Fatal(err)
+	}
+	restoreTV.adbOpen = true
+	e.Runner = uiFixtureRunner{fakeADB: f, power: &powerRunner{fakeADB: f, mode: "secondary"}, restoreTV: restoreTV}
 	helper := filepath.Join(e.Root, "helpers", "power-mode.jar")
 	os.MkdirAll(filepath.Dir(helper), 0700)
 	os.WriteFile(helper, []byte("ui-fixture-dex"), 0600)

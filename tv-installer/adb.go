@@ -131,9 +131,47 @@ func query(r Runner, target string, args ...string) (string, error) {
 	return out, nil
 }
 
+type ADBConnectionError struct {
+	Code    string `json:"code"`
+	Message string `json:"message"`
+	Detail  string `json:"detail"`
+}
+
+func (e *ADBConnectionError) Error() string {
+	if e.Detail != "" {
+		return e.Message + "\nADB 返回：" + e.Detail
+	}
+	return e.Message
+}
+
+func connectionFailure(code, message, detail string) error {
+	detail = strings.Map(func(r rune) rune {
+		if r < 32 && r != '\n' && r != '\t' {
+			return -1
+		}
+		return r
+	}, strings.TrimSpace(detail))
+	if len(detail) > 1200 {
+		detail = detail[:1200]
+	}
+	return &ADBConnectionError{Code: code, Message: message, Detail: detail}
+}
+
 func connect(r Runner, target string) error {
-	if _, e := r.Run("", "connect", target); e != nil {
-		return errors.New("无法连接电视，请检查 IP、调试开关与网络")
+	// adb connect can exit zero even when its reply says "failed to connect".
+	// Check the reply before polling: a missing transport is not proof of missing TV consent.
+	reply, err := r.Run("", "connect", target)
+	lower := strings.ToLower(reply)
+	pendingAuth := strings.Contains(lower, "unauthorized") || strings.Contains(lower, "failed to authenticate")
+	if !pendingAuth {
+		for _, text := range []string{"failed to connect", "cannot connect", "unable to connect", "connection refused", "connection timed out", "no route to host", "network is unreachable", "operation not permitted", "permission denied"} {
+			if strings.Contains(lower, text) {
+				return connectionFailure("network", "尚未连通电视的调试端口，这不是电视未授权。请核对电视 IP、调试开关与连接端口；另一台电脑还需核对局域网访问权限和网络隔离。", reply)
+			}
+		}
+		if err != nil {
+			return connectionFailure("adb", "ADB 连接命令未能执行完成，请先重新检查工具和连接。", strings.TrimSpace(reply+"\n"+err.Error()))
+		}
 	}
 	last := ""
 	for i := 0; i < 3; i++ {
@@ -142,18 +180,30 @@ func connect(r Runner, target string) error {
 		if e == nil && s == "device" {
 			return nil
 		}
-		last = strings.ToLower(s)
+		last = s
+		if last == "" && e != nil {
+			last = e.Error()
+		}
 		if i < 2 {
 			time.Sleep(time.Second)
 		}
 	}
-	if strings.Contains(last, "unauthorized") {
-		return errors.New("电视尚未授权这台电脑：请在电视弹窗选“始终允许”。看不到弹窗时按一次主页键再按返回；点过拒绝的需把调试关掉再打开")
+	if pendingAuth || strings.Contains(strings.ToLower(last), "unauthorized") {
+		return connectionFailure("unauthorized", "电视正在等待这台电脑的独立授权：请在电视选择“始终允许”，然后重新检测。没有弹窗时可点“重新请求电视授权”；仍无弹窗时在电视关闭再打开调试。", strings.TrimSpace(reply+"\n"+last))
 	}
-	if strings.Contains(last, "offline") {
-		return errors.New("电视调试连接处于离线状态：请在电视关闭再打开调试，或重启电视后重试")
+	if strings.Contains(strings.ToLower(last), "offline") {
+		return connectionFailure("offline", "电视调试连接处于离线状态：可先重新请求电视授权；仍离线时在电视关闭再打开调试。", strings.TrimSpace(reply+"\n"+last))
 	}
-	return errors.New("未取得电视调试授权；请在电视选择始终允许，再重新检测。无线调试需先输入配对码")
+	return connectionFailure("transport", "没有取得可用的电视调试连接，当前不能判定为未授权。请按下方 ADB 原因核对 IP、连接端口和网络；使用6位配对码的无线调试需先配对。", strings.TrimSpace(reply+"\n"+last))
+}
+
+func reconnectTV(r Runner, target string) error {
+	// Only this target on this tool's isolated ADB server. Never kill other servers,
+	// revoke TV trust, replace keys, or touch another connected device.
+	if out, err := r.Run("", "disconnect", target); err != nil {
+		return connectionFailure("adb", "无法断开这台设备的旧连接，请先重新检查工具。", strings.TrimSpace(out+"\n"+err.Error()))
+	}
+	return connect(r, target)
 }
 
 func inspect(r Runner, target string) (Facts, error) {
