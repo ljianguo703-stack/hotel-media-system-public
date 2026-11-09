@@ -6,7 +6,7 @@ const BASE='http://127.0.0.1:18947',OUT=process.env.TI_EVIDENCE;
  const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],mutations=[],steps=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(['/api/install','/api/restore'].some(p=>r.url()===BASE+p))mutations.push(r.url())});
  try{
- await page.goto(BASE+'/#ti-test-fixture-session');await page.waitForFunction(()=>document.getElementById('version').textContent.includes('2.0.5'));
+ await page.goto(BASE+'/#ti-test-fixture-session');await page.waitForFunction(()=>document.getElementById('version').textContent.includes('2.0.6'));
  await page.fill('#target','192.168.4.96');await page.click('#probe');await page.waitForFunction(()=>document.getElementById('connectionStatus').textContent.includes('Connection refused'));
  assert.match(await page.textContent('#connectionStatus'),/尚未连通/);assert(!(await page.textContent('#connectionStatus')).includes('电视正在等待'));assert(await page.locator('#installOne').isDisabled());
  for(const [w,h]of[[390,844],[1280,720],[1440,900]]){await page.setViewportSize({width:w,height:h});await page.locator('#connectionStatus').scrollIntoViewIfNeeded();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);await page.screenshot({path:path.join(OUT,`connection-${w}x${h}.png`)})}

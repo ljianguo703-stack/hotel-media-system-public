@@ -17,7 +17,7 @@ import (
 )
 
 const pkg = "com.xjg.hoteltv"
-const version = "2.0.5"
+const version = "2.0.6"
 const activity = pkg + "/.MainActivity"
 const guard = pkg + "/" + pkg + ".guard.HotelHomeGuardService"
 const listener = pkg + "/" + pkg + ".guard.RevivalListener"

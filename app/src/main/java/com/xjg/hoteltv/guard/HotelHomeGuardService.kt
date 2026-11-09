@@ -230,7 +230,15 @@ class HotelHomeGuardService : AccessibilityService() {
             if (intent.getStringExtra("reason") != "homekey") return
             if (backOnPause) noteHomeInAerial()
             val front = lastWindow?.first
-            if (front != null && front !in stockHomes) return
+            if (front != null && front !in stockHomes) {
+                // A bound service can miss PatchWall's next window event. Reuse Aerial's
+                // post-Home check rather than treating the last observed app as current.
+                windowsAtHome = windowsSeen
+                homePressedAt = System.currentTimeMillis()
+                handler.removeCallbacks(frontAfterHome)
+                handler.postDelayed(frontAfterHome, 1500)
+                return
+            }
             // The stock launcher's window change usually comes first and already brought Aerial
             // back; starting it again redid Home's resume (MiTV-MFTR0: 0.2 s apart).
             if (SystemClock.uptimeMillis() - broughtBackAt < 1_000) return
@@ -238,6 +246,21 @@ class HotelHomeGuardService : AccessibilityService() {
             allowStockUntil = 0L
             goHome()
         }
+    }
+
+    private var windowsSeen = 0L
+    private var windowsAtHome = 0L
+    private var homePressedAt = 0L
+    private val frontAfterHome = Runnable {
+        if (windowsSeen != windowsAtHome || hotelHomeInFront || !GuardSetup.isUserUnlocked(this)) return@Runnable
+        if (!usageStatsAllowed(this)) return@Runnable
+        val (front, at) = foreground() ?: return@Runnable
+        // An old home entry, settings, HDMI or another screen in PatchWall is not a Home return.
+        if (at < homePressedAt - 1000 || front.second !in stockHomes[front.first].orEmpty()) return@Runnable
+        lastWindow = front
+        allowStockUntil = 0L
+        Log.i(TAG, "Home pressed without a window change; usage stats confirm the stock HOME; bringing cinema back")
+        goHome()
     }
 
     /** The firmware putting its own screensaver back while Aerial's is chosen (GuardSetup). */
@@ -473,6 +496,7 @@ class HotelHomeGuardService : AccessibilityService() {
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
+        handler.removeCallbacks(frontAfterHome)
         if (instance === this) instance = null
         return super.onUnbind(intent)
     }
@@ -742,6 +766,7 @@ class HotelHomeGuardService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
         sawEvent = true
         if (event.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
+        windowsSeen++
         val pkg = event.packageName?.toString() ?: return
         val cls = event.className?.toString() ?: return
         // Only activities count as what is in front. Overlays and dialogs also raise this event:
@@ -1041,6 +1066,14 @@ class HotelHomeGuardService : AccessibilityService() {
 
         val isRunning: Boolean get() = instance != null
         internal val hotelHomeInFront: Boolean get() = aerialResumed
+
+        /** Read-only installer diagnostic. No PIN, hotel credentials or screen content. */
+        fun diagnosticState(): String {
+            val s = instance ?: return "hotel_guard bound=false resumed=$aerialResumed"
+            return "hotel_guard bound=true resumed=$aerialResumed windows=${s.windowsSeen} " +
+                "screen_off=${s.screenOff} usage_allowed=${usageStatsAllowed(s)} " +
+                "front=${s.lastWindow} homes=${s.stockHomes}"
+        }
 
         /** Whether usage stats may be read (GET_USAGE_STATS, granted over ADB); see foregroundCheck. */
         fun usageStatsAllowed(context: Context): Boolean = runCatching {

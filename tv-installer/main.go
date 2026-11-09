@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"crypto/rand"
 	"crypto/sha256"
 	"crypto/subtle"
@@ -15,6 +16,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"os/signal"
 	"path/filepath"
 	"regexp"
 	"runtime"
@@ -858,6 +860,12 @@ func verifyBundle(root string) error {
 	return nil
 }
 func main() {
+	if len(os.Args) == 3 && os.Args[1] == adbWorkerMode {
+		if err := runADBWorker(os.Args[2]); err != nil {
+			fatal(err)
+		}
+		return
+	}
 	exe, _ := os.Executable()
 	rootFlag := flag.String("bundle", filepath.Dir(exe), "完整便携包目录")
 	stateFlag := flag.String("state", "", "本地私有数据目录，默认包旁边 data")
@@ -910,6 +918,11 @@ func main() {
 	if _, e = runtimeCheck(ADB{Path: adbPath, Port: "15047"}); e != nil {
 		fatal(e)
 	}
+	adb, e := startADBSession(adbPath)
+	if e != nil {
+		fatal(e)
+	}
+	defer adb.Close()
 	listenIP, e := installerListenIP(*lan, *lanIP)
 	if e != nil {
 		fatal(e)
@@ -926,7 +939,7 @@ func main() {
 		fatal(e)
 	}
 	backend := &Backend{}
-	a := &App{Engine: Engine{Runner: ADB{Path: adbPath, Port: "15047"}, Catalog: catalog, Root: root, State: state, Backend: backend}, Token: token, Host: ln.Addr().String(), hotel: hotel, job: latestJob(state), backend: backend}
+	a := &App{Engine: Engine{Runner: adb, Catalog: catalog, Root: root, State: state, Backend: backend}, Token: token, Host: ln.Addr().String(), hotel: hotel, job: latestJob(state), backend: backend}
 	if *lan {
 		a.Pairing, e = newBrowserPairing()
 		if e != nil {
@@ -947,8 +960,28 @@ func main() {
 		}
 	}
 	server := &http.Server{Handler: a.handler(), ReadHeaderTimeout: 5 * time.Second, IdleTimeout: 30 * time.Second, MaxHeaderBytes: 8192}
-	if e = server.Serve(ln); e != nil {
-		fatal(e)
+	ctx, stop := signal.NotifyContext(context.Background(), installerSignals()...)
+	defer stop()
+	served := make(chan error, 1)
+	go func() { served <- server.Serve(ln) }()
+	select {
+	case <-ctx.Done():
+		fmt.Println("正在退出：停止接收新操作，等待当前检测、安装或还原完成后关闭本次专用 ADB。")
+		drainInstaller(server, a)
+		e = <-served
+	case e = <-served:
+		drainInstaller(server, a)
 	}
+	if e != nil && !errors.Is(e, http.ErrServerClosed) {
+		fmt.Fprintln(os.Stderr, e)
+	}
+}
+
+func drainInstaller(server *http.Server, a *App) {
+	server.Shutdown(context.Background())
+	// Install/restore continue after their HTTP request has returned. Keep ADB alive until
+	// their operation lock is released; a normal exit must not cut off automatic rollback.
+	a.op.Lock()
+	a.op.Unlock()
 }
 func fatal(e error) { fmt.Fprintln(os.Stderr, e); os.Exit(1) }

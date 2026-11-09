@@ -995,6 +995,7 @@ func (e Engine) install(req InstallRequest, pinHash string, log func(string)) (s
 	log("检查守护与 HOME 返回（两轮，回到影院后须稳定停留）")
 	e.wait(3 * time.Second)
 	if err = e.homeKeyReturns(target, 2); err != nil {
+		log(err.Error())
 		return snap, err
 	}
 	if req.Register {
@@ -1171,7 +1172,11 @@ func (e Engine) homeKeyReturns(target string, rounds int) error {
 			return er
 		}
 		if got, err := e.waitForeground(target, pkg, false, 12, 3, 2*time.Second); err != nil {
-			return errors.New("按 HOME 未稳定回到影院（最后前台：" + got + "），不能验收为成功")
+			message := "按 HOME 未稳定回到影院（最后前台：" + got + "），不能验收为成功"
+			if status := guardDiagnostic(e.Runner, target); status != "" {
+				message += "；守护诊断：" + status
+			}
+			return errors.New(message)
 		}
 	}
 	return nil

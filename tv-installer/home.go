@@ -263,6 +263,12 @@ func (e Engine) waitForeground(target, want string, negate bool, attempts, stabl
 // string can be written while the service stays unbound (restricted settings, firmware cleanup).
 // "unknown" means the dump was unreadable on this firmware; callers then rely on the HOME test.
 func guardBinding(r Runner, target string) string {
+	if status := guardDiagnostic(r, target); status != "" {
+		if strings.HasPrefix(status, "hotel_guard bound=true") {
+			return "bound"
+		}
+		return "unbound"
+	}
 	out, err := query(r, target, "dumpsys", "activity", "services", pkg)
 	if err != nil {
 		return "unknown"
@@ -274,4 +280,18 @@ func guardBinding(r Runner, target string) string {
 		return "unbound"
 	}
 	return "unknown"
+}
+
+// The protected receiver reports onServiceConnected, not merely a ServiceRecord that may
+// represent a pending/dead binding. Older clients fall back to the existing system dump.
+func guardDiagnostic(r Runner, target string) string {
+	out, err := query(r, target, "am", "broadcast", "-a", pkg+".CONFIG", "-n", pkg+"/.guard.ConfigReceiver", "--ez", "guard_status", "true")
+	if err != nil || !regexp.MustCompile(`result=200\b`).MatchString(out) {
+		return ""
+	}
+	m := regexp.MustCompile(`data="(hotel_guard bound=(?:true|false)[^"\r\n]*)"`).FindStringSubmatch(out)
+	if m == nil {
+		return ""
+	}
+	return m[1]
 }

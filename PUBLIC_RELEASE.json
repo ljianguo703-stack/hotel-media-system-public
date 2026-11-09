@@ -4,8 +4,8 @@
   "date": "2026-11-07",
   "versions": {
     "backend": "v1-0-0-rc5-in20",
-    "tv": "0.1.17/code18",
-    "installer_tool": "2.0.5"
+    "tv": "0.1.18/code19",
+    "installer_tool": "2.0.6"
   },
   "source_base": "4216f349bc99f30a7804005cd4dec86ef1262e3f",
   "privacy_review": {
@@ -63,7 +63,7 @@
     "release": "IN19-dependencies-20261107"
   },
   "documentation": {
-    "version": "IN20-DOC09",
+    "version": "IN20-DOC10",
     "date": "2026-11-10",
     "pages": 34,
     "network_paths": [
@@ -80,10 +80,11 @@
     "public_commit": "184cfd6a87453ac2eea4c3d6fc7e6fa5eab6b9d1",
     "source_archive_sha256": "4d256b92b1dc7d8aa865604753b231a53140ed6d07412cc5d0dd0335d3f905e1",
     "installer_sha256": "ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e",
-    "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source"
+    "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source",
+    "tv": "0.1.17/code18"
   },
-  "source_ref": "refs/tags/TI22-2.0.5-20261110",
-  "installer_tool_source_commit": "a17c731540c634e0c38a398815f7aaca62b6da8d",
+  "source_ref": "refs/tags/TI23-2.0.6-20261110",
+  "installer_tool_source_commit": "c0d9e3fe469d2fb76cdb4f3899825df6004678e8",
   "unified_upgrade": {
     "file": "hotel-tv-upgrade-latest.deb",
     "sha256": "3b0b7dd5da0b77bfe22962af86d4bf556c33e3bbeafe978a358fdbc0cb15720c",
@@ -104,7 +105,7 @@
       "v1-0-0-rc5-in20u1",
       "v1-0-0-rc5-in20u2"
     ],
-    "release": "TI22-2.0.5-20261110",
+    "release": "TI23-2.0.6-20261110",
     "legacy_worker": "original IN17 five modules used; updated runtime software_agent fixes permissions",
     "unit_tests": 10,
     "installer_tests": 83,
@@ -121,7 +122,7 @@
     "site_installation": false
   },
   "current_delivery": {
-    "release": "TI22-2.0.5-20261110",
+    "release": "TI23-2.0.6-20261110",
     "date": "2026-11-10",
     "local_directory": "01_最新版交付",
     "guide": "docs/DELIVERY.md",
@@ -129,38 +130,31 @@
     "private_hotel_data_included": false
   },
   "installer_tool_update": {
-    "version": "2.0.5",
-    "source_commit": "a17c731540c634e0c38a398815f7aaca62b6da8d",
-    "packages": [
-      {
-        "file": "hotel-tv-installer-2.0.5-darwin-arm64.zip",
-        "sha256": "2e742c5419f2bcd93355b1f0b53b249c4b8f04f67f222ee3d99195470b40db83",
-        "files_verified": 38
-      },
-      {
-        "file": "hotel-tv-installer-2.0.5-darwin-amd64.zip",
-        "sha256": "e49154c73119951dee9336e404438359feba939fee918eb5ae50b04e6a727593",
-        "files_verified": 38
-      },
-      {
-        "file": "hotel-tv-installer-2.0.5-linux-amd64.zip",
-        "sha256": "3d4742a550caa0f146b429e5936a2b6f9678025a7206757591350a4967d204c6",
-        "files_verified": 40
-      },
-      {
-        "file": "hotel-tv-installer-2.0.5-windows-amd64.zip",
-        "sha256": "b15520f5646c52850038a1dd24fb2ea66e1a5583df1a1b3ef280f6c475d89af1",
-        "files_verified": 39
-      }
+    "version": "2.0.6",
+    "source_commit": "c0d9e3fe469d2fb76cdb4f3899825df6004678e8",
+    "client": "0.1.18/code19",
+    "changes": [
+      "owned native foreground ADB per application launch and pipe-supervised cleanup",
+      "normal exit drains active device operations",
+      "post-HOME usage-state fallback for missing window events, exact stock HOME only",
+      "protected real guard binding diagnostic saved before automatic rollback"
     ],
-    "go_race": "passed, including opt-in native ADB refusal test",
-    "browser_suites": [
-      "31 original workflow steps",
-      "4 readiness cases",
-      "auth and TV restore import; no install/restore requests"
-    ],
-    "native_mac_arm64_startup": true,
-    "second_mac_hardware_acceptance": "pending",
-    "tv_restore_point_reading_is_not_a_factory_reset": true
+    "verification": {
+      "go_race_top_level": 186,
+      "go_vet": "passed",
+      "android_tests_per_variant": 240,
+      "signed_release_and_lint": "both passed",
+      "browser_suites": 3,
+      "viewports": [
+        "390x844",
+        "1280x720",
+        "1440x900"
+      ]
+    },
+    "physical_acceptance": {
+      "m1_reopen": "pending user retest; macOS version not yet provided",
+      "current_tv_home": "pending user retest; M5 2.0.5 failure recorded, old 2.0.3 success was another physical TV"
+    },
+    "private_hotel_data_included": false
   }
 }

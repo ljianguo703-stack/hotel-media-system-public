@@ -30,6 +30,11 @@ import kotlinx.coroutines.launch
  */
 class ConfigReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
+        if (intent.getBooleanExtra("guard_status", false)) {
+            resultCode = 200
+            resultData = HotelHomeGuardService.diagnosticState()
+            return
+        }
         if (intent.getBooleanExtra("provision_status", false)) {
             resultCode = 200
             resultData = com.xjg.hoteltv.hotel.HotelProvisioning.status(context)
