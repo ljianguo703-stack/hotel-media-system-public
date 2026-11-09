@@ -41,7 +41,7 @@ def decorate(c, doc):
     c.setFont('CN', 8.2)
     c.setFillColor(shared.MUTED)
     c.drawString(19*mm, A4[1]-15*mm, '酒店影院 / 全新 Ubuntu 安装教程')
-    c.drawRightString(A4[0]-19*mm, A4[1]-15*mm, 'IN20-DOC07 · 2026-11-07')
+    c.drawRightString(A4[0]-19*mm, A4[1]-15*mm, 'IN20-DOC08 · 2026-11-09')
     c.setStrokeColor(shared.LINE)
     c.line(19*mm, 18*mm, A4[0]-19*mm, 18*mm)
     c.drawString(19*mm, 12*mm, 'Ubuntu 24.04 amd64 · 在线 / 本地完整包 · 国内 / 海外')

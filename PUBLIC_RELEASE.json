@@ -63,8 +63,8 @@
     "release": "IN19-dependencies-20261107"
   },
   "documentation": {
-    "version": "IN20-DOC07",
-    "date": "2026-11-07",
+    "version": "IN20-DOC08",
+    "date": "2026-11-09",
     "pages": 34,
     "network_paths": [
       "China mainland online",
@@ -82,7 +82,7 @@
     "installer_sha256": "ca0619924133236f7af5efa44a97b8424fc3d4cd7e9f697e4e706183014c9a7e",
     "external_downloaders_and_release_metadata": "excluded only from self-extracting install payload to avoid circular installer digest; included in full public source"
   },
-  "source_ref": "refs/tags/IN20-U2-20261107",
+  "source_ref": "refs/tags/IN20-DELIVERY-20261109",
   "installer_tool_source_commit": "8b5b6258eed5115adbce4c744c7d7d6859d0b13a",
   "unified_upgrade": {
     "file": "hotel-tv-upgrade-latest.deb",
@@ -104,7 +104,7 @@
       "v1-0-0-rc5-in20u1",
       "v1-0-0-rc5-in20u2"
     ],
-    "release": "IN20-U2-20261107",
+    "release": "IN20-DELIVERY-20261109",
     "legacy_worker": "original IN17 five modules used; updated runtime software_agent fixes permissions",
     "unit_tests": 10,
     "installer_tests": 83,
@@ -119,5 +119,13 @@
     "apt": "real APT and dpkg, network disabled and Python dependency preinstalled",
     "systemctl": "disposable process fixture, not full systemd",
     "site_installation": false
+  },
+  "current_delivery": {
+    "release": "IN20-DELIVERY-20261109",
+    "date": "2026-11-09",
+    "local_directory": "01_最新版交付",
+    "guide": "docs/DELIVERY.md",
+    "runtime_changed": false,
+    "private_hotel_data_included": false
   }
 }

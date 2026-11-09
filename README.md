@@ -20,10 +20,12 @@ echo '1682ee506be6c33512659afa7279cdc7600510dd2f9f5fa2a77c2992eb827504  hotel-in
 sudo python3 hotel-install.py
 ```
 
-已有系统只使用 [hotel-tv-upgrade-latest.deb](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/download/IN20-U2-20261107/hotel-tv-upgrade-latest.deb)，目标IN20u2，修复程序目录权限；自动识别已支持起点，保留原数据。详见 [统一升级说明](docs/UPGRADE.md)，不要重跑首装覆盖已有服务。
+已有系统只使用 [hotel-tv-upgrade-latest.deb](https://github.com/ljianguo703-stack/hotel-media-system-public/releases/latest/download/hotel-tv-upgrade-latest.deb)，目标IN20u2，修复程序目录权限；自动识别已支持起点，保留原数据。详见 [统一升级说明](docs/UPGRADE.md)，不要重跑首装覆盖已有服务。
 
 A版分组菜单保留41个功能入口。运行概览显示在线电视、影院业务流量、Linux资源和网口总量；这些流量范围不同，未采样时明确显示未采集。
 
 本版本机隔离验证与酒店现场验收分别记录。连续24小时、真实目标房数并发和实体电源行为仍需现场验收。未知机型按施工工具支持级别单独验证。
 
 源码、许可证和第三方来源见 LICENSE、NOTICE、third-party 与 PUBLIC_RELEASE.json。公开源不包含本店密码、设备凭据、私钥或业务数据库。
+
+文件整理入口：[只认最新交付目录](docs/DELIVERY.md)。旧候选包已清理；固定首装资源与依赖单独标注，由安装器自动读取。
