@@ -4,8 +4,8 @@
   "date": "2026-11-07",
   "versions": {
     "backend": "v1-0-0-rc5-in20",
-    "tv": "0.1.18/code19",
-    "installer_tool": "2.0.6"
+    "tv": "0.1.19/code20",
+    "installer_tool": "2.0.7"
   },
   "source_base": "4216f349bc99f30a7804005cd4dec86ef1262e3f",
   "privacy_review": {
@@ -85,7 +85,7 @@
     "tv": "0.1.17/code18"
   },
   "source_ref": "refs/heads/main",
-  "installer_tool_source_commit": "c1dbce5",
+  "installer_tool_source_commit": "c1dbce56d537ae7001ac78dd35076cde800a948e",
   "unified_upgrade": {
     "file": "hotel-tv-upgrade-latest.deb",
     "sha256": "3b0b7dd5da0b77bfe22962af86d4bf556c33e3bbeafe978a358fdbc0cb15720c",
@@ -155,7 +155,7 @@
       "1280x720",
       "1440x900"
     ],
-    "source_build": "c1dbce5",
+    "source_build": "c1dbce56d537ae7001ac78dd35076cde800a948e",
     "physical_acceptance": {
       "original_engine_code18_controls": "three same-target install/HOME/PIN controls passed and restored; initial foreground and AC option did not deterministically reproduce failure",
       "final_package": "pending; initial candidate HOME checks passed but connection interrupted before installer reboot command",
