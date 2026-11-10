@@ -63,7 +63,7 @@
     "release": "IN19-dependencies-20261107"
   },
   "documentation": {
-    "version": "IN20-DOC10",
+    "version": "IN20-DOC11",
     "date": "2026-11-10",
     "pages": 34,
     "network_paths": [
@@ -74,9 +74,9 @@
     "local_payload_files": 18,
     "local_checksum_entries": 20,
     "seerr_screenshots": "v3.5.1 isolated demonstration, zh-CN, documentation example address",
-    "stage": "DOC10 candidate, not formally released"
+    "stage": "DOC11 updated; final TV field retest pending"
   },
-  "status": "tv-field-failed-publication-withheld",
+  "status": "candidate-awaiting-physical-TV-authorization-and-retest",
   "installer_input": {
     "public_commit": "184cfd6a87453ac2eea4c3d6fc7e6fa5eab6b9d1",
     "source_archive_sha256": "4d256b92b1dc7d8aa865604753b231a53140ed6d07412cc5d0dd0335d3f905e1",
@@ -85,7 +85,7 @@
     "tv": "0.1.17/code18"
   },
   "source_ref": "refs/heads/main",
-  "installer_tool_source_commit": "c0d9e3fe469d2fb76cdb4f3899825df6004678e8",
+  "installer_tool_source_commit": "c1dbce5",
   "unified_upgrade": {
     "file": "hotel-tv-upgrade-latest.deb",
     "sha256": "3b0b7dd5da0b77bfe22962af86d4bf556c33e3bbeafe978a358fdbc0cb15720c",
@@ -129,46 +129,40 @@
     "guide": "docs/DELIVERY.md",
     "runtime_changed": true,
     "private_hotel_data_included": false,
-    "tv_candidate_status": "2.0.6/code19 M5 HOME failed; not formally published"
+    "tv_candidate_status": "2.0.7/code20 candidate; final field test pending after TV debug authorization was lost"
   },
   "installer_tool_update": {
-    "version": "2.0.6",
-    "source_commit": "c0d9e3fe469d2fb76cdb4f3899825df6004678e8",
-    "client": "0.1.18/code19",
+    "version": "2.0.7",
+    "client": "0.1.19/code20",
+    "date": "2026-11-10",
     "changes": [
-      "owned native foreground ADB per application launch and pipe-supervised cleanup",
-      "normal exit drains active device operations",
-      "post-HOME usage-state fallback for missing window events, exact stock HOME only",
-      "protected real guard binding diagnostic saved before automatic rollback"
+      "Reuse existing exact-stock-HOME usage monitoring on verified MiTV-ASTP0/mulan/SDK28/OS3.0.104.0.PSTAATV when window events and HOME broadcasts are absent",
+      "Watch remains scheduled before app-op grant and starts querying only after permission becomes available",
+      "Retain state across extracted versions; preserve existing distinct PIN stores without merging",
+      "Keep owned native ADB lifecycle and visible TV-side restore import"
     ],
-    "verification": {
-      "go_race_top_level": 186,
-      "go_vet": "passed",
-      "android_tests_per_variant": 240,
-      "signed_release_and_lint": "both passed",
-      "browser_suites": 3,
-      "viewports": [
-        "390x844",
-        "1280x720",
-        "1440x900"
-      ]
+    "go_race": {
+      "passed": 190,
+      "skipped": 3,
+      "vet": "passed",
+      "native_ADB_included": true
     },
+    "android_tests_each_variant": 249,
+    "android_signed_release_lint": "both passed",
+    "browser_suites": 3,
+    "viewports": [
+      "390x844",
+      "1280x720",
+      "1440x900"
+    ],
+    "source_build": "c1dbce5",
     "physical_acceptance": {
-      "m1_reopen": "pending user retest; macOS version not yet provided",
-      "current_tv_home": "M5 retest failed, despite bound=true and usage_allowed=true"
+      "original_engine_code18_controls": "three same-target install/HOME/PIN controls passed and restored; initial foreground and AC option did not deterministically reproduce failure",
+      "final_package": "pending; initial candidate HOME checks passed but connection interrupted before installer reboot command",
+      "M1_reopen": "other computer not retested",
+      "physical_power_and_business": "not accepted by this local test"
     },
-    "private_hotel_data_included": false,
-    "status": "field-failed-publication-withheld",
-    "original_control_trial": {
-      "tool": "2.0.3",
-      "client": "0.1.16/code17",
-      "elapsed_seconds": 90,
-      "home_and_pin": "passed",
-      "software_reboot": false,
-      "backend_registration": false,
-      "restored_after_trial": true,
-      "scope": "one temporary installation on the same physical test target"
-    },
-    "root_cause": "not yet established; initial foreground and AC setting differed, additional one-variable trial requires authorization"
+    "status": "awaiting-physical-TV-authorization-and-final-package-retest",
+    "private_hotel_data_included": false
   }
 }

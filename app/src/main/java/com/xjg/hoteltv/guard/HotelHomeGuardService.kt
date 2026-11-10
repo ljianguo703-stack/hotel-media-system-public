@@ -102,7 +102,12 @@ class HotelHomeGuardService : AccessibilityService() {
             // Not skipped where Aerial is the default Home, for the same reason as the Home key:
             // Panasonic DX01C (Skyworth-made, Tianci, Android 6) shows its own launcher at power-on
             // and on the Home key whatever Home resolves to.
-            if (screenOff || !GuardSetup.isUserUnlocked(this@HotelHomeGuardService)) return
+            if (screenOff || hotelHomeInFront ||
+                getSystemService<PowerManager>()?.isInteractive != true ||
+                !GuardSetup.isUserUnlocked(this@HotelHomeGuardService)) return
+            // First install can grant the app-op after accessibility has already connected.
+            // Keep the watch scheduled, but never query usage until permission is present.
+            if (!usageStatsAllowed(this@HotelHomeGuardService)) return
             if (SystemClock.uptimeMillis() < allowStockUntil) return
             val (window, at) = foreground() ?: return
             if (at <= foregroundTakenAt) return
@@ -363,10 +368,17 @@ class HotelHomeGuardService : AccessibilityService() {
         // record its moves to the front as on PatchWall (Vidda C1S, MT9669, Android 9, PR #545,
         // checked by the author with a local build). Only where that launcher is a stock home, so
         // other TVs past Android 6 are not polled.
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M || VIDAA_LAUNCHER in stockHomes) {
+        // This exact Xiaomi Android 9 firmware also left the guard bound with its last window
+        // still pointing at our paused activity. Neither a window event nor a homekey broadcast
+        // followed. Reuse the existing narrow usage watch rather than depending on either signal.
+        val mulanMissingEvents = Build.VERSION.SDK_INT == 28 && Build.MODEL == "MiTV-ASTP0" &&
+            Build.DEVICE == "mulan" && Build.FINGERPRINT ==
+            "Xiaomi/mulan/mulan:9/PPR1.180610.011/OS3.0.104.0.PSTAATV:user/release-keys" &&
+            "com.mitv.tvhome" in stockHomes
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M || VIDAA_LAUNCHER in stockHomes || mulanMissingEvents) {
             handler.removeCallbacks(foregroundCheck)
-            if (usageStatsAllowed(this)) handler.post(foregroundCheck)
-            else Log.i(TAG, "usage stats not allowed; not watching the front by them")
+            handler.post(foregroundCheck)
+            Log.i(TAG, "watching exact stock HOME independently of window and HOME broadcasts; usage_allowed=${usageStatsAllowed(this)}")
         }
         if (!GuardSetup.isUserUnlocked(this)) {
             Log.i(TAG, "bound while user locked; deferred takeover until unlock")

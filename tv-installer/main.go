@@ -868,7 +868,7 @@ func main() {
 	}
 	exe, _ := os.Executable()
 	rootFlag := flag.String("bundle", filepath.Dir(exe), "完整便携包目录")
-	stateFlag := flag.String("state", "", "本地私有数据目录，默认包旁边 data")
+	stateFlag := flag.String("state", "", "本地私有数据目录，默认沿用原资料或系统固定目录")
 	port := flag.Int("port", 0, "操作窗口端口，0为自动选择")
 	noBrowser := flag.Bool("no-browser", false, "不自动打开浏览器")
 	lan := flag.Bool("lan", false, "手机通过局域网网页操作，当前电脑/Ubuntu执行安装")
@@ -882,11 +882,11 @@ func main() {
 	if e != nil {
 		fatal(e)
 	}
-	state := *stateFlag
-	if state == "" {
-		state = filepath.Join(root, "data")
+	configRoot, _ := os.UserConfigDir()
+	state, e := stateDirectory(root, *stateFlag, os.Getenv("HOTEL_INSTALLER_STATE"), configRoot)
+	if e != nil {
+		fatal(e)
 	}
-	state, _ = filepath.Abs(state)
 	if e = os.MkdirAll(state, 0700); e != nil {
 		fatal(e)
 	}
