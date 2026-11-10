@@ -70,6 +70,19 @@ class HotelHomeUsageWatchTest {
         assertNull("One foreground event must not cause repeated launches", shadowOf(service).nextStartedActivity)
     }
 
+    @Test fun homeBroadcastAndUsageWatchAnswerOnePressOnlyOnce() {
+        connect()
+        val receiver = HotelHomeGuardService::class.java.getDeclaredField("homeKey").apply { isAccessible = true }
+            .get(service) as android.content.BroadcastReceiver
+        receiver.onReceive(service, Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS).putExtra("reason", "homekey"))
+        usage("com.mitv.tvhome", home)
+        // The real Android 9 firmware holds activity starts for five seconds after HOME.
+        // Leave the cinema paused while both fallback timers run during that hold.
+        settle()
+        assertNotNull(shadowOf(service).nextStartedActivity)
+        assertNull("Two signals for one HOME press must not queue two activity launches", shadowOf(service).nextStartedActivity)
+    }
+
     @Test fun resumedCinemaIsNotRestartedByAnOldHomeObservation() {
         connect(); usage("com.mitv.tvhome", home); HotelHomeGuardService.onAerialResumed(); settle()
         assertNull(shadowOf(service).nextStartedActivity)

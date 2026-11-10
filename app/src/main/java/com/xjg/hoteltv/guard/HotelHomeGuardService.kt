@@ -119,6 +119,9 @@ class HotelHomeGuardService : AccessibilityService() {
             foregroundTakenAt = at
             if (SystemClock.uptimeMillis() - broughtBackAt < 1_000) return
             Log.i(TAG, "stock launcher $pkg in front by usage stats; bringing Aerial back")
+            // This answers the same HOME press as the pending broadcast fallback. Android 9
+            // may hold the first launch for five seconds; do not queue a second one meanwhile.
+            handler.removeCallbacks(frontAfterHome)
             goHome(woke = SystemClock.elapsedRealtime() - screenOnAt < WAKE_WINDOW_MS)
         }
     }

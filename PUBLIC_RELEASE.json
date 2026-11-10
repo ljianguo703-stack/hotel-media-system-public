@@ -85,7 +85,7 @@
     "tv": "0.1.17/code18"
   },
   "source_ref": "refs/heads/main",
-  "installer_tool_source_commit": "c1dbce56d537ae7001ac78dd35076cde800a948e",
+  "installer_tool_source_commit": "0895e6fe640a060efa7b363ff0d840ac4bd1c5cf",
   "unified_upgrade": {
     "file": "hotel-tv-upgrade-latest.deb",
     "sha256": "3b0b7dd5da0b77bfe22962af86d4bf556c33e3bbeafe978a358fdbc0cb15720c",
@@ -139,7 +139,8 @@
       "Reuse existing exact-stock-HOME usage monitoring on verified MiTV-ASTP0/mulan/SDK28/OS3.0.104.0.PSTAATV when window events and HOME broadcasts are absent",
       "Watch remains scheduled before app-op grant and starts querying only after permission becomes available",
       "Retain state across extracted versions; preserve existing distinct PIN stores without merging",
-      "Keep owned native ADB lifecycle and visible TV-side restore import"
+      "Keep owned native ADB lifecycle and visible TV-side restore import",
+      "Deduplicate simultaneous usage and HOME-broadcast recovery during Android 9 delayed activity start"
     ],
     "go_race": {
       "passed": 190,
@@ -147,7 +148,7 @@
       "vet": "passed",
       "native_ADB_included": true
     },
-    "android_tests_each_variant": 249,
+    "android_tests_each_variant": 250,
     "android_signed_release_lint": "both passed",
     "browser_suites": 3,
     "viewports": [
@@ -155,7 +156,7 @@
       "1280x720",
       "1440x900"
     ],
-    "source_build": "c1dbce56d537ae7001ac78dd35076cde800a948e",
+    "source_build": "0895e6fe640a060efa7b363ff0d840ac4bd1c5cf",
     "physical_acceptance": {
       "original_engine_code18_controls": "three same-target install/HOME/PIN controls passed and restored; initial foreground and AC option did not deterministically reproduce failure",
       "final_package": "pending; initial candidate HOME checks passed but connection interrupted before installer reboot command",
